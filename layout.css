@@ -1,0 +1,21 @@
+body {
+
+  display: grid;
+
+  margin: 0 auto;
+
+  grid-template-columns: [left] 1fr [middle] 1fr [right];
+  grid-template-rows: [top] auto [bottom];
+
+  grid-row: top / bottom;
+}
+
+body > header {
+
+  grid-column: left / middle;
+}
+
+body > div {
+
+	grid-column: middle / right;
+}
