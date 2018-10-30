@@ -15,7 +15,7 @@ body > header {
   grid-column: left / middle;
 }
 
-body > div {
+body > div, body > form {
 
 	grid-column: middle / right;
 }
