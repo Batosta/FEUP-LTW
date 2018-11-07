@@ -3,22 +3,28 @@
   <head>
     <title>Index</title>  
     <link href="index_style.css" rel="stylesheet">
-    <link href="index_layout.css" rel="stylesheet">  
+    <link href="index_layout.css" rel="stylesheet">
+    <link href="index_form.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1><a href="index.html">ONLINE DICKS</a></h1>
-      <h2> GRANDE DESCRICAO DA PAGINA (tao grande quanto as dicks)!!! </h2>
-      <a href="register.html"><input type="submit" value="Register"></a>
-    </header>
-    <div id="login">
-      <input type="email" name="email" placeholder="Email"><p>
-      <input type="password" name="password" placeholder="Password"><p>
-      <input type="submit" value="Login" ><p> 
+    <div id="left_side">
+      <div id="left_text">
+        <h1><a href="index.html">ONLINE 420</a></h1>
+        <h2> GRANDE DESCRICAO DA PAGINA!!! </h2>
+        <a href="register.html"><input type="submit" value="Register"></a>
+      </div>
+      <img src="trump.jpg" alt="ONLINE 420 logo">
     </div>
-    <form id="database" action="check_database.php">
-      <input type="submit" value="TEST: database">
-    </form>
-    <h1><a href="wall.html">Wall</a></h1>
+    <section id="right_side">
+      <form id="login" action="login.php" method="post">
+        <p><input type="email" name="email" placeholder="Email"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+        <p><input type="submit" value="Login" ></p>
+      </form>
+      <form id="database" action="check_database.php">
+        <input type="submit" value="TEST: database">
+      </form>
+      <h1><a href="wall.html">Wall</a></h1>
+    </section>
   </body>
 </html>

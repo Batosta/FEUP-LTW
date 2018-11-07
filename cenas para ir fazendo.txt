@@ -2,12 +2,16 @@ Entrega: week 14				Apresentacao: semana de 17 dezembro
 
 Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só quais são as que acham +faceis ou +importantes e vamos fazendo aos poucos
 
-1. Butão do "Search Users" apresentar users com aqueles usernames - search_users.php
+1. Butão do "Search Users" apresentar users com aqueles usernames - search_users.php (já encontra com aquele nome (falta por nomes mais genericos))
 
 2. Butão do "Search Users" também funcionar com Enter - https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
-
-3. Colocar o Trump com toda a height da pagina e width com pagina/2 - idk
 
 4. Dar login - login_php
 
 5. Manter as cookies = depois de se dar login, se sairmos da pagina e voltarmos a entrar continuamos logados
+
+6. https://pt.wikipedia.org/wiki/Favicon se der  ;)
+
+7. http://php.net/manual/en/function.sha1.php para encriptar as passwords
+
+8. tirar a puta da foto do trump...só funciona a do trump somehow

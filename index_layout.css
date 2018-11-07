@@ -10,12 +10,12 @@ body {
   grid-row: top / bottom;
 }
 
-body > header {
+#left_side {
 
   grid-column: left / middle;
 }
 
-body > div, body > form {
+#right_side {
 
 	grid-column: middle / right;
 }

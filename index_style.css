@@ -3,10 +3,35 @@ body {
 	background-color: #C0C5C6;
 }
 
-body > header {
+#left_side{
 
-	background-image: url("trump.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
- }
+	margin:0px;
+}
+
+#left_text {
+
+	font-size: 200%;
+	max-width: 15em;
+	color: white;
+	padding: 10%;
+	position: absolute;
+}
+
+#left_text a{
+
+	color: green;
+	text-decoration: none;
+	text-shadow: .2em .2em .2em black;
+}
+
+#left_side img{
+
+ 	width: 100%;
+ 	height: 100%;
+}
+
+#right_side {
+
+	margin: 0px;
+	padding: 25%;
+}
