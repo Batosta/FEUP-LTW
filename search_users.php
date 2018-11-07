@@ -1,20 +1,15 @@
 <?php
 
-$dbh = new PDO('sqlite:database.db');
+include_once("../user_functions.php");
 
-$name = $_POST['userName'];
+echo "Search users";
 
-$stmt = $dbh->prepare('SELECT personID FROM Person WHERE personName=?');
-$stmt->execute(array($name));
+$user = $_GET['username'];
 
-$result = $stmt->fetchAll();
+if(($users = findUser($user)) !== null)
+    echo json_encode($users);
 
-if($result != null){
-	foreach ($result as $row) {
-  		echo $row['personID'];
-  	}
-} else{
-	echo "We could not find users with that name!";
-}
+else
+    echo json_encode("");
 
 ?>
