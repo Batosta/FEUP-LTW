@@ -17,5 +17,6 @@ body {
 
 #right_side {
 
-	grid-column: middle / right;
+  grid-column: middle / right;
+  
 }

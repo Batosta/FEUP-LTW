@@ -1,6 +1,6 @@
 body {
 
-	background-color: #C0C5C6;
+	background-color: #333e54;
 }
 
 #left_side{
@@ -19,9 +19,10 @@ body {
 
 #left_text a{
 
-	color: green;
+	color: #776c8a;;
 	text-decoration: none;
 	text-shadow: .2em .2em .2em black;
+	
 }
 
 #left_side img{
@@ -34,4 +35,5 @@ body {
 
 	margin: 0px;
 	padding: 25%;
+
 }
