@@ -45,4 +45,15 @@ foreach ($result as $row) {
     echo $row['commentText'], "<br>";
 }
 
+echo "<br><br>";
+$stmt = $dbh->prepare('SELECT * FROM SubComment');
+$stmt->execute();
+$result = $stmt->fetchAll();
+foreach ($result as $row) {
+    echo $row['subcommentID'], "|";
+    echo $row['commentID'], "|";
+    echo $row['accountID'], "|";
+    echo $row['sucommentText'], "<br>";
+}
+
 ?>

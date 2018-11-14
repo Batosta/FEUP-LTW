@@ -27,4 +27,11 @@ INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (2, 2, 4, 
 INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (3, 3, 1, 'fk 2pac');
 INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (4, 4, 3, 'gucci gang gucci gang gucci gang!');
 
+-- Table: SubComment
+INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (1, 1, 1, 'subcomment 1');
+INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (2, 2, 2, 'subcomment 2');
+INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (3, 3, 3, 'subcomment 3');
+INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (4, 4, 4, 'subcomment 4');
+
+
 PRAGMA foreign_keys = on;

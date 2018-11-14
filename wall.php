@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="header">
-      <h1><a href="wall.html">ONLINE 420</a></h1>
+      <h1><a href="wall.php">ONLINE 420</a></h1>
       <form id="search_users" action="search_users.php" method="post">
         <input type="text" name="userName" placeholder="Search users">
         <input type="submit" value="Search" >
