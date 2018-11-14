@@ -35,5 +35,10 @@ body {
 
 	margin: 0px;
 	padding: 25%;
+}
 
+#right_side a {
+
+	text-decoration: none;
+	color: white;
 }

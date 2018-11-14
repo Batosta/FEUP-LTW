@@ -31,3 +31,9 @@
 
     margin-top: 125px; 							/* Top margin to avoid having items behind the navigation bar */
 }
+
+/* The post */
+.post {
+
+    display: block;
+}

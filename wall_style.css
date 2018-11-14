@@ -4,3 +4,20 @@
 	text-decoration: none;
 	text-shadow: .2em .2em .2em black;
 }
+
+.post {
+
+	margin: 5px;
+	padding: 10px;
+	text-align: left;
+	background-color: #D6D6C2;
+	border: 3px solid black;
+	border-radius: 10px 50px;
+}
+
+
+.post #options {
+
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
