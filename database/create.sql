@@ -2,6 +2,7 @@ drop table if exists Person;
 drop table if exists Account;
 drop table if exists Post;
 drop table if exists Comment;
+drop table if exists SubComment;
 
 create table Person(
     personID integer primary key,
@@ -29,4 +30,11 @@ create table Comment(
     postID integer references Post(postID),
     accountID integer references Account(accountID),
     commentText text not null
+);
+
+create table SubComment(
+    subcommentID integer primary key,
+    commentID integer references Comment(commentID),
+    accountID integer references Account(accountID),
+    sucommentText text not null
 );
