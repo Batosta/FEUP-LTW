@@ -1,5 +1,23 @@
 <?php
 
+function getAccountPhoto($dbh, $accountID){
+
+    $stmt = $dbh->prepare('SELECT photo FROM Account WHERE ? = accountID');
+    $stmt->execute(array($accountID)); 
+    $row = $stmt->fetch();
+
+    return $row['photo'];
+}
+
+function getAccountUsername($dbh, $accountID){
+
+    $stmt = $dbh->prepare('SELECT username FROM Account WHERE ? = accountID');
+    $stmt->execute(array($accountID)); 
+    $row = $stmt->fetch();
+
+    return $row['username'];
+}
+
 function getUserID($username){
 
     global $dbh;
@@ -9,7 +27,6 @@ function getUserID($username){
 
     if($row = $stmt->fetch())
         return $row['accountID'];
-    
     else 
         return -1;
 

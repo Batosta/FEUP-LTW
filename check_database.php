@@ -20,7 +20,8 @@ foreach ($result as $row) {
     echo $row['personID'], "|";
     echo $row['passW'], "|";
     echo $row['email'], "|";
-    echo $row['username'], "<br>";
+    echo $row['username'], "|";
+    echo $row['photo'], "<br>";
 }
 
 echo "<br><br>";

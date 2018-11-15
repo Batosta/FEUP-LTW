@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 
   grid-template-columns: [left] 1fr [middle] 1fr [right];
-  grid-template-rows: [top] auto [bottom];
+  grid-template-rows: [top] 1fr [bottom];
 
   grid-row: top / bottom;
 }
@@ -18,5 +18,4 @@ body {
 #right_side {
 
   grid-column: middle / right;
-  
 }

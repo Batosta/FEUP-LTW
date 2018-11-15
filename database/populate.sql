@@ -8,13 +8,14 @@ INSERT INTO Person(personID, personName, personAge) VALUES (4, 'Gazzy Garcia', 1
 INSERT INTO Person(personID, personName, personAge) VALUES (5, 'Joao Ferreira', 20);
 
 -- Table: Account
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (1, 1, 'killshot', 'eminem@gmail.com', 'Eminem');
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (2, 2, 'shinitz', 'snoop@gmail.com', 'Snoop Dogg');
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (3, 3, 'suicidalthoughts', 'biggie@gmail.com', 'Biggie Smalls');
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (4, 4, 'guccigang', 'lil@gmail.com', 'Lil Pump');
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (5, 5, 'asheop', 'samurai@gmail.com', 'Jack the Nigga');
-INSERT INTO Account(accountID, personID, passW, email, username) VALUES (6, 4, 'guccigang2', 'gucci@gmail.com', 'gucci gang');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (1, 1, 'killshot', 'eminem@gmail.com', 'Eminem', 'trump.jpg');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (2, 2, 'shinitz', 'snoop@gmail.com', 'Snoop Dogg', 'test.jpg');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (3, 3, 'suicidalthoughts', 'biggie@gmail.com', 'Biggie Smalls', 'trump.jpg');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (4, 4, 'guccigang', 'lil@gmail.com', 'Lil Pump', 'test.jpg');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (5, 5, 'asheop', 'samurai@gmail.com', 'Jack the Nigga', 'trump.jpg');
+INSERT INTO Account(accountID, personID, passW, email, username, photo) VALUES (6, 4, 'guccigang2', 'gucci@gmail.com', 'gucci gang', 'test.jpg');
 
+-- likes
 -- Table: Post
 INSERT INTO Post(postID, accountID, photo, description) VALUES (1, 1, 'trump.jpg', 'worst president');
 INSERT INTO Post(postID, accountID, photo, description) VALUES (2, 2, 'trump.jpg', '420 blaze it');

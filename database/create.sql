@@ -15,7 +15,8 @@ create table Account(
     personID integer references Person(personID),
     passW text(30) not null,
     email text(40) not null unique,
-    username text(20) not null unique
+    username text(20) not null unique,
+    photo text(100)
 );
 
 create table Post(

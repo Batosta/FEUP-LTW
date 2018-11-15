@@ -42,3 +42,8 @@ body {
 	text-decoration: none;
 	color: white;
 }
+
+#right_side form {
+
+	border-style: outset;
+}
