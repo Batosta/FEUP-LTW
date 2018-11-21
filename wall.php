@@ -37,6 +37,7 @@
           <h2 id="username"><?=$post_username?></h2>
           <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
           <h3 id="description"><?=$post['description']?></h3>
+        </section>
         <section id="options">
           <h4>like, comment, share</h4>
         </section>
@@ -74,5 +75,6 @@
       <form class="posts" action="show_posts.php">
         <input type="submit" value="Show all posts">
       </form>
-    </body>
+    </div>
+  </body>
 </html>

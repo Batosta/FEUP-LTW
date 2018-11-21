@@ -6,9 +6,7 @@ Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só q
 
 2. Botão do "Search Users" também funcionar com Enter - https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
 
-3. Colocar o Trump com toda a height da pagina e width com pagina/2 - idk
-
-4. Dar login - login_php //not sure if done
+4. Dar login - login_php
 
 5. Manter as cookies = depois de se dar login, se sairmos da pagina e voltarmos a entrar continuamos logados
 
@@ -16,4 +14,4 @@ Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só q
 
 7. http://php.net/manual/en/function.sha1.php para encriptar as passwords
 
-8. tirar a puta da foto do trump...só funciona a do trump somehow - as outras imagens que escolheram são mt grandes
+9. Posts terem uma data

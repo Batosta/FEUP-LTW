@@ -16,6 +16,9 @@ create table Account(
     passW text(30) not null,
     email text(40) not null unique,
     username text(20) not null unique,
+    birthday text(10),
+    city text(20),
+    job text(30),
     photo text(100)
 );
 
