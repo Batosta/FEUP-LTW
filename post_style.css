@@ -1,0 +1,35 @@
+.post {
+
+	margin: 15px;
+	padding: 0.5em 2em;
+	text-align: left;
+	background-color: #D6D6C2;
+	border: 3px solid black;
+	border-radius: 10px 50px;
+}
+
+#options {
+
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#username {
+
+	left: 200em;
+}
+
+#post_photo {
+
+	margin: 0em 25%;
+}
+
+#comments{
+
+	margin-top: 5px;
+}
+
+#subcomments {
+
+	margin-left: 2em;
+}

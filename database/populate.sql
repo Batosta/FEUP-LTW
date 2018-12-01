@@ -6,7 +6,7 @@ INSERT INTO Account(accountID, personName, passW, email, username, birthday, cit
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (3, 'Christopher Wallace', 'suicidalthoughts', 'biggie@gmail.com', 'Biggie Smalls','11-06-1997', 'Pedrogao Grande, Portugal', 'Dead', 'biggie.jpg');
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (4, 'Gazzy Garcia', 'guccigang', 'lil@gmail.com', 'Lil Pump', '10-10-2001', 'Paris, France', 'Harvard student', 'lil.jpg');
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (5, 'Joao Ferreira', 'asheop', 'samurai@gmail.com', 'Jack the Nigga', '11-03-1996', 'Lisbon,Portugal', 'Job1', 'samurai.jpg');
--- likes
+
 -- Table: Post
 INSERT INTO Post(postID, accountID, photo, description) VALUES (1, 1, 'trump.jpg', 'worst president');
 INSERT INTO Post(postID, accountID, photo, description) VALUES (2, 2, 'trump.jpg', '420 blaze it');

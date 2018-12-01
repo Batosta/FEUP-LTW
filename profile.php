@@ -19,7 +19,9 @@
     <title>Profile</title> 
     <link href="favicon.ico" rel="shortcut icon">
     <link href="profile_style.css" rel="stylesheet">
-    <link href="profile_layout.css" rel="stylesheet">  
+    <link href="profile_layout.css" rel="stylesheet">
+    <link href="post_style.css" rel="stylesheet">
+    <link href="post_layout.css" rel="stylesheet">    
   </head>
   <body>
     <div class="header">
@@ -44,7 +46,9 @@
         <h5><?=$accountJob ?></h5>
       </section>
       <section id="posts">
-        <h2>POSTS</h2>
+        <?
+          showPostByAccountId($dbh, $account_id);
+        ?>      
       </section>
     </div>
   </body>

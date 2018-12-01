@@ -79,9 +79,19 @@
 
         return $row['accountID'];
     }
-?>
 
-<?  function showPostByPostId($dbh, $postID){
+    function showAllPosts($dbh) {
+
+        $stmt = $dbh->prepare('SELECT * FROM Post');
+        $stmt->execute();
+        $posts = $stmt->fetchAll();
+        foreach ($posts as $post) {
+            $post_id = $post['postID'];
+            showPostByPostId($dbh, $post_id);
+        }
+    }
+  
+    function showPostByPostId($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE postID = ?');
         $stmt->execute(array($postID));
@@ -133,4 +143,19 @@
             </section>
             <? } ?>
         </div>
-<? } ?>
+<? }
+
+
+    function showPostByAccountId($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ?');
+        $stmt->execute(array($accountID));
+        $result = $stmt->fetchAll();
+
+        foreach ($result as $post) {
+
+            $postID = $post['postID'];
+            showPostByPostId($dbh, $postID);
+        }
+}
+?>
