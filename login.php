@@ -1,27 +1,20 @@
 <?php
 
-	include_once("../user_functions.php");
-	include_once("../session.php");
+	include_once("./user_functions.php");
+	include_once("./session.php");
 
 	$dbh = new PDO('sqlite:database.db');
-	$dbh->setAttribute(PDO::ATR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
     if(checkPassword($dbh, $username, $password)){
-        if(password_verify($password, $hashed_password)){
-    	setCurrentUser($_POST['username']);
-        $_SESSION['success_messages'][] = "User logged in!";
-        //header('Location: ../register.html');
+        $accountID = getUserID($dbh, $username);
+        currentUser($username, $accountID);
+        header('Location: ./profile.php');
     }
-}
     else{
         $_SESSION['ERROR'] = 'Incorrect password or username';
-        header('Location: ../login.php');
+        header('Location: ./index.html');
     }
-
-    //Redirect para a page anterior
-    //header("Location: $_SERVER['HTTP_REFERER']");
 ?>

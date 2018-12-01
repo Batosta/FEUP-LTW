@@ -1,12 +1,6 @@
 <?php
 
-session_start();
-
-function setCurrentUser($username){
-    $_SESSION['username'] = $username;
-}
-
-function getAccountPhoto($dbh, $accountID){
+    function getAccountPhoto($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT photo FROM Account WHERE ? = accountID');
         $stmt->execute(array($accountID)); 
@@ -24,23 +18,66 @@ function getAccountPhoto($dbh, $accountID){
         return $row['username'];
     }
 
+    function getAccountEmail($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT email FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['email'];
+    }
+
+    function getAccountBirthday($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT birthday FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['birthday'];
+    }
+
+    function getAccountCity($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT city FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['city'];
+    }
+
+    function getAccountJob($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT job FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['job'];
+    }
+
+    function getAccountName($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT personName FROM Account, Person WHERE accountID = ? AND Account.personID = Person.personID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['personName'];
+    }
+
     function checkPassword($dbh, $username, $password){
 
-    echo voutestarapasse;
-    $stmt = $dbh->prepare('SELECT * FROM Account WHERE username = ? AND passW = ?');
-    $stmt->execute(array($username, $password));
-    echo testei;
-    return $stmt->fetchAll() ? true : false; //returns true if exists
-}
+        $stmt = $dbh->prepare('SELECT * FROM Account WHERE username = ? AND passW = ?');
+        $stmt->execute(array($username, $password));
 
-function getAccountID($dbh, $username){
+        return $stmt->fetch() ? true : false; //returns true if exists
+    }
 
-    $stmt = $dbh->prepare('SELECT * FROM Account 
-        WHERE ? = username');
-    $stmt->execute(array($username));
-    $row = $stmt->fetch();
+    function getUserID($dbh, $username){
 
-    return $row['accountID'];
-}
+        $stmt = $dbh->prepare('SELECT accountID FROM Account WHERE username = ?');
+        $stmt->execute(array($username));
+        $row = $stmt->fetch();
+
+        return $row['accountID'];
+    }
 
 ?>
