@@ -1,21 +1,12 @@
 <?php
 
-    function getAccountPhoto($dbh, $accountID){
+    function getAccountName($dbh, $accountID){
 
-        $stmt = $dbh->prepare('SELECT photo FROM Account WHERE ? = accountID');
-        $stmt->execute(array($accountID)); 
-        $row = $stmt->fetch();
-
-        return $row['photo'];
-    }
-
-    function getAccountUsername($dbh, $accountID){
-
-        $stmt = $dbh->prepare('SELECT username FROM Account WHERE ? = accountID');
+        $stmt = $dbh->prepare('SELECT personName FROM Account WHERE accountID = ?');
         $stmt->execute(array($accountID));
         $row = $stmt->fetch();
 
-        return $row['username'];
+        return $row['personName'];
     }
 
     function getAccountEmail($dbh, $accountID){
@@ -25,6 +16,15 @@
         $row = $stmt->fetch();
 
         return $row['email'];
+    }
+
+    function getAccountUsername($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT username FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID));
+        $row = $stmt->fetch();
+
+        return $row['username'];
     }
 
     function getAccountBirthday($dbh, $accountID){
@@ -54,13 +54,13 @@
         return $row['job'];
     }
 
-    function getAccountName($dbh, $accountID){
+    function getAccountPhoto($dbh, $accountID){
 
-        $stmt = $dbh->prepare('SELECT personName FROM Account, Person WHERE accountID = ? AND Account.personID = Person.personID');
-        $stmt->execute(array($accountID));
+        $stmt = $dbh->prepare('SELECT photo FROM Account WHERE ? = accountID');
+        $stmt->execute(array($accountID)); 
         $row = $stmt->fetch();
 
-        return $row['personName'];
+        return $row['photo'];
     }
 
     function checkPassword($dbh, $username, $password){
