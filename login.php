@@ -11,11 +11,12 @@
 	$password = $_POST['password'];
 
     if(checkPassword($dbh, $username, $password)){
-       // $_SESSION['username'] = $username;
+        if(password_verify($password, $hashed_password)){
     	setCurrentUser($_POST['username']);
         $_SESSION['success_messages'][] = "User logged in!";
         //header('Location: ../register.html');
     }
+}
     else{
         $_SESSION['ERROR'] = 'Incorrect password or username';
         header('Location: ../login.php');

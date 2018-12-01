@@ -6,8 +6,6 @@ Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só q
 
 2. Botão do "Search Users" também funcionar com Enter - https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
 
-4. Dar login - login_php
-
 5. Manter as cookies = depois de se dar login, se sairmos da pagina e voltarmos a entrar continuamos logados
 
 6. https://pt.wikipedia.org/wiki/Favicon se der  ;)
