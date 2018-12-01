@@ -16,7 +16,8 @@
     $accountJob = getAccountJob($dbh, $account_id);
   ?>
   <head>
-    <title>Profile</title>  
+    <title>Profile</title> 
+    <link href="favicon.ico" rel="shortcut icon">
     <link href="profile_style.css" rel="stylesheet">
     <link href="profile_layout.css" rel="stylesheet">  
   </head>

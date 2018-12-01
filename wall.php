@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US"> 
   <head>
-    <title>Wall</title>  
+    <title>Wall</title>
+    <link href="favicon.ico" rel="shortcut icon">
     <link href="wall_style.css" rel="stylesheet">
     <link href="wall_layout.css" rel="stylesheet">  
   </head>
