@@ -1,5 +1,7 @@
 <?php
 
+    include_once("./encryption.php");
+
     function getAccountName($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT personName FROM Account WHERE accountID = ?');

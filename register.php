@@ -1,5 +1,7 @@
 <?php
 
+include_once("./encryption.php");
+
 $dbh = new PDO('sqlite:database.db');
 
 $name = $_POST['name'];
