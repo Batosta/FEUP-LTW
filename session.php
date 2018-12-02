@@ -4,8 +4,10 @@ session_start();
 
 function currentUser($username, $accountID){
 
-    $_SESSION['username'] = $username;
-    $_SESSION['accountID'] = $accountID;
+	if($_SESSION['status']="Active"){
+    	$_SESSION['username'] = $username;
+    	$_SESSION['accountID'] = $accountID;
+	}
 }
 
 ?>

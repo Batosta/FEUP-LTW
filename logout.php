@@ -1,7 +1,6 @@
 <?php
-
+	session_start();
     session_destroy();
-    session_start();
-
+    $_SESSION['status']="Unactive";
     header('Location: ./index.html');
 ?>

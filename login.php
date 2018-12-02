@@ -9,6 +9,7 @@
 	$password = $_POST['password'];
 
     if(checkPassword($dbh, $username, $password)){
+        $_SESSION['status']="Active";
         $accountID = getUserID($dbh, $username);
         currentUser($username, $accountID);
         header('Location: ./profile.php');
