@@ -67,8 +67,10 @@
 
     function checkPassword($dbh, $username, $password){
 
+        $pass = encryptPass($password);
+
         $stmt = $dbh->prepare('SELECT * FROM Account WHERE username = ? AND passW = ?');
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username, $pass));
 
         return $stmt->fetch() ? true : false; //returns true if exists
     }

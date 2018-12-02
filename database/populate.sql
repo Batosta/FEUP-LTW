@@ -1,12 +1,12 @@
 PRAGMA foreign_keys = on;
 
 -- Table: Account
-INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (1, 'Marshal Mathers', 'killshot', 'eminem@gmail.com', 'Eminem', '10-10-1997', 'New York, USA', 'McDonalds employee','eminem.jpg');
-INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (2, 'Calvin Broadus', 'shinitz', 'snoop@gmail.com', 'Snoop Dogg', '10-05-1997', 'New York, USA', 'Weed dealer', 'snoop.jpg');
-INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (3, 'Christopher Wallace', 'suicidalthoughts', 'biggie@gmail.com', 'Biggie Smalls','11-06-1997', 'Pedrogao Grande, Portugal', 'Dead', 'biggie.jpg');
-INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (4, 'Gazzy Garcia', 'guccigang', 'lil@gmail.com', 'Lil Pump', '10-10-2001', 'Paris, France', 'Harvard student', 'lil.jpg');
-INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (5, 'Joao Ferreira', 'asheop', 'samurai@gmail.com', 'Jack the Nigga', '11-03-1996', 'Lisbon,Portugal', 'Job1', 'samurai.jpg');
-
+INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (1, 'Marshal Mathers', 'st4qH39l2of.k', 'eminem@gmail.com', 'Eminem', '10-10-1997', 'New York, USA', 'McDonalds employee','eminem.jpg');
+INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (2, 'Calvin Broadus', 'stg75VURFVFwY', 'snoop@gmail.com', 'Snoop Dogg', '10-05-1997', 'New York, USA', 'Weed dealer', 'snoop.jpg');
+INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (3, 'Christopher Wallace', 'st5P86rdRbBlg', 'biggie@gmail.com', 'Biggie Smalls','11-06-1997', 'Pedrogao Grande, Portugal', 'Dead', 'biggie.jpg');
+INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (4, 'Gazzy Garcia', 'stOKQPJmr5c5M', 'lil@gmail.com', 'Lil Pump', '10-10-2001', 'Paris, France', 'Harvard student', 'lil.jpg');
+INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (5, 'Joao Ferreira', 'stKlSG2ybmJos', 'samurai@gmail.com', 'Jack the Nigga', '11-03-1996', 'Lisbon,Portugal', 'Job1', 'samurai.jpg');
+-- likes
 -- Table: Post
 INSERT INTO Post(postID, accountID, photo, description) VALUES (1, 1, 'trump.jpg', 'worst president');
 INSERT INTO Post(postID, accountID, photo, description) VALUES (2, 2, 'trump.jpg', '420 blaze it');

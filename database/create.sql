@@ -2,7 +2,6 @@ drop table if exists Account;
 drop table if exists Post;
 drop table if exists Comment;
 drop table if exists SubComment;
-drop table if exists Votes;
 
 create table Account(
     accountID integer primary key autoincrement,
@@ -36,14 +35,3 @@ create table SubComment(
     accountID integer references Account(accountID),
     sucommentText text not null
 );
-
--- type: 0: downvote  1:upvote
-create table Votes(
-    voteID integer primary key autoincrement,
-    postID integer references Post(postID),
-    accountID integer references Account(accountID),
-    type integer not null
-);
-
--- tabela de channels
--- tabela de channels
