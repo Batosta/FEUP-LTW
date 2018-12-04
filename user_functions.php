@@ -2,6 +2,15 @@
 
     include_once("./encryption.php");
 
+
+    function getUserID($dbh, $username){
+
+        $stmt = $dbh->prepare('SELECT accountID FROM Account WHERE username = ?');
+        $stmt->execute(array($username));
+        $row = $stmt->fetch();
+
+        return $row['accountID'];
+    }
     function getAccountName($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT personName FROM Account WHERE accountID = ?');
@@ -10,7 +19,6 @@
 
         return $row['personName'];
     }
-
     function getAccountEmail($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT email FROM Account WHERE ? = accountID');
@@ -19,7 +27,6 @@
 
         return $row['email'];
     }
-
     function getAccountUsername($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT username FROM Account WHERE ? = accountID');
@@ -28,7 +35,6 @@
 
         return $row['username'];
     }
-
     function getAccountBirthday($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT birthday FROM Account WHERE ? = accountID');
@@ -37,7 +43,6 @@
 
         return $row['birthday'];
     }
-
     function getAccountCity($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT city FROM Account WHERE ? = accountID');
@@ -46,7 +51,6 @@
 
         return $row['city'];
     }
-
     function getAccountJob($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT job FROM Account WHERE ? = accountID');
@@ -55,7 +59,6 @@
 
         return $row['job'];
     }
-
     function getAccountPhoto($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT photo FROM Account WHERE ? = accountID');
@@ -64,6 +67,7 @@
 
         return $row['photo'];
     }
+
 
     function checkPassword($dbh, $username, $password){
 
@@ -75,14 +79,6 @@
         return $stmt->fetch() ? true : false; //returns true if exists
     }
 
-    function getUserID($dbh, $username){
-
-        $stmt = $dbh->prepare('SELECT accountID FROM Account WHERE username = ?');
-        $stmt->execute(array($username));
-        $row = $stmt->fetch();
-
-        return $row['accountID'];
-    }
 
     function showAllPosts($dbh) {
 
@@ -94,7 +90,6 @@
             showPostByPostId($dbh, $post_id);
         }
     }
-  
     function showPostByPostId($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE postID = ?');
@@ -147,9 +142,7 @@
             </section>
             <? } ?>
         </div>
-<? }
-
-
+<?  }
     function showPostByAccountId($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ?');
@@ -161,5 +154,5 @@
             $postID = $post['postID'];
             showPostByPostId($dbh, $postID);
         }
-}
+    }
 ?>

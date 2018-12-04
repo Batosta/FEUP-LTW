@@ -2,8 +2,12 @@ Entrega: week 14				Apresentacao: semana de 17 dezembro
 
 Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só quais são as que acham +faceis ou +importantes e vamos fazendo aos poucos
 
-1. Botão do "Search Users" apresentar users com aqueles usernames - search_users.php //done?
+1. Botão do "Search Users" apresentar users com aqueles usernames - search_users.php //done? (e canais (post acho que tambem))
 
 2. Botão do "Search Users" também funcionar com Enter - https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
 
-9. Posts terem uma data
+3. Posts terem uma data
+
+4. canais
+
+6. nao aceitares mails/usernames iguais (fazer um popupzinho if possible)
