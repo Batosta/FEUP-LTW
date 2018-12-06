@@ -111,7 +111,7 @@
                 <h3 id="description"><?=$post['description']?></h3>
             </section>
             <section id="options">
-                <h4>like, comment, share</h4>
+                <h4><a href="list_comments.php">Comment</a></h4>
             </section>
             <?
                 $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
