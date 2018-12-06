@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Index</title>  
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="index_style.css" rel="stylesheet">
-    <link href="index_layout.css" rel="stylesheet">
-    <link href="index_form.css" rel="stylesheet">
+    <title>Aria</title>  
+    <link href="/imagens/icon.png" rel="shortcut icon">
+    <link href="interface.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>
   <body>
-    <div id="left_side">
-      <div id="left_text">
-        <h1><a href="index.html">ONLINE 420</a></h1>
-        <h2> GRANDE DESCRICAO DA PAGINA!!! </h2>
-        <a href="register.html"><input type="submit" value="Register"></a>
+   <div class="title">
+    <h1>Aria</h1>
+   </div>
+
+   <div class="logo">
+     <img src="imagens/icon.png" height="40" width="40">
+   </div>
+
+   <form>
+     <input type="text" name="search" placeholder="Search something in Aria">
+   </form>
+   
+    <div class="menu">
+      <div class="signButton">
+        <a href="signup.html" target="_blank"><p>Sign Up<p></p></a>
       </div>
-      <img src="test.jpg" alt="ONLINE 420 logo">
+      <div class="logButton">
+      <a href="login.html" target="_blank"><p>Log In</p></a>
+      </div>
     </div>
-    <section id="right_side">
-      <form id="login" action="login.php" method="post">
-        <h2> Login </h2>
-        <p><input type="text" name="username" placeholder="Username"></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><input type="submit" value="Login" ></p>
-      </form>
-      <form id="database" action="check_database.php">
-        <input type="submit" value="TEST: database">
-      </form>
-      <h1><a href="wall.php">Wall</a></h1>
-    </section>
+
   </body>
+
+  <footer>
+    <div class="about">
+      <p>About Us  <p>
+    </div>
+    <div class="ltw">
+      <p>Linguagens & Tecnoglogias Web<p> 
+    </div>
+    <div class="contacts">
+      <p> Contact </p>
+    </div>
+  </footer>
+
 </html>

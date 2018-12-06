@@ -15,25 +15,30 @@
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
   ?>
+
   <head>
     <title>Profile</title> 
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="profile_style.css" rel="stylesheet">
-    <link href="profile_layout.css" rel="stylesheet">
+    <link href="/imagens/icon.png" rel="shortcut icon">
+    <link href="profile.css" rel="stylesheet">
     <link href="post_style.css" rel="stylesheet">
-    <link href="post_layout.css" rel="stylesheet">    
+    <link href="post_layout.css" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>
+
   <body>
-    <div class="header">
-      <h1><a href="wall.php">ONLINE 420</a></h1>
-      <form id="search_users" action="search_users.php" method="post">
-        <input type="text" name="userName" placeholder="Search users">
-        <input type="submit" value="Search" >
-      </form>
-      <form id="logout" action="logout.php">
-        <input type="submit" value="Log out" >
-      </form>
-      <h3><a href="change_profile.php">Alterar o perfil</a></h3>
+    <div class="navBar">
+      <div class="menu">
+          <img src="imagens/menu.png" height="25" width="25">
+      </div>
+      <div class="searchBar">
+          <form>
+              <input type="text" name="search" placeholder="Search something in your profile">
+          </form>
+      </div>
+      <div class="logOut">
+          <img src="imagens/logout.png" height="25" width="25">
+      </div>
     </div>
 
     <div class="main">
@@ -53,4 +58,16 @@
       </section>
     </div>
   </body>
+
+  <footer>
+    <div class="about">
+      <p>About Us  <p>
+    </div>
+    <div class="ltw">
+      <p>Linguagens & Tecnoglogias Web<p>
+    </div>
+    <div class="contacts">
+      <p> Contact </p>
+    </div>
+  </footer>
 </html>

@@ -16,6 +16,6 @@
     }
     else{
         $_SESSION['ERROR'] = 'Incorrect password or username';
-        header('Location: ./index.html');
+        header('Location: ./login.html');
     }
 ?>
