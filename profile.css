@@ -5,7 +5,6 @@ body {
 
 footer {
     display: flex;
-    position: absolute;
     background-color: rgb(16,0,32);
     font-family: "Quicksand";
     color: white;
@@ -55,7 +54,7 @@ footer {
     background-color: rgba(229, 238, 234, 0.562);
 }
 
-form input{
+.searchBar form input{
     background-image: url('imagens/searchIcon.png');
     background-color: rgba(229, 238, 234, 0.562);
     background-size: 20px;
@@ -72,13 +71,13 @@ form input{
     height: 30px;
 }
 
-input[type=text] {
+.searchBar form input[type=text] {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.searchBar form input[type=text]:focus {
     width: 300px;
 }
 

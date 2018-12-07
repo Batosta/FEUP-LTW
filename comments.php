@@ -1,7 +1,11 @@
 <?php
-	function addComment($commentID, $postID, $accountID, $text) {
-		$stmt = $db->prepare('INSERT INTO comment (commentID, postID, accountID, commentText) VALUES (NULL, ?, ?, ?)');
-		$stmt->execute(array($postID, $accountID, $text));
+	
+	function addComment($dbh, $accountID, $postID, $commentText) {
+
+		$stmt = $dbh->prepare('INSERT INTO Comment (commentID, postID, accountID, commentText) VALUES (NULL, ?, ?, ?)');
+		$stmt->execute(array($postID, $accountID, $commentText));
+
+		header('Location: ./profile.php');
 	}
 
 	function getCommentsAfterId($postID, $commentID){
