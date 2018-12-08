@@ -1,5 +1,9 @@
 body {
     margin: 0;
+    /*background-image:url('imagens/cubes.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100%;*/
+    background-color: #e6e6e6;
 }
 
 footer {
@@ -146,26 +150,43 @@ footer p {
 .main {
 
     width: 100em;
-    margin: 0 auto;
-
-    margin-top: 60px;                          /* Top margin to avoid having items behind the navigation bar */
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 60px 20px;
     display: grid;
 
-    grid-template-columns: [left] 25% [middle] 75% [right];
+    grid-template-columns: [left] 25% [middle] 55% [right];
     grid-template-rows: [top] auto [bottom];
 
     grid-row: top / bottom;
 }
 
 .main #bio   {
-
+    display: block;
+    background-color: rgb(16,0,32);
+    background-image: url('imagens/marbleWallpaper.jpg');
+    background-repeat: repeat-x;
+    background-size: 35%;
+    margin-bottom: 50%;
+    padding: 5%;
     grid-column: left / middle;
     font-family: "Quicksand";
+    border-radius: 5%;
+    color: white;
+    width: 70%;
+    height: 60%;
 }
 
 .main #posts {
 
     grid-column: middle / right;
+}
+
+.main #bio img {
+    border-radius: 50%;
+    border: 1px solid #100020;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: 5px;
+
 }

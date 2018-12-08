@@ -56,7 +56,7 @@
 
     <div class="main">
       <section id="bio">
-        <img src=<?=$accountPhoto ?> alt="Profile photo" height="250" width="250">
+        <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
         <h2><?=$accountUsername ?></h2>
         <h4><?=$accountName ?></h4>
         <h5><?=$accountEmail ?></h5>
