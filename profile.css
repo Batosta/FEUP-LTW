@@ -1,27 +1,26 @@
 body {
-
     margin: 0;
 }
 
 footer {
     display: flex;
-    position: absolute;
     background-color: rgb(16,0,32);
-    font-family: "Quicksand";
-    color: white;
     bottom: 0;
     width: 100%;
     height: 40px;
     align-items: center;
 }
 
-.about {
+footer p {
+    font-family: "Quicksand";
+    color: white;
+}
 
+.about {
     margin-left: 20px;
 }
 
 .ltw {
-    
     margin-left: auto;
 }
 
@@ -36,32 +35,83 @@ footer {
     height: 50px;
     align-items: center;
     position: fixed;
-    top:0;
+    top: 0;
     width: 100%;
 }
 
 .logOut {
     margin-left: auto;
-   
+    margin-right: 10px;
 }
+
+.menu {
+    margin-left: 10px;
+}
+
+.menuContent {
+    display: none;
+    position: absolute;
+    background-color: rgba(229, 238, 234, 1);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.menuContent p {
+    text-decoration: none;
+    color: rgb(135,135,135);
+    font-family:"Open Sans Condensed";                                                                                                                                                                                                                                                                              
+}
+
+/* Change color of dropdown links on hover */
+/*.menuContent a:hover {background-color: #ddd;}*/
+
+.menu:hover .menuContent {display: block; text-decoration: none;}
+
+.menu:hover img { 
+    background-color: rgba(229, 238, 234, 0.8);
+    border-radius: 100%;}
+
+.logOutContent {
+    display: none;
+    position: absolute;
+    right:0;
+    background-color: rgba(229, 238, 234, 1);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.logOutContent p {
+    text-decoration: none;
+    color: rgb(135,135,135);
+    font-family:"Open Sans Condensed";                                                                                                                                                                                                                                                                              
+}
+
+/* Change color of dropdown links on hover */
+/*.menuContent a:hover {background-color: #ddd;}*/
+
+.logOut:hover .logOutContent {display: block; text-decoration: none;}
+
+.logOut:hover img { 
+    background-color: rgba(229, 238, 234, 0.8);
+    border-radius: 100%;}
 
 .logOut, .menu {
     padding: 5px;
-}
-
-.menu, .logOut{
-    display: inline-block;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background-color: rgba(229, 238, 234, 0.562);
 }
 
-form input{
+.searchBar form input{
     background-image: url('imagens/searchIcon.png');
     background-color: rgba(229, 238, 234, 0.562);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 8px 5px;
-    color: rgb(0, 0, 0);
+    color: rgb(242, 242, 242);
     opacity: 30%;
     font-family:"Open Sans Condensed";
     border-radius: 20px;
@@ -72,13 +122,13 @@ form input{
     height: 30px;
 }
 
-input[type=text] {
+.searchBar input[type=text] {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.searchBar input[type=text]:focus {
     width: 300px;
 }
 

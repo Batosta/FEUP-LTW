@@ -28,9 +28,17 @@
 
   <body>
     <div class="navBar">
+
       <div class="menu">
           <img src="imagens/menu.png" height="25" width="25">
+          <div class="menuContent">
+            <a href="#"><p>Home Page</p></a>
+            <a href="#"><p>Edit profile</p></a>
+            <a href="#"><p>Subscription</p></a>
+            <a href="#"><p>Liked</p></a>
+          </div>
       </div>
+
       <div class="searchBar">
           <form>
               <input type="text" name="search" placeholder="Search something in your profile">
@@ -38,6 +46,10 @@
       </div>
       <div class="logOut">
           <img src="imagens/logout.png" height="25" width="25">
+          <div class="logOutContent">
+            <a href="logout.php"><p>Sign Out</p></a>
+            <a href="logotheraccount.php"><p>Sign into another account </p></a>
+          </div>
       </div>
     </div>
 
@@ -56,7 +68,7 @@
           showPostByAccountId($dbh, $account_id);
         ?>      
       </section>
-    </div>
+    </div>  
   </body>
 
   <footer>
@@ -70,4 +82,6 @@
       <p> Contact </p>
     </div>
   </footer>
+
+
 </html>
