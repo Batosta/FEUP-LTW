@@ -65,15 +65,10 @@ footer p {
 }
 
 #homePage{background-image: url('imagens/home.png');}
-
 #settings {background-image: url('imagens/settings.png');}
-
 #likes {background-image: url('imagens/like.png');}
-
 #subs {background-image: url('imagens/following.png');}
-
 #logOut {background-image: url('imagens/logout.png');}
-
 #user {background-image: url('imagens/user.png');}
 
 #homePage, #settings, #likes, #subs, #logOut, #user {
@@ -86,6 +81,13 @@ footer p {
 }
 
 #subs:hover, #homePage:hover, #settings:hover, #likes:hover, #logOut:hover, #user:hover {background-color: rgb(254, 255, 254);}
+
+#likes:hover { background-image: url('imagens/likeII.png');}
+#subs:hover {background-image: url('imagens/followingII.png');}
+#user:hover {background-image: url('imagens/userII.png');}
+#settings:hover {background-image: url('imagens/settingsII.png');}
+#homePage:hover {background-image: url('imagens/homeII.png');}
+#logOut:hover {background-image: url('imagens/logoutII.png');}
 
 .menu:hover .menuContent, .logOut:hover .logOutContent  {display: flex;  flex-direction: column;}
 
