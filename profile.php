@@ -32,10 +32,10 @@
       <div class="menu">
           <img src="imagens/menu.png" height="25" width="25">
           <div class="menuContent">
-            <a href="#"><img id="symb" src="imagens/home.png" height="5" width="5"><p>Home Page</p></a>
-            <a href="#"><img id="symb" src="imagens/settings.png" height="5" width="5"><p>Edit profile</p></a>
-            <a href="#"><img id="symb" src="imagens/user.png" height="5" width="5"><p>Subscriptions</p></a>
-            <a href="#"><img id="symb" src="imagens/like.png" height="5" width="5"><p>Liked</p></a>
+            <a id="homePage" href="#"><p>Home Page</p></a>
+            <a id="settings" href="#"><p>Edit profile</p></a>
+            <a id="subs" href="#"><p>Subscriptions</p></a>
+            <a id="likes" href="#"><p>Liked</p></a>
           </div>
       </div>
 
@@ -48,8 +48,8 @@
       <div class="logOut">
           <img src="imagens/turn-on.png" height="25" width="25">
           <div class="logOutContent">
-            <a href="logout.php"><img id="symb" src="imagens/logout.png" height="5" width="5"><p>Sign Out</p></a>
-            <a href="logotheraccount.php"><img id="symb" src="imagens/signin.png" height="5" width="5"><p>Sign into another account </p></a>
+            <a id="logOut" href="logout.php"><p>Sign Out</p></a>
+            <a id="user" href="logotheraccount.php"><p>Sign into other account </p></a>
           </div>
       </div>
     </div>

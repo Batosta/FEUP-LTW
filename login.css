@@ -42,6 +42,7 @@ footer {
     width: 300px;
     right: 40%;
     top: 36%;
+
 }
 
 .logInMenu p {
@@ -64,6 +65,7 @@ footer {
     width: 100px;
     background-color: white;
     color: rgb(77, 76, 76);
+    outline:none;
 }
 
 .topBar {

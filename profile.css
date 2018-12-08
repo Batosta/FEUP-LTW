@@ -55,27 +55,42 @@ footer p {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1; 
-
 }
 
-.menuContent a {
+.menuContent a, .logOutContent a {
     text-decoration: none;
     color: rgb(135,135,135);
     font-family:"Open Sans Condensed";   
-
+    text-align: center;
 }
 
-#symb {
+#homePage{background-image: url('imagens/home.png');}
+
+#settings {background-image: url('imagens/settings.png');}
+
+#likes {background-image: url('imagens/like.png');}
+
+#subs {background-image: url('imagens/following.png');}
+
+#logOut {background-image: url('imagens/logout.png');}
+
+#user {background-image: url('imagens/user.png');}
+
+#homePage, #settings, #likes, #subs, #logOut, #user {
+    background-color: rgba(229, 238, 234, 1);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
     border-radius: 0%;
     float: left;
 }
 
-.menuContent a:hover {background-color: rgb(254, 255, 254);}
+#subs:hover, #homePage:hover, #settings:hover, #likes:hover, #logOut:hover, #user:hover {background-color: rgb(254, 255, 254);}
 
-.menu:hover .menuContent {display: flex;  flex-direction: column;}
+.menu:hover .menuContent, .logOut:hover .logOutContent  {display: flex;  flex-direction: column;}
 
-.menu:hover img { 
-    background-color: rgba(229, 238, 234, 0.8);
+.menu:hover img, .logOut:hover img { 
+    background-color: rgb(229, 238, 234);
     border-radius: 100%;}
 
 .logOutContent {
@@ -86,21 +101,8 @@ footer p {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    border-right:100px;
 }
-
-.logOutContent a {
-    text-decoration: none;
-    color: rgb(135,135,135);
-    font-family:"Open Sans Condensed";                                                                                                                                                                                                                                                                              
-}
-
-.logOutContent a:hover {background-color: rgb(254, 255, 254);}
-
-.logOut:hover .logOutContent {display: flex;  flex-direction: column;}
-
-.logOut:hover img { 
-    background-color: rgba(229, 238, 234, 0.8);
-    border-radius: 100%;}
 
 .logOut img, .menu img {
     padding: 5px;
@@ -144,8 +146,9 @@ footer p {
     width: 100em;
     margin: 0 auto;
 
-    margin-top: 125px;                          /* Top margin to avoid having items behind the navigation bar */
-
+    margin-top: 60px;                          /* Top margin to avoid having items behind the navigation bar */
+    margin-right: 20px;
+    margin-left: 20px;
     display: grid;
 
     grid-template-columns: [left] 25% [middle] 75% [right];
@@ -157,6 +160,7 @@ footer p {
 .main #bio   {
 
     grid-column: left / middle;
+    font-family: "Quicksand";
 }
 
 .main #posts {
