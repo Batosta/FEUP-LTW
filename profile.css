@@ -54,19 +54,25 @@ footer p {
     background-color: rgba(229, 238, 234, 1);
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 1; 
+
 }
 
-.menuContent p {
+.menuContent a {
     text-decoration: none;
     color: rgb(135,135,135);
-    font-family:"Open Sans Condensed";                                                                                                                                                                                                                                                                              
+    font-family:"Open Sans Condensed";   
+
 }
 
-/* Change color of dropdown links on hover */
-/*.menuContent a:hover {background-color: #ddd;}*/
+#symb {
+    border-radius: 0%;
+    float: left;
+}
 
-.menu:hover .menuContent {display: block; text-decoration: none;}
+.menuContent a:hover {background-color: rgb(254, 255, 254);}
+
+.menu:hover .menuContent {display: flex;  flex-direction: column;}
 
 .menu:hover img { 
     background-color: rgba(229, 238, 234, 0.8);
@@ -82,22 +88,21 @@ footer p {
     z-index: 1;
 }
 
-.logOutContent p {
+.logOutContent a {
     text-decoration: none;
     color: rgb(135,135,135);
     font-family:"Open Sans Condensed";                                                                                                                                                                                                                                                                              
 }
 
-/* Change color of dropdown links on hover */
-/*.menuContent a:hover {background-color: #ddd;}*/
+.logOutContent a:hover {background-color: rgb(254, 255, 254);}
 
-.logOut:hover .logOutContent {display: block; text-decoration: none;}
+.logOut:hover .logOutContent {display: flex;  flex-direction: column;}
 
 .logOut:hover img { 
     background-color: rgba(229, 238, 234, 0.8);
     border-radius: 100%;}
 
-.logOut, .menu {
+.logOut img, .menu img {
     padding: 5px;
     width: 25px;
     height: 25px;
@@ -130,6 +135,7 @@ footer p {
 
 .searchBar form input[type=text]:focus {
     width: 300px;
+    outline: none;
 }
 
 /* The rest of the content */

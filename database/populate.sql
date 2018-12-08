@@ -6,12 +6,28 @@ INSERT INTO Account(accountID, personName, passW, email, username, birthday, cit
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (3, 'Christopher Wallace', 'st5P86rdRbBlg', 'biggie@gmail.com', 'Biggie Smalls','11-06-1997', 'Pedrogao Grande, Portugal', 'Dead', 'biggie.jpg');
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (4, 'Gazzy Garcia', 'stOKQPJmr5c5M', 'lil@gmail.com', 'Lil Pump', '10-10-2001', 'Paris, France', 'Harvard student', 'lil.jpg');
 INSERT INTO Account(accountID, personName, passW, email, username, birthday, city, job, photo) VALUES (5, 'Joao Ferreira', 'stKlSG2ybmJos', 'samurai@gmail.com', 'Jack the Nigga', '11-03-1996', 'Lisbon,Portugal', 'Job1', 'samurai.jpg');
--- likes
+
+-- Table: Channel
+INSERT INTO Channel(channelID, description) VALUES (1, 'President Trump');
+INSERT INTO Channel(channelID, description) VALUES (2, 'Retarded');
+INSERT INTO Channel(channelID, description) VALUES (3, 'highpeopledoingthings');
+
+-- Table: ChannelUsers
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (1, 1);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (1, 2);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (2, 2);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (2, 3);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (3, 1);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (3, 2);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (3, 3);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (5, 1);
+INSERT INTO ChannelUsers(accountID, channelID) VALUES (5, 3);
+
 -- Table: Post
-INSERT INTO Post(postID, accountID, photo, description) VALUES (1, 1, 'trump.jpg', 'worst president');
-INSERT INTO Post(postID, accountID, photo, description) VALUES (2, 2, 'trump.jpg', '420 blaze it');
-INSERT INTO Post(postID, accountID, photo, description) VALUES (3, 3, 'trump.jpg', 'blacklivesmater');
-INSERT INTO Post(postID, accountID, photo, description) VALUES (4, 4, 'trump.jpg', 'gucci gang gucci gang gucci gang!');
+INSERT INTO Post(postID, accountID, channelID, title, photo, description) VALUES (1, 1, 1, 'Trump', 'trump.jpg', 'worst president');
+INSERT INTO Post(postID, accountID, channelID, title, photo, description) VALUES (2, 2, 1, 'President...', 'trump.jpg', '420 blaze it');
+INSERT INTO Post(postID, accountID, channelID, title, photo, description) VALUES (3, 3, 1, 'Ni***', 'trump.jpg', 'blacklivesmater');
+INSERT INTO Post(postID, accountID, channelID, title, photo, description) VALUES (4, 4, 2, 'Gucci Gang', 'trump.jpg', 'gucci gang gucci gang gucci gang!');
 
 -- Table: Comment
 INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (1, 1, 2, 'meh');
@@ -20,10 +36,9 @@ INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (3, 3, 1, 
 INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (4, 4, 3, 'gucci gang gucci gang gucci gang!');
 
 -- Table: SubComment
-INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (1, 1, 1, 'subcomment 1');
-INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (2, 2, 2, 'subcomment 2');
-INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (3, 3, 3, 'subcomment 3');
-INSERT INTO SubComment(subcommentID, commentID, accountID, sucommentText) VALUES (4, 4, 4, 'subcomment 4');
-
+INSERT INTO SubComment(subcommentID, commentID, accountID, subcommentText) VALUES (1, 1, 1, 'subcomment 1');
+INSERT INTO SubComment(subcommentID, commentID, accountID, subcommentText) VALUES (2, 2, 2, 'subcomment 2');
+INSERT INTO SubComment(subcommentID, commentID, accountID, subcommentText) VALUES (3, 3, 3, 'subcomment 3');
+INSERT INTO SubComment(subcommentID, commentID, accountID, subcommentText) VALUES (4, 4, 4, 'subcomment 4');
 
 PRAGMA foreign_keys = on;

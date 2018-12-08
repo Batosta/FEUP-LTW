@@ -11,3 +11,9 @@ Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só q
 4. canais
 
 6. nao aceitares mails/usernames iguais (fazer um popupzinho if possible)
+
+
+
+adicionei titulo no post
+adicionei channel no post
+adicionei channel/channelusers

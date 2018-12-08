@@ -19,12 +19,32 @@ foreach ($result as $row) {
 }
 
 echo "<br><br>";
+$stmt = $dbh->prepare('SELECT * FROM Channel');
+$stmt->execute();
+$result = $stmt->fetchAll();
+foreach ($result as $row) {
+    echo $row['channelID'], "|";
+    echo $row['description'], "<br>";
+}
+
+echo "<br><br>";
+$stmt = $dbh->prepare('SELECT * FROM ChannelUsers');
+$stmt->execute();
+$result = $stmt->fetchAll();
+foreach ($result as $row) {
+    echo $row['channelID'], "|";
+    echo $row['accountID'], "<br>";
+}
+
+echo "<br><br>";
 $stmt = $dbh->prepare('SELECT * FROM Post');
 $stmt->execute();
 $result = $stmt->fetchAll();
 foreach ($result as $row) {
     echo $row['postID'], "|";
     echo $row['accountID'], "|";
+    echo $row['channelID'], "|";
+    echo $row['title'], "|";
     echo $row['photo'], "|";
     echo $row['description'], "<br>";
 }
@@ -48,7 +68,7 @@ foreach ($result as $row) {
     echo $row['subcommentID'], "|";
     echo $row['commentID'], "|";
     echo $row['accountID'], "|";
-    echo $row['sucommentText'], "<br>";
+    echo $row['subcommentText'], "<br>";
 }
 
 ?>
