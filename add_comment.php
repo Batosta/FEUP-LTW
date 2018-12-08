@@ -1,18 +1,20 @@
 <?php
-  $db = new PDO('sqlite:news.db');
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+
+  include_once('./session.php');
   include_once('comments.php');
 
-  $commentID = $_POST['commentID'];
+  $dbh = new PDO('sqlite:database.db');
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $accountID = $_SESSION['accountID'];
+
   $postID = $_POST['postID'];
-  $accountID = $_POST['accountID'];
-  $commentText = $_POST['commentText'];
+  $commentText = $_POST['newcomment'];
 
-  addComment($commentID, $postID, $accountID, $text);
+  addComment($dbh, $accountID, $postID, $commentText);
 
-  $comments = getCommentsAfterId($postID, $commentID);
-  echo json_encode($comments);
+  // $comments = getCommentsAfterId($postID, $commentID);
+  // echo json_encode($comments);
 
 ?>

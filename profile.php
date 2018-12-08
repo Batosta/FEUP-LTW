@@ -44,6 +44,7 @@
               <input type="text" name="search" placeholder="Search something in your profile">
           </form>
       </div>
+      
       <div class="logOut">
           <img src="imagens/logout.png" height="25" width="25">
           <div class="logOutContent">

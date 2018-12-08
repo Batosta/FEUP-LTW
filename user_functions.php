@@ -111,7 +111,12 @@
                 <h3 id="description"><?=$post['description']?></h3>
             </section>
             <section id="options">
-                <h4><a href="list_comments.php">Comment</a></h4>
+                <form action="add_comment.php" method="post">
+                    <h2>Add your comment : </h2>
+                    <input type="text" name="newcomment">
+                    <input type="hidden" name="postID" value="<?=$post_id?>">
+                    <input type="submit" value="Enter">
+                </form>
             </section>
             <?
                 $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
@@ -127,6 +132,7 @@
                 <h4><?=$comment['commentText']?></h4>
                 <?
                     $stmt4 = $dbh->prepare('SELECT DISTINCT accountID, sucommentText FROM SubComment WHERE commentID = ?');
+                    echo $comment[0];
                     $stmt4->execute(array($comment[0]));
                     $subcomments = $stmt4->fetchAll();
                     foreach ($subcomments as $subcomment) {
