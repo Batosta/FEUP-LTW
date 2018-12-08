@@ -110,43 +110,29 @@
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
             </section>
+
             <section id="options">
-                <form action="add_comment.php" method="post">
-                    <h2>Add your comment : </h2>
-                    <input type="text" name="newcomment">
+                <form>
+                    <h2>Add your comment</h2>
+                    <label>
+                        <textarea name="text"></textarea>
+                    </label>
                     <input type="hidden" name="postID" value="<?=$post_id?>">
-                    <input type="submit" value="Enter">
+                    <input type="hidden" name="accountID" value="<?=$account_id?>">
+                    <input type="submit" name="Enter">
                 </form>
             </section>
-            <?
-                $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
-                $stmt1->execute(array($post_id));
-                $comments = $stmt1->fetchAll();
-                foreach ($comments as $comment) {
-            ?>
+
+            <!-- comecei aqui -->
             <section id="comments">
-                <?
-                    $comment_photo = getAccountPhoto($dbh, $comment['accountID']);
-                ?>
-                <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="40" width="40">
-                <h4><?=$comment['commentText']?></h4>
-                <?
-                    $stmt4 = $dbh->prepare('SELECT DISTINCT accountID, sucommentText FROM SubComment WHERE commentID = ?');
-                    echo $comment[0];
-                    $stmt4->execute(array($comment[0]));
-                    $subcomments = $stmt4->fetchAll();
-                    foreach ($subcomments as $subcomment) {
-                ?>
-                <section id="subcomments">
-                    <?
-                        $subcomment_photo = getAccountPhoto($dbh, $subcomment['accountID']);
-                    ?>
-                    <img id="subcomment_photo" src=<?=$subcomment_photo?> alt="Subcomment photo" height="30" width="30">
-                    <h5><?=$subcomment['sucommentText']?></h5>
-                </section>
+                <? foreach ($comments as $comment) { ?>
+                    <article class="comment">
+                        <span class="accountID"><?=$comment['accountID']?></span>
+                        <p><?=$comment['commentText']?></p>
                 <? } ?>
+
             </section>
-            <? } ?>
+            <!-- acaba aqui -->
         </div>
 <?  }
     function showPostByAccountId($dbh, $accountID){
