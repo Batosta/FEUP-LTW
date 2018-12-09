@@ -15,8 +15,8 @@ function submitComment(event) {
 	let cText = document.querySelector('#comments textarea[name=text]').value;
   console.log(cText);
 
-	let request = new XMLHttpRequest();
-	request.addEventListener("load", receiveComments);
+  let request = new XMLHttpRequest();
+  request.addEventListener("load", receiveComments);
   
 	request.open("POST", "add_comment.php", true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
