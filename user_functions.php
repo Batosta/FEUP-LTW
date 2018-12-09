@@ -119,7 +119,7 @@
                     </label>
                     <input type="hidden" name="postID" value="<?=$post_id?>">
                     <input type="hidden" name="accountID" value="<?=$account_id?>">
-                    <input type="submit" name="Enter">
+                    <input type="submit" name="submit" value="Submit">
                 </form>
             </section>
 
@@ -134,7 +134,9 @@
             </section>
             <!-- acaba aqui -->
         </div>
+
 <?  }
+
     function showPostByAccountId($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ?');

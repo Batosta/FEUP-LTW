@@ -24,7 +24,7 @@
     <link href="post_layout.css" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <!--<script src="script.js" defer></script>-->
   </head>
 
   <body>
@@ -68,7 +68,8 @@
       <section id="posts">
         <?
           showPostByAccountId($dbh, $account_id);
-        ?>      
+        ?>
+      <script src="script.js" defer></script>      
       </section>
     </div>  
   </body>

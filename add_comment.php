@@ -1,12 +1,10 @@
 <?php
-  include_once('./comments.php');
+  include_once('comments.php');
   $dbh = new PDO('sqlite:database.db');
  
   $postID = $_POST['postID'];
   $accountID = $_POST['accountID'];
   $commentText = $_POST['commentText'];
-
-  echo AccountID;
 
   addComment($dbh, $accountID, $postID, $commentText);
 
