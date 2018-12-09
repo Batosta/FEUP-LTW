@@ -111,7 +111,17 @@
                 <h3 id="description"><?=$post['description']?></h3>
             </section>
 
-            <section id="options">
+            <!--test-->
+
+
+            <!--end test-->
+
+            <section id="comments">
+                <? foreach ($comments as $comment) { ?>
+                    <article class="comment">
+                        <span class="accountID"><?=$comment['accountID']?></span>
+                        <p><?=$comment['commentText']?></p>
+                <? } ?>
                 <form>
                     <h2>Add your comment</h2>
                     <label>
@@ -122,17 +132,6 @@
                     <input type="submit" name="submit" value="Submit">
                 </form>
             </section>
-
-            <!-- comecei aqui -->
-            <section id="comments">
-                <? foreach ($comments as $comment) { ?>
-                    <article class="comment">
-                        <span class="accountID"><?=$comment['accountID']?></span>
-                        <p><?=$comment['commentText']?></p>
-                <? } ?>
-
-            </section>
-            <!-- acaba aqui -->
         </div>
 
 <?  }

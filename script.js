@@ -1,4 +1,4 @@
-let commentForm = document.querySelector("#options form");
+let commentForm = document.querySelector("#comments form");
 commentForm.addEventListener("submit", submitComment);
 
 function encodeForAjax(data) {
@@ -8,27 +8,24 @@ function encodeForAjax(data) {
 }
 
 function submitComment(event) {
-	let pID = document.querySelector('#options input[name=postID]').value;
+	let pID = document.querySelector('#comments input[name=postID]').value;
   console.log(pID);
-	let aID = document.querySelector('#options input[name=accountID]').value;
+	let aID = document.querySelector('#comments input[name=accountID]').value;
   console.log(aID);
-	let cText = document.querySelector('#options textarea[name=text]').value;
+	let cText = document.querySelector('#comments textarea[name=text]').value;
   console.log(cText);
 
 	let request = new XMLHttpRequest();
 	request.addEventListener("load", receiveComments);
   
-	request.open("post", "add_comment.php", true);
+	request.open("POST", "add_comment.php", true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
   let encoded = encodeForAjax({postID: pID, accountID: aID, commentText: cText});
-
   console.log("Encoded string: " + encoded);
-
-	request.send(encodeForAjax(encoded));
+  request.send(encoded);
   
   /*
-  request.open("get", "add_comment.php" + encodedForAjax({postID: pID, accountID: aID, commentText: cText}), true);
+  request.open("get", "add_comment.php?" + encodeForAjax({postID: pID, accountID: aID, commentText: cText}), true);
 	request.send();
   */
   event.preventDefault();
