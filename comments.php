@@ -8,13 +8,17 @@
 
 	function getCommentsAfterId($dbh, $postID){
 
+		$x .= "\n";
 		$stmt = $dbh->prepare('SELECT max(comment.commentID) FROM comment WHERE comment.postID = ?');
 		$stmt->execute(array($postID));
 
 		$commentID = $stmt->fetch();
+		$commentID = array_values($commentID)[0];
 
-		$stmt = $dbh->prepare('SELECT comment.* FROM comment JOIN account USING (accountID) WHERE postID = ? AND comment.commentID = ?');
-		$stmt->execute(array($postID,$commentID));
+		$x .= "\n";
+		$stmt = $dbh->prepare('SELECT * FROM comment WHERE postID = ? AND comment.commentID = ?');
+
+		$stmt->execute([$postID,$commentID]);
 
 		return $stmt->fetchAll();
 	}
