@@ -1,8 +1,6 @@
 body {
     margin: 0;
-    /*background-image:url('imagens/cubes.png');*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: 100%;*/
+    background-image:url('imagens/cubes.png');
     background-color: #e6e6e6;
 }
 
@@ -35,7 +33,7 @@ footer p {
 
 .navBar {
     display: flex;
-    background-color: rgb(56, 197, 130);
+    background-color: rgba(250,250,250, 0.2);
     height: 50px;
     align-items: center;
     position: fixed;
@@ -55,7 +53,6 @@ footer p {
 .menuContent {
     display: none;
     position: absolute;
-    background-color: rgba(229, 238, 234, 1);
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1; 
@@ -76,7 +73,7 @@ footer p {
 #user {background-image: url('imagens/user.png');}
 
 #homePage, #settings, #likes, #subs, #logOut, #user {
-    background-color: rgba(229, 238, 234, 1);
+    background-color: #e6e6e6;
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: 5% 50%;
@@ -96,14 +93,13 @@ footer p {
 .menu:hover .menuContent, .logOut:hover .logOutContent  {display: flex;  flex-direction: column;}
 
 .menu:hover img, .logOut:hover img { 
-    background-color: rgb(229, 238, 234);
+    background-color: rgb(250, 250, 250);
     border-radius: 100%;}
 
 .logOutContent {
     display: none;
     position: absolute;
     right:0;
-    background-color: rgba(229, 238, 234, 1);
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -120,7 +116,7 @@ footer p {
 
 .searchBar form input{
     background-image: url('imagens/searchIcon.png');
-    background-color: rgba(229, 238, 234, 0.562);
+    background-color: rgba(250, 250, 250, 0.65);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 8px 5px;
@@ -146,38 +142,38 @@ footer p {
     outline: none;
 }
 
-/* The rest of the content */
 .main {
-
     width: 100em;
     margin: 60px 20px;
     display: grid;
-
     grid-template-columns: [left] 25% [middle] 55% [right];
     grid-template-rows: [top] auto [bottom];
-
     grid-row: top / bottom;
 }
 
 .main #bio   {
     display: block;
-    background-color: rgb(16,0,32);
-    background-image: url('imagens/marbleWallpaper.jpg');
+    background-image: url('imagens/patternWallpaper.jpg');
     background-repeat: repeat-x;
-    background-size: 35%;
+    background-size: 120%;
+    background-position: bottom;
     margin-bottom: 50%;
     padding: 5%;
     grid-column: left / middle;
-    font-family: "Quicksand";
-    border-radius: 5%;
-    color: white;
+    font-family: "Open Sans Condensed";
+    border-radius: 2%;
+    color: rgb(16,0,32);
     width: 70%;
-    height: 60%;
+    height: 55%;
+    line-height: 50%;
 }
 
 .main #posts {
-
     grid-column: middle / right;
+}
+
+.main #bio h5:before {
+    content:"• ";
 }
 
 .main #bio img {
@@ -186,7 +182,6 @@ footer p {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 20%;
     padding: 5px;
-
 }
