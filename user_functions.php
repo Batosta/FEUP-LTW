@@ -99,13 +99,52 @@
         $post_id = $post['postID'];
         $account_id = $post['accountID']; ?>
 
+        <style>
+
+        #info {
+            display:flex;
+            background-color: rgba(250,250,250,0.6);
+            border-radius: 10px;
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        #username {
+            position: absolute;
+            top: 17.5%;
+            left: 38.5%;
+            font-size: 15px;
+        }
+
+        #account_photo {
+
+            border-radius: 3px;
+        }
+
+        #username:after {
+            content: " : ";
+        }
+
+        #post_photo {
+            padding: 10px;
+            width: 40%;
+            height:40%;
+        }
+
+        #description {
+           
+        }
+
+        </style>
+
+
         <div class="post">
             <section id="info">
                 <?
                     $post_photo = getAccountPhoto($dbh, $account_id);
                     $post_username = getAccountUsername($dbh, $account_id);
-                ?>
-                <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="50" width="50">
+                ?> 
+                <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
                 <h2 id="username"><?=$post_username?></h2>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>

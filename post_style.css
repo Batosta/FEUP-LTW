@@ -1,27 +1,19 @@
 .post {
 
+	display:block;
 	margin: 15px;
-	padding: 0.5em 2em;
+	padding: 2em;
 	text-align: left;
-	background-color: #D6D6C2;
-	border: 3px solid black;
-	border-radius: 10px 50px;
+	background-color: rgba(16,0,32, 0.95);
+	border-radius: 10px;
+	color: white;
+	font-family: "Open Sans Condensed";
 }
 
 #options {
 
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-}
-
-#username {
-
-	left: 200em;
-}
-
-#post_photo {
-
-	margin: 0em 25%;
 }
 
 #comments{
