@@ -150,17 +150,25 @@
                 <h3 id="description"><?=$post['description']?></h3>
             </section>
 
-            <!--test-->
-
-
-            <!--end test-->
-
+            <?
+                $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
+                $stmt1->execute(array($post_id));
+                $existentComments = $stmt1->fetchAll();
+                foreach ($existentComments as $existentComment) {
+            ?>
+                <section id="existentComments">
+                    <?
+                        $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
+                    ?>
+                    <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="40" width="40">
+                    <h4><?=$existentComment['commentText']?></h4>
+                </section>
+            <? } ?>
             <section id="comments">
-                <? foreach ($comments as $comment) { ?>
-                    <article class="comment">
-                        <span class="accountID"><?=$comment['accountID']?></span>
-                        <p><?=$comment['commentText']?></p>
-                <? } ?>
+                <article class="comment">
+                    <span class="accountID"><?=$comment['accountID']?></span>
+                    <p><?=$comment['commentText']?></p>
+                </article>
                 <form>
                     <h2>Add your comment</h2>
                     <label>
