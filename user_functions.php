@@ -114,16 +114,13 @@
             top: 17.5%;
             left: 38.5%;
             font-size: 15px;
+            font-weight: 200;
+            font-family: "Open Sans Condensed";
         }
 
-        #account_photo {
+        #account_photo {border-radius: 3px;}
 
-            border-radius: 3px;
-        }
-
-        #username:after {
-            content: " : ";
-        }
+        #username:after {content: " : ";}
 
         #post_photo {
             padding: 10px;
@@ -131,12 +128,9 @@
             height:40%;
         }
 
-        #description {
-           
-        }
+        #description { font-weight: 300; }
 
         </style>
-
 
         <div class="post">
             <section id="info">
@@ -156,6 +150,16 @@
                 $existentComments = $stmt1->fetchAll();
                 foreach ($existentComments as $existentComment) {
             ?>
+
+
+            <style>
+
+            #existentComments {
+               
+            }
+
+
+            </style>
                 <section id="existentComments">
                     <?
                         $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);

@@ -11,17 +11,16 @@
 }
 
 #options {
-
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 }
 
 #comments{
-
+	display: block;
+	background-color: rgba(16,0,32, 0.95);
 	margin-top: 5px;
 }
 
 #subcomments {
-
 	margin-left: 2em;
 }

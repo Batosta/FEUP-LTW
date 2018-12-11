@@ -155,16 +155,16 @@ footer p {
     display: block;
     background-image: url('imagens/green.png');
     background-repeat: repeat-x;
-    background-size: 120%;
+    background-size: 150%;
     background-position: bottom;
     margin-bottom: 50%;
-    padding: 5%;
+    padding: 20px;
     grid-column: left / middle;
     font-family: "Open Sans Condensed";
     border-radius: 2%;
     color:white;
-    width: 70%;
-    height: 60%;
+    width: 250px;
+    height: 370px;
     line-height: 50%;
 }
 
@@ -186,3 +186,32 @@ footer p {
     margin-top: 10%;
     padding: 5px;
 }
+
+.otherPages {
+    display:flex;
+    align-items: center;
+    position: absolute;
+    top: 480px;
+    left: 30px;
+}
+
+#insta {
+    display: block;
+    background-image: url('imagens/instagram.png');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    color: rgba(100,100,100,0);
+}
+
+#face {
+    display: block;
+    background-image: url('imagens/facebook.png');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    color: rgba(100,100,100,0);
+}
+
+#insta:hover { background-image: url('imagens/instaHover.png');}
+#face:hover {background-image: url('imagens/facebookHover.png');}

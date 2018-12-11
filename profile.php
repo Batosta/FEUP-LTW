@@ -23,6 +23,7 @@
     <link href="post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300" rel="stylesheet">
     <!--<script src="script.js" defer></script>-->
   </head>
 
@@ -71,6 +72,12 @@
       <script src="script.js" defer></script>      
       </section>
     </div>  
+
+    <div class="otherPages">   <!--  Fazer share ao site maybe? how tho-->
+      <a id="insta" href="https://www.instagram.com" target="_blank"> Instagram</a>
+      <a id="face" href="https://www.facebook.com" target="_blank"> Facebook </a>
+    </div>
+
   </body>
 
   <footer>
