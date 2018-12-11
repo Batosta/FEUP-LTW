@@ -7,13 +7,7 @@
 
     $account_id = $_SESSION['accountID'];
 
-    $accountUsername = getAccountUsername($dbh, $account_id);
-    $accountName = getAccountName($dbh, $account_id);
-    $accountPhoto = getAccountPhoto($dbh, $account_id);
-    $accountEmail = getAccountEmail($dbh, $account_id);
-    $accountBirthday = getAccountBirthday($dbh, $account_id);
-    $accountCity = getAccountCity($dbh, $account_id);
-    $accountJob = getAccountJob($dbh, $account_id);
+    $channel_ids = getChannelIDs($dbh, $account_id);
   ?>
 
   <head>
@@ -23,7 +17,6 @@
     <link href="post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
-    <!--<script src="script.js" defer></script>-->
   </head>
 
   <body>
@@ -56,19 +49,14 @@
 
     <div class="main">
       <section id="bio">
-        <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
-        <h2><?=$accountUsername ?></h2>
-        <h4><?=$accountName ?></h4>
-        <h5><?=$accountEmail ?></h5>
-        <h5><?=$accountBirthday ?></h5>
-        <h5><?=$accountCity ?></h5>
-        <h5><?=$accountJob ?></h5>
-      </section>
-      <section id="posts">
-        <?
-          showPostByAccountId($dbh, $account_id);
+        <h1> Following Channels </h1>
+        <? 
+          foreach($channel_ids as $channel_id){
+
+            $channel_name = getChannelName($dbh, $channel_id[0]);
         ?>
-      <script src="script.js" defer></script>      
+        <a href="channel.php?id=<?=$channel_id[0]?>"><p><?=$channel_name?></p></a>
+        <? } ?>
       </section>
     </div>  
   </body>
@@ -78,7 +66,7 @@
       <p>About Us  <p>
     </div>
     <div class="ltw">
-      <a id="ltw" href="https://web.fe.up.pt/~arestivo/page/courses/2018/ltw/" target="_blank"><p>Linguagens & Tecnoglogias Web</p></a>
+      <p>Linguagens & Tecnoglogias Web<p>
     </div>
     <div class="contacts">
       <p> Contact </p>

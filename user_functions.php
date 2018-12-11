@@ -80,6 +80,45 @@
     }
 
 
+
+
+
+    function getChannelIDs($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE ? = accountID');
+        $stmt->execute(array($accountID)); 
+        $row = $stmt->fetchAll();
+
+        return $row;
+    }
+    function getChannelName($dbh, $channelID){
+
+        $stmt = $dbh->prepare('SELECT description FROM Channel WHERE ? = channelID');
+        $stmt->execute(array($channelID)); 
+        $row = $stmt->fetch();
+
+        return $row['description'];
+    }
+    function getPostChannelName($dbh, $postID){
+
+        $stmt = $dbh->prepare('SELECT channelID FROM Post WHERE ? = postID');
+        $stmt->execute(array($postID)); 
+        $row = $stmt->fetch();
+
+        $channel_name = getChannelName($dbh, $row['channelID']);
+        return $channel_name;
+    }
+    function showAllChannelPosts($dbh, $channelID){
+
+        $stmt = $dbh->prepare('SELECT * FROM Post WHERE channelID = ?');
+        $stmt->execute(array($channelID));
+        $result = $stmt->fetchAll();
+        foreach($result as $post){
+
+            $postID = $post['postID'];
+            showPostByPostId($dbh, $postID);
+        }
+    }
     function showAllPosts($dbh) {
 
         $stmt = $dbh->prepare('SELECT * FROM Post');
@@ -96,7 +135,6 @@
         $stmt->execute(array($postID));
         $post = $stmt->fetch();
 
-        $post_id = $post['postID'];
         $account_id = $post['accountID']; ?>
 
         <style>
@@ -131,10 +169,6 @@
             height:40%;
         }
 
-        #description {
-           
-        }
-
         </style>
 
 
@@ -143,8 +177,10 @@
                 <?
                     $post_photo = getAccountPhoto($dbh, $account_id);
                     $post_username = getAccountUsername($dbh, $account_id);
+                    $channel_name = getPostChannelName($dbh, $postID);
                 ?> 
                 <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
+                <h3 id="channel_name"><?=$channel_name?></h3>
                 <h2 id="username"><?=$post_username?></h2>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
@@ -152,7 +188,7 @@
 
             <?
                 $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
-                $stmt1->execute(array($post_id));
+                $stmt1->execute(array($postID));
                 $existentComments = $stmt1->fetchAll();
                 foreach ($existentComments as $existentComment) {
             ?>
@@ -174,7 +210,7 @@
                     <label>
                         <textarea name="text"></textarea>
                     </label>
-                    <input type="hidden" name="postID" value="<?=$post_id?>">
+                    <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$account_id?>">
                     <input type="submit" name="submit" value="Submit">
                 </form>

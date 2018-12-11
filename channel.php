@@ -7,23 +7,17 @@
 
     $account_id = $_SESSION['accountID'];
 
-    $accountUsername = getAccountUsername($dbh, $account_id);
-    $accountName = getAccountName($dbh, $account_id);
-    $accountPhoto = getAccountPhoto($dbh, $account_id);
-    $accountEmail = getAccountEmail($dbh, $account_id);
-    $accountBirthday = getAccountBirthday($dbh, $account_id);
-    $accountCity = getAccountCity($dbh, $account_id);
-    $accountJob = getAccountJob($dbh, $account_id);
+    $channel_id = $_GET['id'];
+    $channel_name = getChannelName($dbh, $channel_id);
   ?>
 
   <head>
-    <title>Profile</title> 
+    <title><?=$channel_name?></title> 
     <link href="imagens/icon.png" rel="shortcut icon">
     <link href="profile.css" rel="stylesheet">
     <link href="post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
-    <!--<script src="script.js" defer></script>-->
   </head>
 
   <body>
@@ -56,19 +50,12 @@
 
     <div class="main">
       <section id="bio">
-        <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
-        <h2><?=$accountUsername ?></h2>
-        <h4><?=$accountName ?></h4>
-        <h5><?=$accountEmail ?></h5>
-        <h5><?=$accountBirthday ?></h5>
-        <h5><?=$accountCity ?></h5>
-        <h5><?=$accountJob ?></h5>
+        <a href="channel.php?id=<?=$channel_id?>"><p><?=$channel_name?></p></a>
       </section>
       <section id="posts">
         <?
-          showPostByAccountId($dbh, $account_id);
-        ?>
-      <script src="script.js" defer></script>      
+          showAllChannelPosts($dbh, $channel_id);
+        ?>  
       </section>
     </div>  
   </body>
