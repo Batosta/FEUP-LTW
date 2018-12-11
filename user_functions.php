@@ -129,6 +129,18 @@
             showPostByPostId($dbh, $post_id);
         }
     }
+
+    function getAccountPoints($dbh, $post_id){
+
+        $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
+        $stmt->execute(array($post_id));
+
+        $row = $stmt->fetch();
+
+        return $row['points'];
+
+    }
+
     function showPostByPostId($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE postID = ?');
@@ -176,12 +188,14 @@
                     $post_photo = getAccountPhoto($dbh, $account_id);
                     $post_username = getAccountUsername($dbh, $account_id);
                     $channel_name = getPostChannelName($dbh, $postID);
+                    $post_points = getAccountPoints($dbh, $post_id);
                 ?> 
                 <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
                 <h3 id="channel_name"><?=$channel_name?></h3>
                 <h2 id="username"><?=$post_username?></h2>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
+                <h3 id="points">Points: <?=$post_points?></h3>
             </section>
 
             <?

@@ -38,7 +38,8 @@ create table Post(
     channelID integer references Channel(channelID),
     title text(50) not null,
     photo text(100),
-    description text(200) not null
+    description text(200) not null,
+    points integer not null
 );
 
 -- Table with all the comments of every post
@@ -56,5 +57,3 @@ create table SubComment(
     accountID integer references Account(accountID),
     subcommentText text not null
 );
-
-

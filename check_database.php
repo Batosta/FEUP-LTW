@@ -46,7 +46,8 @@ foreach ($result as $row) {
     echo $row['channelID'], "|";
     echo $row['title'], "|";
     echo $row['photo'], "|";
-    echo $row['description'], "<br>";
+    echo $row['description'], "|";
+    echo $row['points'], "<br>";
 }
 
 echo "<br><br>";
