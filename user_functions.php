@@ -158,34 +158,31 @@
             display:flex;
             background-color: rgba(250,250,250,0.6);
             border-radius: 10px;
-            border-width: thick;
-            border-color: rgba(250, 250, 250, 1);
             padding: 10px;
             flex-direction: column;
-            
         }
 
-        #like {
-            display: flex;
-            background-image: url('imagens/love.png');
+        button {
+            background-image: url('imagens/loveII.png');
+            background-color: transparent;
             background-repeat: no-repeat;
-            background-size: 5%;
-            padding: 10px;
-            background-position: bottom right;
+            outline: none;
+            border: none;
+            background-size: 40px;
             color: rgba(0,0,0,0);
-            margin-right: 25px;
+            height: 45px;
+            width: 45px;
+            position: absolute;
+            right: 8%;
+            top: 100%;
         }
 
-        #like:hover {
+        button:hover, button:focus {
             background-image: url('imagens/loved.png');
         }
 
         #channel_name {
             font-weight: 300;}
-
-      /*  #like:clicked {
-            background-image: url('imagens/loved.png'); 
-        }*/
 
         #username {
             position: absolute;
@@ -195,7 +192,9 @@
             font-weight: 200;
         }
 
-        #account_photo {border-radius: 3px;}
+        #account_photo {
+            border-radius: 3px;
+        }
 
         #username:after {content: " : ";}
 
@@ -223,6 +222,7 @@
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <h3 id="points">Points: <?=$post_points?></h3>
+                <button type="button"> </button>
             </section>
 
             <?
@@ -236,22 +236,34 @@
             <style>
 
             #existentComments {
-               
+                display: block;
+                background-color: rgba(250,250,250,0.6);
+                padding: 10px;
+                padding-left: 25px;
             }
 
+            #comment_photo {
+                border-radius: 3px;
+                width: 35px;
+                height:35px;
+
+            }
 
             </style>
+
                 <section id="existentComments">
                     <?
                         $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
                     ?>
                     <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="40" width="40">
+                    <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
                     <h4><?=$existentComment['commentText']?></h4>
                 </section>
             <? } ?>
             <section id="comments">
                 <article class="comment">
                     <span class="accountID"><?=$comment['accountID']?></span>
+                    <p> </p>
                     <p><?=$comment['commentText']?></p>
                 </article>
                 <form>
