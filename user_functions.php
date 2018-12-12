@@ -143,9 +143,34 @@
             display:flex;
             background-color: rgba(250,250,250,0.6);
             border-radius: 10px;
+            border-width: thick;
+            border-color: rgba(250, 250, 250, 1);
             padding: 10px;
             flex-direction: column;
+            
         }
+
+        #like {
+            display: flex;
+            background-image: url('imagens/love.png');
+            background-repeat: no-repeat;
+            background-size: 5%;
+            padding: 10px;
+            background-position: bottom right;
+            color: rgba(0,0,0,0);
+            margin-right: 25px;
+        }
+
+        #like:hover {
+            background-image: url('imagens/loved.png');
+        }
+
+        #channel_name {
+            font-weight: 300;}
+
+      /*  #like:clicked {
+            background-image: url('imagens/loved.png'); 
+        }*/
 
         #username {
             position: absolute;
@@ -153,7 +178,6 @@
             left: 38.5%;
             font-size: 15px;
             font-weight: 200;
-            font-family: "Open Sans Condensed";
         }
 
         #account_photo {border-radius: 3px;}
@@ -182,6 +206,7 @@
                 <h2 id="username"><?=$post_username?></h2>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
+                <h4 id="like"> like </h4>
             </section>
 
             <?
