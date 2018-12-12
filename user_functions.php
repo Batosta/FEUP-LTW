@@ -320,7 +320,7 @@
             </div>
 
             <div class="searchBar">
-                <form>
+                <form action="search.php" method="post">
                     <input type="text" name="search" placeholder="Search something in your profile">
                 </form>
             </div>
