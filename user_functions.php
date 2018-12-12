@@ -220,6 +220,7 @@
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <h3 id="points">Points: <?=$post_points?></h3>
+                <h4 id="like"> like </h4>
             </section>
 
             <?
