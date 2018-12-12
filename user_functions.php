@@ -160,7 +160,6 @@
         }
 
         button {
-            background-image: url('imagens/loveII.png');
             background-color: transparent;
             background-repeat: no-repeat;
             outline: none;
@@ -169,13 +168,30 @@
             color: rgba(0,0,0,0);
             height: 45px;
             width: 45px;
+        }
+
+
+        #upvote {
+            background-image: url('imagens/upvote.png');
             position: absolute;
             right: 8%;
             top: 100%;
         }
 
-        button:hover, button:focus {
-            background-image: url('imagens/loved.png');
+        #downvote {
+            background-image: url('imagens/downvote.png');
+            position: absolute;
+            right: 15%;
+            top: 100%;
+        }
+
+
+        #downvote:hover, #downvote:focus {
+            background-image: url('imagens/downvoted.png');
+        }
+
+        #upvote:hover, #upvote:focus {
+            background-image: url('imagens/upvoted.png');
         }
 
         #channel_name {
@@ -203,6 +219,19 @@
 
         #description { font-weight: 300; }
 
+        #existentComments {
+            display: block;
+            background-color: rgba(250,250,250,0.6);
+            padding: 10px;
+            padding-left: 25px;
+        }
+
+        #comment_photo {
+            border-radius: 3px;
+            width: 35px;
+            height:35px;
+        }
+
         </style>
 
         <div class="post">
@@ -219,7 +248,8 @@
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <h3 id="points">Points: <?=$post_points?></h3>
-                <button type="button"> </button>
+                <button id="upvote" type="button"> </button>
+                <button id="downvote" type="button"> </button>
             </section>
 
             <?
@@ -228,25 +258,6 @@
                 $existentComments = $stmt1->fetchAll();
                 foreach ($existentComments as $existentComment) {
             ?>
-
-
-            <style>
-
-            #existentComments {
-                display: block;
-                background-color: rgba(250,250,250,0.6);
-                padding: 10px;
-                padding-left: 25px;
-            }
-
-            #comment_photo {
-                border-radius: 3px;
-                width: 35px;
-                height:35px;
-
-            }
-
-            </style>
 
                 <section id="existentComments">
                     <?
