@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     background-image:url('imagens/cubes.png');
@@ -120,7 +121,7 @@ footer p {
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 8px 5px;
-    color: rgb(0, 0, 0);
+    color: rgb(242, 242, 242);
     opacity: 30%;
     font-family:"Open Sans Condensed";
     border-radius: 20px;
@@ -187,13 +188,6 @@ footer p {
     padding: 5px;
 }
 
-.otherPages {
-    display:flex;
-    align-items: center;
-    position: absolute;
-    top: 480px;
-    left: 30px;
-}
 
 #insta {
     display: block;
@@ -201,7 +195,10 @@ footer p {
     background-size: 100%;
     width: 30px;
     height: 30px;
-    color: rgba(100,100,100,0);
+    color: transparent;
+    position: absolute;
+    top: 480px;
+    left: 30px;
 }
 
 #face {
@@ -210,8 +207,30 @@ footer p {
     background-size: 100%;
     width: 30px;
     height: 30px;
-    color: rgba(100,100,100,0);
+    color: transparent;
+    position: absolute;
+    top: 480px;
+    left: 70px;
 }
 
 #insta:hover { background-image: url('imagens/instaHover.png');}
 #face:hover {background-image: url('imagens/facebookHover.png');}
+
+#create__post {
+    display:inline-block;
+    background-image: url('imagens/plus.png');
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: left;
+    color: transparent;
+    text-decoration: none;
+    font-family: 'Quicksand';
+    width: 130px;
+    height:40px;
+    text-align: right;
+    line-height: 5px;
+}
+
+#create__post:hover {
+    color: rgb(16,0,32);
+}

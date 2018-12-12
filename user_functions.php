@@ -89,9 +89,6 @@
     }
 
 
-
-
-
     function getChannelIDs($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE ? = accountID');
@@ -162,15 +159,16 @@
             flex-direction: column;
         }
 
-        button {
+        #upvote, #downvote {
             background-color: transparent;
             background-repeat: no-repeat;
             outline: none;
             border: none;
-            background-size: 40px;
-            color: rgba(0,0,0,0);
-            height: 45px;
-            width: 45px;
+            background-size: 30px;
+            height: 40px;
+            width: 40px;
+            font-size: 2px;
+            color: transparent;
         }
 
 
@@ -198,21 +196,33 @@
         }
 
         #channel_name {
-            font-weight: 300;}
+            font-weight: 300;
+            font-size: 15px;
+            float: left;
+            font-style: italic;
+        }
 
         #username {
-            position: absolute;
-            top: 17.5%;
-            left: 38.5%;
             font-size: 15px;
             font-weight: 200;
+            float: left;
+            margin-right: 5px;
+            margin-left: 10px;
         }
 
         #account_photo {
             border-radius: 3px;
+            float: left;
         }
 
-        #username:after {content: " : ";}
+        .userInfo {
+            display: flex;
+            align-items: center;
+        }
+
+        #username:after {  content:" •";}
+
+        #channel_name:after { content:" :"; }
 
         #post_photo {
             padding: 10px;
@@ -245,9 +255,11 @@
                     $channel_name = getPostChannelName($dbh, $postID);
                     $post_points = getPostPoints($dbh, $postID);
                 ?> 
-                <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
-                <h3 id="channel_name"><?=$channel_name?></h3>
-                <h2 id="username"><?=$post_username?></h2>
+                <div class="userInfo"> 
+                    <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
+                    <h2 id="username"><?=$post_username?></h2>
+                    <h3 id="channel_name"><?=$channel_name?></h3>
+                </div>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <section id="points">
@@ -258,8 +270,8 @@
                             <input type="hidden" name="postID" value="<?=$postID?>">
                             <input type="hidden" name="accountID" value="<?=$account_id?>">
                             <input type="hidden" name="post_points" value="<?=$post_points?>">
-                            <input type="submit" name="like" value="Like">
-                            <input type="submit" name="dislike" value="Dislike">
+                            <input id="upvote" type="submit" name="like" value="Like">
+                            <input id="downvote" type="submit" name="dislike" value="Dislike">
                         </form>
 
                     </article>
