@@ -162,27 +162,31 @@
             
         }
 
-        #like {
-            display: flex;
+        button {
             background-image: url('imagens/love.png');
+            background-color: transparent;
             background-repeat: no-repeat;
-            background-size: 5%;
-            padding: 10px;
-            background-position: bottom right;
+            outline: none;
+            border: none;
+            background-size: 40px;
             color: rgba(0,0,0,0);
-            margin-right: 25px;
+            height: 45px;
+            width: 45px;
+            position: absolute;
+            right: 8%;
+            top: 100%;
         }
 
-        #like:hover {
+        button:hover {
             background-image: url('imagens/loved.png');
         }
 
         #channel_name {
             font-weight: 300;}
 
-      /*  #like:clicked {
+        button:focus {
             background-image: url('imagens/loved.png'); 
-        }*/
+        }
 
         #username {
             position: absolute;
@@ -220,7 +224,7 @@
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <h3 id="points">Points: <?=$post_points?></h3>
-                <h4 id="like"> like </h4>
+                <button type="button"> </button>
             </section>
 
             <?
@@ -239,6 +243,7 @@
 
 
             </style>
+
                 <section id="existentComments">
                     <?
                         $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
