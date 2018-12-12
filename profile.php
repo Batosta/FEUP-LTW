@@ -45,7 +45,8 @@
         <?
           showPostByAccountId($dbh, $account_id);
         ?>
-      <script src="script.js" defer></script>      
+      <script src="script.js" defer></script>
+      <script src="script1.js" defer></script>            
       </section>
     </div>  
 

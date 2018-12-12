@@ -250,9 +250,21 @@
                 <h2 id="username"><?=$post_username?></h2>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
-                <h3 id="points">Points: <?=$post_points?></h3>
-                <button id="upvote" type="button"> </button>
-                <button id="downvote" type="button"> </button>
+                <section id="points">
+                    <article class="currentPoints">
+                        <span class="points">Points: <?=$post_points?></span>
+
+                        <form>
+                            <input type="hidden" name="postID" value="<?=$postID?>">
+                            <input type="hidden" name="accountID" value="<?=$account_id?>">
+                            <input type="hidden" name="post_points" value="<?=$post_points?>">
+                            <input type="submit" name="like" value="Like">
+                            <input type="submit" name="dislike" value="Dislike">
+                        </form>
+
+                    </article>
+                </section>
+
             </section>
 
             <?

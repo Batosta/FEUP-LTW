@@ -24,10 +24,10 @@ INSERT INTO ChannelUsers(accountID, channelID) VALUES (5, 1);
 INSERT INTO ChannelUsers(accountID, channelID) VALUES (5, 3);
 
 -- Table: Post
-INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (1, 1, 1, 'Trump', 'trump.jpg', 'worst president',1);
-INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (2, 2, 1, 'President...', 'trump.jpg', '420 blaze it',1);
-INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (3, 3, 1, 'Ni***', 'trump.jpg', 'blacklivesmater',1);
-INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (4, 4, 2, 'Gucci Gang', 'trump.jpg', 'gucci gang gucci gang gucci gang!',1);
+INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (1, 1, 1, 'Trump', 'trump.jpg', 'worst president',0);
+INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (2, 2, 1, 'President...', 'trump.jpg', '420 blaze it',0);
+INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (3, 3, 1, 'Ni***', 'trump.jpg', 'blacklivesmater',0);
+INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (4, 4, 2, 'Gucci Gang', 'trump.jpg', 'gucci gang gucci gang gucci gang!',0);
 
 -- Table: Comment
 INSERT INTO Comment(commentID, postID, accountID, commentText) VALUES (1, 1, 2, 'meh');

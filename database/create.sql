@@ -2,6 +2,7 @@ drop table if exists Account;
 drop table if exists Channel;
 drop table if exists ChannelUsers;
 drop table if exists Post;
+drop table if exists LikeUser;
 drop table if exists Comment;
 drop table if exists SubComment;
 
@@ -40,6 +41,13 @@ create table Post(
     photo text(100),
     description text(200) not null,
     points integer not null
+);
+
+-- Table that states if the user has already like a post
+create table LikeUser(
+    accountID integer not null,
+    postID integer not null,
+    primary key(accountID, postID)
 );
 
 -- Table with all the comments of every post

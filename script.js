@@ -24,10 +24,6 @@ function submitComment(event) {
   console.log("Encoded string: " + encoded);
   request.send(encoded);
   
-  /*
-  request.open("get", "add_comment.php?" + encodeForAjax({postID: pID, accountID: aID, commentText: cText}), true);
-	request.send();
-  */
   event.preventDefault();
 }
 
