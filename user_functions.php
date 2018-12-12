@@ -67,6 +67,15 @@
 
         return $row['photo'];
     }
+    function getPostPoints($dbh, $postID){
+
+        $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
+        $stmt->execute(array($postID));
+
+        $row = $stmt->fetch();
+
+        return $row['points'];
+    }
 
 
     function checkPassword($dbh, $username, $password){
@@ -119,26 +128,20 @@
             showPostByPostId($dbh, $postID);
         }
     }
-    function showAllPosts($dbh) {
+    function showAllPosts($dbh, $accountID) {
 
-        $stmt = $dbh->prepare('SELECT * FROM Post');
-        $stmt->execute();
-        $posts = $stmt->fetchAll();
-        foreach ($posts as $post) {
-            $post_id = $post['postID'];
-            showPostByPostId($dbh, $post_id);
+        
+        // percorrer o ChannelUsers e ver todos os channelsID do gajo com accountID = ao da session
+        // percorrer o Post e mostrar todos os posts com channelID = ao do gajo
+        
+        $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE accountID = ?');
+        $stmt->execute(array($accountID));
+        $channelIDs = $stmt->fetchAll();
+
+        foreach ($channelIDs as $channelID) {
+
+            showAllChannelPosts($dbh, $channelID['channelID']);
         }
-    }
-
-    function getAccountPoints($dbh, $post_id){
-
-        $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
-        $stmt->execute(array($post_id));
-
-        $row = $stmt->fetch();
-
-        return $row['points'];
-
     }
 
     function showPostByPostId($dbh, $postID){
@@ -147,7 +150,7 @@
         $stmt->execute(array($postID));
         $post = $stmt->fetch();
 
-        $account_id = $post['accountID']; ?>
+        $accountID = $post['accountID']; ?>
 
         <style>
 
@@ -237,10 +240,10 @@
         <div class="post">
             <section id="info">
                 <?
-                    $post_photo = getAccountPhoto($dbh, $account_id);
-                    $post_username = getAccountUsername($dbh, $account_id);
+                    $post_photo = getAccountPhoto($dbh, $accountID);
+                    $post_username = getAccountUsername($dbh, $accountID);
                     $channel_name = getPostChannelName($dbh, $postID);
-                    $post_points = getAccountPoints($dbh, $postID);
+                    $post_points = getPostPoints($dbh, $postID);
                 ?> 
                 <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
                 <h3 id="channel_name"><?=$channel_name?></h3>
@@ -280,7 +283,7 @@
                         <textarea name="text"></textarea>
                     </label>
                     <input type="hidden" name="postID" value="<?=$postID?>">
-                    <input type="hidden" name="accountID" value="<?=$account_id?>">
+                    <input type="hidden" name="accountID" value="<?=$accountID?>">
                     <input type="submit" name="submit" value="Submit">
                 </form>
             </section>

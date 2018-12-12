@@ -6,14 +6,7 @@
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
-
-    $accountUsername = getAccountUsername($dbh, $account_id);
-    $accountName = getAccountName($dbh, $account_id);
-    $accountPhoto = getAccountPhoto($dbh, $account_id);
-    $accountEmail = getAccountEmail($dbh, $account_id);
-    $accountBirthday = getAccountBirthday($dbh, $account_id);
-    $accountCity = getAccountCity($dbh, $account_id);
-    $accountJob = getAccountJob($dbh, $account_id);
+    $account_channels = getChannelIDs($dbh, $account_id);
   ?>
 
   <head>
@@ -24,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300" rel="stylesheet">
-    <!--<script src="script.js" defer></script>-->
   </head>
 
   <body>
@@ -56,21 +48,21 @@
     </div>
 
     <div class="main">
-      <section id="bio">
-        <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
-        <h2><?=$accountUsername ?></h2>
-        <h4><?=$accountName ?></h4>
-        <h5><?=$accountEmail ?></h5>
-        <h5><?=$accountBirthday ?></h5>
-        <h5><?=$accountCity ?></h5>
-        <h5><?=$accountJob ?></h5>
-      </section>
       <section id="posts">
-        <a id="create__post" href="createPost.php"><p>Create Post</p></a>
-        <?
-          showPostByAccountId($dbh, $account_id);
-        ?>
-      <script src="script.js" defer></script>      
+      	<form id="signup" action="createNewPost.php" method="post">
+	        <p> Create new Post </p>
+	        <p><input type="text" name="title" placeholder="Title" required="required"></p>
+	        <p><input type="text" name="photo" placeholder="Photo"></p>
+	        <p><input type="text" name="description" placeholder="Description" required="required"></p>
+	        <?
+	        	foreach($account_channels as $account_channel) {
+
+	        		$channel_name = getChannelName($dbh, $account_channel['channelID']);
+	        ?>
+	        <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+	    	<? } ?>
+	        <p><input id="button" type="submit" value="Create Post"></p>
+	      </form>
       </section>
     </div>  
 
