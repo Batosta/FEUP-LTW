@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US"> 
   <?
+
+    $dbh = new PDO('sqlite:database.db');
+    include ('user_functions.php');
     include ('./session.php');
-    include ('./user_functions.php');
+
+    $account_id = $_SESSION['accountID'];
+    $accountUsername = getAccountUsername($dbh, $account_id);
+    $accountPhoto = getAccountPhoto($dbh, $account_id);
   ?>
   <head>
     <title>Edit Profile</title> 
@@ -11,7 +17,7 @@
   </head>
   <body>
     
-    <? draw_header(); ?>
+    <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       <form id="change" action="change_profile_functions.php" method="post">

@@ -6,6 +6,8 @@
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
+    $accountUsername = getAccountUsername($dbh, $account_id);
+    $accountPhoto = getAccountPhoto($dbh, $account_id);
 
     $channel_ids = getChannelIDs($dbh, $account_id);
   ?>
@@ -21,7 +23,7 @@
 
   <body>
 
-    <? draw_header(); ?>
+    <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       <section id="bio">

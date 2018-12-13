@@ -7,6 +7,8 @@
 
     $account_id = $_SESSION['accountID'];
     $account_channels = getChannelIDs($dbh, $account_id);
+    $accountUsername = getAccountUsername($dbh, $account_id);
+    $accountPhoto = getAccountPhoto($dbh, $account_id);
   ?>
 
   <head>
@@ -21,7 +23,7 @@
 
   <body>
 
-    <? draw_header(); ?>
+    <? draw_header($accountPhoto, $accountUsername) ?>
 
     <div class="main">
       <section id="posts">

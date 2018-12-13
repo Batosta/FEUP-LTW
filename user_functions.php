@@ -248,7 +248,7 @@
     }
 
 
-    function draw_header() { ?>
+    function draw_header($accountPhoto, $accountUsername) { ?>
 
         <div class="navBar">
 
@@ -260,6 +260,11 @@
                     <a id="subs" href="subscriptions.php"><p>Subscriptions</p></a>
                     <a id="likes" href="#"><p>Liked</p></a>
                 </div>
+            </div>
+
+            <div class="user">
+                <img src="<?=$accountPhoto?>" height = "25" width="25">
+                <a href="profile.php"><?=$accountUsername?></a>
             </div>
 
             <div class="searchBar">

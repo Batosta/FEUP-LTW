@@ -4,8 +4,13 @@
 	    $dbh = new PDO('sqlite:database.db');
 
 	    include ('./user_functions.php');
+	    include ('./session.php')
 
 		$search_text = $_POST['search'];
+
+		$account_id = $_SESSION['accountID'];
+	    $accountUsername = getAccountUsername($dbh, $account_id);
+	    $accountPhoto = getAccountPhoto($dbh, $account_id);
 
 		$search_channels = getSearchChannel($dbh, $search_text);
 		$search_posts = getSearchPost($dbh, $search_text);
@@ -22,7 +27,7 @@
 
   <body>
     
-    <? draw_header(); ?>
+    <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       	<section id="channels">

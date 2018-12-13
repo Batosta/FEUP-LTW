@@ -9,6 +9,8 @@
 
     $channel_id = $_GET['id'];
     $channel_name = getChannelName($dbh, $channel_id);
+    $accountUsername = getAccountUsername($dbh, $account_id);
+    $accountPhoto = getAccountPhoto($dbh, $account_id);
   ?>
 
   <head>
@@ -22,7 +24,7 @@
 
   <body>
     
-    <? draw_header(); ?>
+    <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       <section id="bio">
