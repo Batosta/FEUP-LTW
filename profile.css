@@ -42,6 +42,13 @@ footer p {
     width: 100%;
 }
 
+.profile {
+
+    margin-left: 5px;
+    font-family: "Open Sans Condensed";
+    color: rgb(146,146,146);
+}
+
 .logOut {
     margin-left: auto;
     margin-right: 10px;
