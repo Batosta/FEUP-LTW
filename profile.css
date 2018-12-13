@@ -185,6 +185,11 @@ footer p {
     content:"• ";
 }
 
+.main #bio h5 {
+    font-family: "Quicksand";
+    font-weight: 300;
+}
+
 .main #bio img {
     border-radius: 50%;
     border: 1px solid #100020;

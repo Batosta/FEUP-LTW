@@ -18,7 +18,33 @@
   </head>
   <body>
     
-    <? draw_header(); ?>
+           <div class="navBar">
+
+            <div class="menu">
+                <img src="imagens/menu.png" height="25" width="25">
+                <div class="menuContent">
+                    <a id="homePage" href="wall.php"><p>Home Page</p></a>
+                    <a id="settings" href="change_profile.php"><p>Edit profile</p></a>
+                    <a id="subs" href="subscriptions.php"><p>Subscriptions</p></a>
+                    <a id="likes" href="#"><p>Liked</p></a>
+                </div>
+            </div>
+
+            <div class="searchBar">
+                <form action="search.php" method="post">
+                    <input type="text" name="search" placeholder="Search something in your profile">
+                </form>
+            </div>
+              
+            <div class="logOut">
+                <img src="imagens/turn-on.png" height="25" width="25">
+                <div class="logOutContent">
+                    <a id="logOut" href="logout.php"><p>Sign Out</p></a>
+                    <a id="user" href="logotheraccount.php"><p>Sign into other account </p></a>
+                </div>
+            </div>
+        </div>
+
 
     <div class="main">
       <?
