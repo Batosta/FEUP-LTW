@@ -263,8 +263,8 @@
             </div>
 
             <div class="user">
-                <img src="<?=$accountPhoto?>" height = "25" width="25">
-                <a href="profile.php"><?=$accountUsername?></a>
+                <a href="profile.php"><img src="<?=$accountPhoto?>" height = "25" width="25"></a>
+                <a id="tinyName" href="profile.php"><?=$accountUsername?></a>
             </div>
 
             <div class="searchBar">
