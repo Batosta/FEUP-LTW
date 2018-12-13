@@ -44,45 +44,44 @@ footer {
     margin-right: 20px;
 }
 
-.signButton {
-    background-color: rgb(56, 197, 130);
-    color: white;
-    text-transform: uppercase;
-    font-family:"Open Sans Condensed";
-    font-size: 17px;
-    padding: 7px 20px;
+.menu #signIn a {
     width: 60px;
-    border-radius: 5px;
-    position: absolute;
     right: 75%;
     top: 45%;
-    text-align: center;
 }
 
-/*.signButton:hover, .logButton:hover {
-
-    background-color: white; 
-    border-color: rgb(56, 197, 130);
-    color: rgb(56, 197, 130);
-
+.menu #logIn  a {
+    width: 70px;
+    right: 20%;
+    top: 45%;
 }
-   */
 
-.logButton {
+.menu #logIn a, .menu #signIn a {
     background-color: rgb(56, 197, 130);
     text-transform: uppercase;
     font-family:"Open Sans Condensed";
     font-size: 17px;
-    padding: 7px 20px;
-    width: 70px;
+    padding: 20px 30px;
     border-radius: 5px;
     position: absolute;
-    right: 20%;
-    top: 45%;
     text-align: center;
+    color: white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
-a {
+.menu #signIn a:hover, .menu #logIn a:hover {
+    background-color: transparent; 
+    border: 1px solid #38c582;
+    color: #38c582 !important;
+
+}
+
+.menu  a {
+    text-decoration: none;
+}
+
+footer a {
     text-decoration: none;
     color: white;
 }
@@ -103,6 +102,7 @@ form input{
     padding: 1px 35px;
     width: 200px;
     height: 30px;
+    outline: none;
 }
 
 .logo {

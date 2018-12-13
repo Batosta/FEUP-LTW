@@ -188,8 +188,7 @@ footer p {
     padding: 5px;
 }
 
-
-#insta {
+#insta, #face {
     display: block;
     background-image: url('imagens/instagram.png');
     background-size: 100%;
@@ -199,17 +198,17 @@ footer p {
     position: absolute;
     top: 480px;
     left: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#insta {
+    background-image: url('imagens/instagram.png');
+    left: 30px;
 }
 
 #face {
-    display: block;
     background-image: url('imagens/facebook.png');
-    background-size: 100%;
-    width: 30px;
-    height: 30px;
-    color: transparent;
-    position: absolute;
-    top: 480px;
     left: 70px;
 }
 
@@ -229,6 +228,8 @@ footer p {
     height:40px;
     text-align: right;
     line-height: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 #create__post:hover {

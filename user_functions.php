@@ -165,104 +165,6 @@
 
         $accountID = $post['accountID']; ?>
 
-        <style>
-
-        #info {
-            display:flex;
-            background-color: rgba(250,250,250,0.6);
-            border-radius: 10px;
-            padding: 10px;
-            flex-direction: column;
-        }
-
-        #upvote, #downvote {
-            background-color: transparent;
-            background-repeat: no-repeat;
-            outline: none;
-            border: none;
-            background-size: 30px;
-            height: 40px;
-            width: 40px;
-            font-size: 2px;
-            color: transparent;
-        }
-
-
-        #upvote {
-            background-image: url('imagens/upvote.png');
-            position: absolute;
-            right: 8%;
-            top: 100%;
-        }
-
-        #downvote {
-            background-image: url('imagens/downvote.png');
-            position: absolute;
-            right: 15%;
-            top: 100%;
-        }
-
-
-        #downvote:hover, #downvote:focus {
-            background-image: url('imagens/downvoted.png');
-        }
-
-        #upvote:hover, #upvote:focus {
-            background-image: url('imagens/upvoted.png');
-        }
-
-        #channel_name {
-            font-weight: 300;
-            font-size: 15px;
-            float: left;
-            font-style: italic;
-        }
-
-        #username {
-            font-size: 15px;
-            font-weight: 200;
-            float: left;
-            margin-right: 5px;
-            margin-left: 10px;
-        }
-
-        #account_photo {
-            border-radius: 3px;
-            float: left;
-        }
-
-        .userInfo {
-            display: flex;
-            align-items: center;
-        }
-
-        #username:after {  content:" •";}
-
-        #channel_name:after { content:" :"; }
-
-        #post_photo {
-            padding: 10px;
-            width: 40%;
-            height:40%;
-        }
-
-        #description { font-weight: 300; }
-
-        #existentComments {
-            display: block;
-            background-color: rgba(250,250,250,0.6);
-            padding: 10px;
-            padding-left: 25px;
-        }
-
-        #comment_photo {
-            border-radius: 3px;
-            width: 35px;
-            height:35px;
-        }
-
-        </style>
-
         <div class="post">
             <section id="info">
                 <?
@@ -272,7 +174,7 @@
                     $post_points = getPostPoints($dbh, $postID);
                 ?> 
                 <div class="userInfo"> 
-                    <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="35" width="35">
+                    <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
                     <h3 id="channel_name"><?=$channel_name?></h3>
                 </div>
@@ -306,15 +208,16 @@
                     <?
                         $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
                     ?>
-                    <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="40" width="40">
-                    <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
+                    <div class="commenterInfo"> 
+                        <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="35" width="35">
+                        <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
+                    </div>
                     <h4><?=$existentComment['commentText']?></h4>
                 </section>
             <? } ?>
             <section id="comments">
                 <article class="comment">
                     <span class="accountID"><?=$comment['accountID']?></span>
-                    <p> </p>
                     <p><?=$comment['commentText']?></p>
                 </article>
                 <form>
@@ -324,7 +227,7 @@
                     </label>
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
-                    <input type="submit" name="submit" value="Submit">
+                    <input id="button" type="submit" name="submit" value="Submit">
                 </form>
             </section>
         </div>
@@ -352,7 +255,7 @@
             <div class="menu">
                 <img src="imagens/menu.png" height="25" width="25">
                 <div class="menuContent">
-                    <a id="homePage" href="profile.php"><p>Profile</p></a>
+                    <a id="homePage" href="wall.php"><p>Home Page</p></a>
                     <a id="settings" href="change_profile.php"><p>Edit profile</p></a>
                     <a id="subs" href="subscriptions.php"><p>Subscriptions</p></a>
                     <a id="likes" href="#"><p>Liked</p></a>
