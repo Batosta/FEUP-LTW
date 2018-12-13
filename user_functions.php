@@ -89,6 +89,26 @@
     }
 
 
+    function getSearchChannel($dbh, $search_text){
+
+        $stmt = $dbh->prepare('SELECT * FROM Channel WHERE description LIKE ?');
+        $search_text1 = "%" . $search_text . "%";
+        $stmt->execute(array($search_text1));
+        $row = $stmt->fetchAll();
+
+        return $row;
+    }
+    function getSearchPost($dbh, $search_text){
+     
+        $stmt = $dbh->prepare('SELECT * FROM Post WHERE title LIKE ?');
+        $search_text1 = "%" . $search_text . "%";
+        $stmt->execute(array($search_text1));
+        $row = $stmt->fetchAll();
+
+        return $row;
+    }
+
+
     function getChannelIDs($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE ? = accountID');
@@ -126,10 +146,6 @@
         }
     }
     function showAllPosts($dbh, $accountID) {
-
-        
-        // percorrer o ChannelUsers e ver todos os channelsID do gajo com accountID = ao da session
-        // percorrer o Post e mostrar todos os posts com channelID = ao do gajo
         
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE accountID = ?');
         $stmt->execute(array($accountID));
