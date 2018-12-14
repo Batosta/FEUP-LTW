@@ -42,28 +42,49 @@
 
     <div class="main">
 
-      <button id="myBtn">Create Post</button>
 
+    <button id="myBtn">Create Post</button>
+
+  
       <div id="myModal" class="modal">
 
-        <div class="modal-content">
+        <form class="modal-content" action="createNewPost.php" method="post">
+
           <div class="minidiv"> 
+
             <label>
-              <textarea name="text" placeholder="Type your comment here..."></textarea>
+              <textarea id="title" name="title" placeholder="Title" required="required"></textarea>
             </label>
+
+            <label>
+              <textarea name="description" placeholder="Description" required="required"></textarea>
+            </label>
+
             <span class="close">&times;</span>
+
+             <label>
+            <?
+            foreach($account_channels as $account_channel) {
+
+              $channel_name = getChannelName($dbh, $account_channel['channelID']); 
+            ?>
+            <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+            <? } ?>
+            </label>
+
           </div>
-         <label>
-          <p>Tags : </p>
-          <textarea id="tags" name="text"></textarea>
-        </label>
-        <div class="buttons"> 
-        <button id="uploadImage"> Upload Image </button>
+
+           <form action="upload.php" method="post" enctype="multipart/form-data">
+             Select image to upload: 
+            <div class="buttons"> 
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input id="submit" type="submit" value="Upload Image" name="submit">
+          </form>
         <button id="enter"> Post </button>
         </div>
-      </div>
+      </form>
 
-</div>
+    </div>
 
     <script src="script.js" defer></script>
 

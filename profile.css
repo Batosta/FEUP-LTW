@@ -3,6 +3,8 @@ body {
     margin: 0;
     background-image: url('imagens/gplay.png');
     background-color: #e6e6e6;
+    height: 100%;
+    padding: 0;
 }
 
 
@@ -166,7 +168,6 @@ body {
   margin-top: 5px;
 }
 
-
 .modal-content button {
     border: none;
     outline: none;
@@ -182,14 +183,12 @@ body {
     width: 100px;
 }
 
-
 .modal-content p {
   font-family: 'Open Sans Condensed';
   color: rgb(16, 0, 32);
   margin-bottom: 5px;
   margin-top: 10px;
 }
-
 
 .close {
   color: #aaa;

@@ -104,6 +104,8 @@
     float: left;
     font-style: italic;
     color: #d9d9d9;
+    background-color: transparent; 
+    text-decoration: none;
 }
 
 #username {
@@ -126,7 +128,7 @@
 
 #username:after {  content:" •";}
 
-#channel_name:after { content:"  :"; color: white; font-style: normal; }
+#channel_name:after { content:"  :"; color: white;}
 
 #post_photo {
     padding: 10px;

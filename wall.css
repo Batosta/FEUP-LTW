@@ -125,44 +125,41 @@ body {
   height: 30%;
   width: 50%; 
   border-radius: 10px;
-  flex-direction:  column;
+  flex-direction: column;
 }
 
 .minidiv {
   display: block;
 }
 
-.modal-content textarea, #tags {
+.modal-content textarea {
     resize: none;
     outline: none;
     border: none;
     border-radius: 5px;
     font-family: 'Open Sans Condensed';
     background-color: rgba(146,146,146,0.4);
-    float: left;;
-    width: 640px
-}
-
-.modal-content textarea {
+    float: left;
+    width: 620px;
     height: 80px;
+    margin-bottom: 10px;
 }
 
-
-#tags {
-    height: 20%;
+#title {
+    height: 20px;
+    width: 500px;
 }
-
 
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 35px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 
-.modal-content button {
+.modal-content button, #toUpload, #submit {
     border: none;
     outline: none;
     cursor: pointer;

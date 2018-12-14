@@ -91,6 +91,7 @@
       <a id="face" href="https://www.facebook.com" target="_blank"> Facebook </a>
       <a id="spotify" href="https://open.spotify.com/browse/featured" target="_blank"> Spotify</a>
     </div>
+  </div>
 
   </body>
   <? draw_footer() ?>
