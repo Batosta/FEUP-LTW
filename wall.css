@@ -36,14 +36,21 @@ body {
     padding: 7px;
 }
 
+.miniHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 11%;
+  left: 6%;
+}
+
 #siteName {
-    position: fixed;
     background-color: transparent;
     color: white;
     font-family: 'Quicksand';
-    top: 11%;
-    left: 6%;
     font-weight: 300;
+    margin-left: 10px;
 }
 
 .mainMenu a:hover {
@@ -202,7 +209,7 @@ body {
 
 #myBtn:hover {color: white;}
 
-.user {background-color: rgba(16, 0, 32, 0.6) !important;}
+.user {background-color: rgba(146,146,146, 0.6) !important;}
 
 .post {background-color: rgba(250, 250, 250, 0.8) !important;}
 

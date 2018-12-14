@@ -27,7 +27,10 @@
     
     <div class="mainContent">
 
-      <h2 id="siteName"> Aria </h2>
+      <div class="miniHeader"> 
+        <img src="imagens/music.png" width="30" height="30">
+        <h2 id="siteName"> Aria </h2>
+      </div>
 
       <div class="mainMenu">
 
@@ -38,7 +41,7 @@
      </div>
 
     <div class="main">
-      
+
       <button id="myBtn">Create Post</button>
 
       <div id="myModal" class="modal">

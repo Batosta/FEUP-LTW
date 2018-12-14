@@ -146,7 +146,7 @@ footer a { text-decoration: none; }
     background-color: rgba(146,146,146, 0.40);
     padding: 5px;
     flex-direction: row;
-    border-radius: 20px;
+    border-radius: 10px;
     width: auto;
 }
 
