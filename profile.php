@@ -41,19 +41,44 @@
         <h5><?=$accountCity ?></h5>
         <h5><?=$accountJob ?></h5>
       </section>
+
       <section id="posts">
-        <a id="create__post" href="createPost.php"><p>Create Post</p></a>
+
+      <button id="myBtn">Create Post</button>
+
+      <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <div class="minidiv"> 
+            <label>
+              <textarea name="text" placeholder="Type your comment here..."></textarea>
+            </label>
+            <span class="close">&times;</span>
+          </div>
+         <label>
+          <p>Tags : </p>
+          <textarea id="tags" name="text"></textarea>
+        </label>
+
+        <div class="buttons"> 
+          <button id="uploadImage"> Upload Image </button>
+          <button id="enter"> Post </button>
+        </div>
+      </div>
+    </div>
+
+        <!-- <a id="create__post" href="createPost.php"><p>Create Post</p></a> -->
         <?
           showPostByAccountId($dbh, $account_id);
         ?>
       <script src="script.js" defer></script>
       <script src="script1.js" defer></script>            
       </section>
-    </div>  
-
+   
     <div class="otherPages">   <!--  Fazer share ao site maybe? how tho-->
       <a id="insta" href="https://www.instagram.com" target="_blank"> Instagram</a>
       <a id="face" href="https://www.facebook.com" target="_blank"> Facebook </a>
+      <a id="spotify" href="https://open.spotify.com/browse/featured" target="_blank"> Spotify</a>
     </div>
 
   </body>
