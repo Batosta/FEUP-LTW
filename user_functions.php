@@ -178,6 +178,9 @@
                     <h2 id="username"><?=$post_username?></h2>
                     <h3 id="channel_name"><?=$channel_name?></h3>
                 </div>
+                <div class="title">
+                    <h2 id="title"><?=$post['title']?></h2>
+                </div>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <section id="points">

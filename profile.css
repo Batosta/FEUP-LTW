@@ -150,18 +150,13 @@ body {
     font-family: 'Open Sans Condensed';
     background-color: rgba(146,146,146,0.4);
     float: left;;
-    width: 640px
+    width: 700px
 }
 
 .modal-content textarea {
-    height: 80px;
+    margin: 5px;
+    height: 20px;
 }
-
-
-#tags {
-    height: 20%;
-}
-
 
 .buttons {
   display: flex;

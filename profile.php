@@ -14,6 +14,8 @@
     $accountBirthday = getAccountBirthday($dbh, $account_id);
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
+
+    $account_channels = getChannelIDs($dbh, $account_id);
   ?>
 
   <head>
@@ -48,23 +50,32 @@
 
       <div id="myModal" class="modal">
 
-        <div class="modal-content">
+        <form class="modal-content" action="createNewPost.php" method="post">
           <div class="minidiv"> 
             <label>
-              <textarea name="text" placeholder="Type your comment here..."></textarea>
+              <textarea name="title" placeholder="Title" required="required"></textarea>
+            </label>
+            <label>
+              <textarea name="photo" placeholder="Photo"></textarea>
+            </label>
+            <label>
+              <textarea name="description" placeholder="Description" required="required"></textarea>
+            </label>
+            <label>
+            <?
+            foreach($account_channels as $account_channel) {
+
+              $channel_name = getChannelName($dbh, $account_channel['channelID']); 
+            ?>
+            <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+            <? } ?>
             </label>
             <span class="close">&times;</span>
           </div>
-         <label>
-          <p>Tags : </p>
-          <textarea id="tags" name="text"></textarea>
-        </label>
-
         <div class="buttons"> 
-          <button id="uploadImage"> Upload Image </button>
           <button id="enter"> Post </button>
         </div>
-      </div>
+      </form>
     </div>
 
         <!-- <a id="create__post" href="createPost.php"><p>Create Post</p></a> -->
