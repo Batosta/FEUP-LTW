@@ -83,7 +83,7 @@
         <script src="script1.js" defer></script>
       </section>
    
-    <div class="otherPages">
+    <div class="otherPages">   <!--  Fazer share ao site maybe? how tho-->
       <a id="insta" href="https://www.instagram.com" target="_blank"> Instagram</a>
       <a id="face" href="https://www.facebook.com" target="_blank"> Facebook </a>
       <a id="spotify" href="https://open.spotify.com/browse/featured" target="_blank"> Spotify</a>

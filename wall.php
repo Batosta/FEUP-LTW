@@ -32,51 +32,57 @@
         <h2 id="siteName"> Aria </h2>
       </div>
 
-      <div class="subscriptions">
+      <div class="mainMenu">
 
-        <? 
-        foreach($account_channels as $account_channel){
-
-          $channel_name = getChannelName($dbh, $account_channel['channelID']);
-        ?>
-        <a href="channel.php?id=<?=$account_channel['channelID']?>"><?=$channel_name?></a>
-        <? } ?>
-      </div>
-    </div>
+        <a href="#"> Latest Music </a>
+        <a href="#"> Album Reviews </a>
+        <a href="#"> Single Reviews </a>
+        <a href="#"> Music Discussions </a>
+     </div>
 
     <div class="main">
 
 
     <button id="myBtn">Create Post</button>
 
-    <div id="myModal" class="modal">
+      <div id="myModal" class="modal">
 
-      <form class="modal-content" action="createNewPost.php" method="post">
-        <div class="minidiv"> 
-          <label>
-            <textarea name="title" placeholder="Title" required="required"></textarea>
-          </label>
-          <label>
-            <textarea name="photo" placeholder="Photo"></textarea>
-          </label>
-          <label>
-            <textarea name="description" placeholder="Description" required="required"></textarea>
-          </label>
-          <label>
-          <?
+        <form class="modal-content" action="createNewPost.php" method="post">
+
+          <div class="minidiv"> 
+
+            <label>
+              <textarea id="title" name="title" placeholder="Title" required="required"></textarea>
+            </label>
+
+            <label>
+              <textarea name="description" placeholder="Description" required="required"></textarea>
+            </label>
+
+            <span class="close">&times;</span>
+
+             <label>
+            <?
             foreach($account_channels as $account_channel) {
 
               $channel_name = getChannelName($dbh, $account_channel['channelID']); 
-          ?>
-          <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
-          <? } ?>
-          </label>
-          <span class="close">&times;</span>
-        </div>
-        <div class="buttons"> 
-          <button id="enter"> Post </button>
+            ?>
+            <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+            <? } ?>
+            </label>
+
+          </div>
+
+           <form action="upload.php" method="post" enctype="multipart/form-data">
+             Select image to upload: 
+            <div class="buttons"> 
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input id="submit" type="submit" value="Upload Image" name="submit">
+          </form>
+        <button id="enter"> Post </button>
         </div>
       </form>
+
     </div>
 
     <script src="script.js" defer></script>
@@ -90,4 +96,6 @@
   </body>
 
   <? draw_footer(); ?>
+      <!--<script src="script.js" defer></script>
+      <script src="script1.js" defer></script>--> 
 </html>
