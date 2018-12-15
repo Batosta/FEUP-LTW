@@ -10,8 +10,8 @@
     $newPost_description = $_POST['description'];
     $newPost_channelID = $_POST['channel'];
 
-    $stmt = $dbh->prepare('INSERT INTO Post(postID, accountID, channelID, title, photo, description, points) VALUES (NULL, ?, ?, ?, ?, ?, 0);');
-    $stmt->execute(array($account_id, $newPost_channelID, $newPost_title, $newPost_photo, $newPost_description));
+    $stmt = $dbh->prepare('INSERT INTO Post (postID, accountID, channelID, title, photo, description, points) VALUES (NULL, ?, ?, ?, ?, ?, ?);');
+    $stmt->execute(array($account_id, $newPost_channelID, $newPost_title, $newPost_photo, $newPost_description, 0));
 
 	header('Location: ./profile.php');
 ?>

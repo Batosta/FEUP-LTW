@@ -189,15 +189,14 @@
 
                         <form>
                             <input type="hidden" name="postID" value="<?=$postID?>">
-                            <input type="hidden" name="accountID" value="<?=$account_id?>">
-                            <input type="hidden" name="post_points" value="<?=$post_points?>">
-                            <input id="upvote" type="submit" name="like" value="Like">
-                            <input id="downvote" type="submit" name="dislike" value="Dislike">
-                        </form>
+                            <input type="hidden" name="accountID" value="<?=$accountID?>">
+                            <input type="hidden" name="post_points" value="<?=$post_points?>"> 
+                            <input id="upvote" type="submit" name="like" value="like">
+                            <!--<input id="downvote" type="submit" name="dislike" value="dislike">-->
 
+                        </form>
                     </article>
                 </section>
-
             </section>
 
             <?
@@ -218,10 +217,10 @@
                     <h4><?=$existentComment['commentText']?></h4>
                 </section>
             <? } ?>
-            <section id="comments">
+            <section class="comments">
                 <article class="comment">
-                    <span class="accountID"><?=$comment['accountID']?></span>
-                    <p><?=$comment['commentText']?></p>
+                    <span class="accountID"></span>
+                    <p></p>
                 </article>
                 <form>
                     <h2>Add your comment</h2>
@@ -230,9 +229,12 @@
                     </label>
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
-                    <input id="button" type="submit" name="submit" value="Submit">
+                    <input class="button" type="submit" name="submit" value="Submit">
                 </form>
             </section>
+            <!--<script src="script.js" defer></script>-->
+            <script src="script.js" defer></script>
+            <!--<script src="script1.js" defer></script>-->
         </div>
 
 <?  }

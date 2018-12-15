@@ -97,4 +97,6 @@
   </body>
 
   <? draw_footer(); ?>
+      <!--<script src="script.js" defer></script>
+      <script src="script1.js" defer></script>--> 
 </html>

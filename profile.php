@@ -82,8 +82,8 @@
         <?
           showPostByAccountId($dbh, $account_id);
         ?>
-      <script src="script.js" defer></script>
-      <script src="script1.js" defer></script>            
+        <!--<script src="script.js" defer></script>
+        <script src="script1.js" defer></script>-->
       </section>
    
     <div class="otherPages">   <!--  Fazer share ao site maybe? how tho-->
@@ -95,4 +95,5 @@
 
   </body>
   <? draw_footer() ?>
+
 </html>
