@@ -45,7 +45,6 @@
 
     <button id="myBtn">Create Post</button>
 
-  
       <div id="myModal" class="modal">
 
         <form class="modal-content" action="createNewPost.php" method="post">
