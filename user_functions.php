@@ -125,13 +125,18 @@
 
         return $row['description'];
     }
-    function getPostChannelName($dbh, $postID){
+    function getPostChannelID($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM Post WHERE ? = postID');
         $stmt->execute(array($postID)); 
         $row = $stmt->fetch();
 
-        $channel_name = getChannelName($dbh, $row['channelID']);
+        return $row['channelID'];
+    }
+    function getPostChannelName($dbh, $postID){
+
+        $channelID = getPostChannelID($dbh, $postID);
+        $channel_name = getChannelName($dbh, $channelID);
         return $channel_name;
     }
     function showAllChannelPosts($dbh, $channelID){
@@ -171,12 +176,13 @@
                     $post_photo = getAccountPhoto($dbh, $accountID);
                     $post_username = getAccountUsername($dbh, $accountID);
                     $channel_name = getPostChannelName($dbh, $postID);
+                    $channel_id = getPostChannelID($dbh, $postID);
                     $post_points = getPostPoints($dbh, $postID);
                 ?> 
                 <div class="userInfo"> 
                     <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
-                    <h3 id="channel_name"><?=$channel_name?></h3>
+                    <a id="channel_name" href="channel.php?id=<?=$channel_id?>"><?=$channel_name?></a>
                 </div>
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>
@@ -225,12 +231,13 @@
                 <form>
                     <h2>Add your comment</h2>
                     <label>
-                        <textarea name="text"></textarea>
+                        <textarea name="text" required="required"></textarea>
                     </label>
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
                     <input class="button" type="submit" name="submit" value="Submit">
                 </form>
+                <script src="script.js" defer></script>
             </section>
             <!--<script src="script.js" defer></script>-->
             <script src="script.js" defer></script>
