@@ -2,7 +2,7 @@
 <html lang="en-US"> 
   <?
     $dbh = new PDO('sqlite:database.db');
-    include ('user_functions.php');
+    include ('./user_functions.php');
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
@@ -11,11 +11,14 @@
     $channel_name = getChannelName($dbh, $channel_id);
     $accountUsername = getAccountUsername($dbh, $account_id);
     $accountPhoto = getAccountPhoto($dbh, $account_id);
+
+    $subscription = getSubscription($dbh, $account_id, $channel_id);
   ?>
 
   <head>
     <title><?=$channel_name?></title> 
     <link href="imagens/icon.png" rel="shortcut icon">
+    <link href="common.css" rel="stylesheet">
     <link href="profile.css" rel="stylesheet">
     <link href="post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
@@ -24,22 +27,41 @@
 
   <body>
     
-    <? draw_header($accountPhoto, $accountUsername); ?>
+    <?  
+
+    draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       <section id="bio">
         <a href="channel.php?id=<?=$channel_id?>"><p><?=$channel_name?></p></a>
+        <form id="subsription" action="subscribe.php" method="post">
+          <input type="hidden" name="subscription" value="<?=$subscription?>">
+          <input type="hidden" name="channelID" value="<?=$channel_id?>">
+          <input type="hidden" name="accountID" value="<?=$account_id?>">
+          <?
+          if($subscription == 1) { ?>
+            <input type="submit" value="Unsubscribe"> 
+          <? }
+          else{ ?>
+            <input type="submit" value="Subscribe"> 
+          <? } ?>
+        </form>
       </section>
       <section id="posts">
-        <?
-          showAllChannelPosts($dbh, $channel_id);
-        ?>  
+
+      <?
+      if($subscription == 1) {
+
+        showAllChannelPosts($dbh, $channel_id);
+      }
+      else { ?>
+
+        <h3>Subscribe this channel to see their posts</h3>
+      <? } ?>  
       </section>
     </div>  
   </body>
 
-  <? draw_footer() ?>
-  <!--<script src="script.js" defer></script>
-  <script src="script1.js" defer></script>--> 
+  <? draw_footer() ?> 
 
 </html>

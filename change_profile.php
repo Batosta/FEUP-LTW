@@ -14,6 +14,7 @@
     <title>Edit Profile</title> 
     <link href="favicon.ico" rel="shortcut icon">
     <link href="profile.css" rel="stylesheet">
+    <link href="common.css" rel="stylesheet">
   </head>
   <body>
     

@@ -32,8 +32,8 @@ $stmt = $dbh->prepare('SELECT * FROM ChannelUsers');
 $stmt->execute();
 $result = $stmt->fetchAll();
 foreach ($result as $row) {
-    echo $row['channelID'], "|";
-    echo $row['accountID'], "<br>";
+    echo $row['accountID'], "|";
+    echo $row['channelID'], "<br>";
 }
 
 echo "<br><br>";

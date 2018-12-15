@@ -109,6 +109,17 @@
     }
 
 
+    function getSubscription($dbh, $accountID, $channelID){
+
+        $cIDs = getChannelIDs($dbh, $accountID);
+
+        foreach($cIDs as $cID){
+
+            if($cID['channelID'] == $channelID)
+                return 1;
+        }
+        return 0;
+    }
     function getChannelIDs($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE ? = accountID');
@@ -125,16 +136,21 @@
 
         return $row['description'];
     }
-    function getPostChannelName($dbh, $postID){
+    function getPostChannelID($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM Post WHERE ? = postID');
         $stmt->execute(array($postID)); 
         $row = $stmt->fetch();
 
-        $channel_name = getChannelName($dbh, $row['channelID']);
+        return $row['channelID'];
+    }
+    function getPostChannelName($dbh, $postID){
+
+        $channelID = getPostChannelID($dbh, $postID);
+        $channel_name = getChannelName($dbh, $channelID);
         return $channel_name;
     }
-    function showAllChannelPosts($dbh, $channelID){
+    function showAllChannelPosts($dbh, $channelID, $accountID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE channelID = ?');
         $stmt->execute(array($channelID));
@@ -142,7 +158,7 @@
         foreach($result as $post){
 
             $postID = $post['postID'];
-            showPostByPostId($dbh, $postID);
+            showPostByPostId($dbh, $postID, $accountID);
         }
     }
     function showAllPosts($dbh, $accountID) {
@@ -153,30 +169,31 @@
 
         foreach ($channelIDs as $channelID) {
 
-            showAllChannelPosts($dbh, $channelID['channelID']);
+            showAllChannelPosts($dbh, $channelID['channelID'], $accountID);
         }
     }
 
-    function showPostByPostId($dbh, $postID){
+    function showPostByPostId($dbh, $postID, $accountID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE postID = ?');
         $stmt->execute(array($postID));
         $post = $stmt->fetch();
 
-        $accountID = $post['accountID']; ?>
+        $postAccountID = $post['accountID']; ?>
 
         <div class="post">
             <section id="info">
                 <?
-                    $post_photo = getAccountPhoto($dbh, $accountID);
-                    $post_username = getAccountUsername($dbh, $accountID);
+                    $post_photo = getAccountPhoto($dbh, $postAccountID);
+                    $post_username = getAccountUsername($dbh, $postAccountID);
                     $channel_name = getPostChannelName($dbh, $postID);
+                    $channel_id = getPostChannelID($dbh, $postID);
                     $post_points = getPostPoints($dbh, $postID);
                 ?> 
                 <div class="userInfo"> 
                     <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
-                    <h3 id="channel_name"><?=$channel_name?></h3>
+                    <a id="channel_name" href="channel.php?id=<?=$channel_id?>"><?=$channel_name?></a>
                 </div>
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>
@@ -189,7 +206,7 @@
 
                         <form>
                             <input type="hidden" name="postID" value="<?=$postID?>">
-                            <input type="hidden" name="accountID" value="<?=$accountID?>">
+                            <input type="hidden" name="accountID" value="<?=$postAccountID?>">
                             <input type="hidden" name="post_points" value="<?=$post_points?>"> 
                             <input id="upvote" type="submit" name="like" value="like">
                             <!--<input id="downvote" type="submit" name="dislike" value="dislike">-->
@@ -200,22 +217,22 @@
             </section>
 
             <?
-                $stmt1 = $dbh->prepare('SELECT DISTINCT accountID, commentText FROM Comment WHERE postID = ?');
+                $stmt1 = $dbh->prepare('SELECT accountID, commentText FROM Comment WHERE postID = ?');
                 $stmt1->execute(array($postID));
                 $existentComments = $stmt1->fetchAll();
                 foreach ($existentComments as $existentComment) {
             ?>
 
-                <section id="existentComments">
-                    <?
-                        $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
-                    ?>
-                    <div class="commenterInfo"> 
-                        <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="35" width="35">
-                        <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
-                    </div>
-                    <h4><?=$existentComment['commentText']?></h4>
-                </section>
+            <section id="existentComments">
+                <?
+                    $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
+                ?>
+                <div class="commenterInfo"> 
+                    <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="35" width="35">
+                    <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
+                </div>
+                <h4><?=$existentComment['commentText']?></h4>
+            </section>
             <? } ?>
             <section class="comments">
                 <article class="comment">
@@ -225,18 +242,15 @@
                 <form>
                     <h2>Add your comment</h2>
                     <label>
-                        <textarea name="text"></textarea>
+                        <textarea name="text" required="required"></textarea>
                     </label>
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
                     <input class="button" type="submit" name="submit" value="Submit">
                 </form>
             </section>
-            <!--<script src="script.js" defer></script>-->
             <script src="script.js" defer></script>
-            <!--<script src="script1.js" defer></script>-->
         </div>
-
 <?  }
 
     function showPostByAccountId($dbh, $accountID){
@@ -248,7 +262,7 @@
         foreach ($result as $post) {
 
             $postID = $post['postID'];
-            showPostByPostId($dbh, $postID);
+            showPostByPostId($dbh, $postID, $accountID);
         }
     }
 
@@ -286,57 +300,56 @@
                 </div>
             </div>
         </div>
-
     <? }
 
     function updateUserPhoto($userID, $photoPath) {
     
-    try {
-      $stmt = $dbh->prepare('UPDATE Account SET photo = ? WHERE accountID = ?');
-      if($stmt->execute(array($photoPath, $userID)))
-          return true;
-      else
+        try {
+          $stmt = $dbh->prepare('UPDATE Account SET photo = ? WHERE accountID = ?');
+          if($stmt->execute(array($photoPath, $userID)))
+              return true;
+          else
+              return false;
+        }catch(PDOException $e) {
           return false;
-    }catch(PDOException $e) {
-      return false;
-    }
-  } 
+        }
+    } 
 
 
     function uploadUserImage() {
         
-  $target_dir = "../profilePictures/";
-  $originalName = basename($_FILES["fileToUpload"]["name"]);
-  $imageFileType = pathinfo($originalName,PATHINFO_EXTENSION);
-  $target_file = $target_dir . getUserID() . "." . $imageFileType ;
-  $uploadOk = 1;
- 
-  // Allow certain file formats
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
-    $_SESSION['ERROR'] = "ERROR: Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-  }
-  //Overide previous picture
-  if (file_exists($target_file)) {
-    unlink($target_file);
-  }
-
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-    $_SESSION['ERROR'] =  "Error uploading photo";
-
-  // if everything is ok, try to upload file
-  } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      if(updateUserPhoto(getUserID(), getUserID() . "." . $imageFileType) == null){
-        $_SESSION['ERROR'] = "Error uploading photo";
+      $target_dir = "../profilePictures/";
+      $originalName = basename($_FILES["fileToUpload"]["name"]);
+      $imageFileType = pathinfo($originalName,PATHINFO_EXTENSION);
+      $target_file = $target_dir . getUserID() . "." . $imageFileType ;
+      $uploadOk = 1;
+     
+      // Allow certain file formats
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+      && $imageFileType != "gif" ) {
+        $_SESSION['ERROR'] = "ERROR: Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
       }
-    } else {
+      //Overide previous picture
+      if (file_exists($target_file)) {
+        unlink($target_file);
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
         $_SESSION['ERROR'] =  "Error uploading photo";
+
+      // if everything is ok, try to upload file
+      } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+          if(updateUserPhoto(getUserID(), getUserID() . "." . $imageFileType) == null){
+            $_SESSION['ERROR'] = "Error uploading photo";
+          }
+        } else {
+            $_SESSION['ERROR'] =  "Error uploading photo";
+        }
+      }
     }
-  }
-}
 
     function draw_footer() { ?>
 
@@ -351,6 +364,5 @@
                 <p> Contact </p>
             </div>
         </footer>
-
     <? } ?>
 

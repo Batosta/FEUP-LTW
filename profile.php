@@ -46,47 +46,44 @@
 
       <section id="posts">
 
-      <button id="myBtn">Create Post</button>
+        <button id="myBtn">Create Post</button>
 
-      <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
 
-        <form class="modal-content" action="createNewPost.php" method="post">
-          <div class="minidiv"> 
-            <label>
-              <textarea name="title" placeholder="Title" required="required"></textarea>
-            </label>
-            <label>
-              <textarea name="photo" placeholder="Photo"></textarea>
-            </label>
-            <label>
-              <textarea name="description" placeholder="Description" required="required"></textarea>
-            </label>
-            <label>
-            <?
-            foreach($account_channels as $account_channel) {
+          <form class="modal-content" action="createNewPost.php" method="post">
+            <div class="minidiv"> 
+              <label>
+                <textarea name="title" placeholder="Title" required="required"></textarea>
+              </label>
+              <label>
+                <textarea name="photo" placeholder="Photo"></textarea>
+              </label>
+              <label>
+                <textarea name="description" placeholder="Description" required="required"></textarea>
+              </label>
+              <label>
+              <?
+                foreach($account_channels as $account_channel) {
 
-              $channel_name = getChannelName($dbh, $account_channel['channelID']); 
-            ?>
-            <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
-            <? } ?>
-            </label>
-            <span class="close">&times;</span>
-          </div>
-        <div class="buttons"> 
-          <button id="enter"> Post </button>
+                  $channel_name = getChannelName($dbh, $account_channel['channelID']); 
+              ?>
+              <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+              <? } ?>
+              </label>
+              <span class="close">&times;</span>
+            </div>
+            <div class="buttons"> 
+              <button id="enter"> Post </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-
-        <!-- <a id="create__post" href="createPost.php"><p>Create Post</p></a> -->
         <?
           showPostByAccountId($dbh, $account_id);
         ?>
-        <!--<script src="script.js" defer></script>
-        <script src="script1.js" defer></script>-->
+        <script src="script1.js" defer></script>
       </section>
    
-    <div class="otherPages">   <!--  Fazer share ao site maybe? how tho-->
+    <div class="otherPages">
       <a id="insta" href="https://www.instagram.com" target="_blank"> Instagram</a>
       <a id="face" href="https://www.facebook.com" target="_blank"> Facebook </a>
       <a id="spotify" href="https://open.spotify.com/browse/featured" target="_blank"> Spotify</a>
