@@ -1,5 +1,26 @@
-let commentForm = document.querySelector("#comments form");
-commentForm.addEventListener("submit", submitComment);
+let commentsSection = document.getElementsByClassName("comments");
+let child;
+
+for(let i = 0; i < commentsSection.length; i++){
+  commentsSection[i].addEventListener("submit", function(){
+  child = commentsSection[i];
+
+  let pID = commentsSection[i].querySelector('input[name=postID]').value;
+  let aID = commentsSection[i].querySelector('input[name=accountID]').value;
+  let cText = commentsSection[i].querySelector('textarea[name=text]').value;
+
+  let request = new XMLHttpRequest();
+  request.addEventListener("load", receiveComments);
+  
+  request.open("POST", "add_comment.php", true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  let encoded = encodeForAjax({postID: pID, accountID: aID, commentText: cText});
+
+  request.send(encoded);
+  
+  event.preventDefault();
+  });
+}
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
@@ -7,30 +28,9 @@ function encodeForAjax(data) {
   }).join('&');
 }
 
-function submitComment(event) {
-	let pID = document.querySelector('#comments input[name=postID]').value;
-  console.log(pID);
-	let aID = document.querySelector('#comments input[name=accountID]').value;
-  console.log(aID);
-	let cText = document.querySelector('#comments textarea[name=text]').value;
-  console.log(cText);
-
-  let request = new XMLHttpRequest();
-  request.addEventListener("load", receiveComments);
-  
-	request.open("POST", "add_comment.php", true);
-	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  let encoded = encodeForAjax({postID: pID, accountID: aID, commentText: cText});
-  console.log("Encoded string: " + encoded);
-  request.send(encoded);
-  
-  event.preventDefault();
-}
-
 function receiveComments(event) {
-  let section = document.querySelector('#comments');
+  
   let comments = JSON.parse(this.responseText);
-  console.log(this.responseText);
 
   for (let i = 0; i < comments.length; i++) {
     let comment = document.createElement('article');
@@ -40,7 +40,7 @@ function receiveComments(event) {
     comments[i].accountID + '</span><p>' +
     comments[i].commentText + '</p>';
 
-    section.insertBefore(comment, commentForm);
+    child.appendChild(comment);
   }
 }
 

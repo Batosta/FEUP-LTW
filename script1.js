@@ -16,8 +16,6 @@ function submitPoint(event) {
 
   let points = document.querySelector('#points input[name=post_points]').value;
 
-  console.log(likeButton);
-
   points++;
   console.log(points);
 
