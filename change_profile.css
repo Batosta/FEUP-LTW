@@ -1,0 +1,132 @@
+body {
+
+    margin: 0;
+    background-image: url('imagens/changeII.gif');
+    background-repeat: no-repeat;
+    background-color: rgba(229, 238, 234, 0.5);
+    height: 100%;
+    background-position: 86.5% 65%;
+    background-size: 30%, 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.editInfo {
+    display: block;
+    background-color: rgba(56, 197, 130, 0.7);
+    padding: 30px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+
+.editInfo #change {
+    margin: 30px;
+    margin-left: 20%;
+}
+
+.editInfo #change input {
+    font-family: 'Open Sans Condensed';
+    outline: none;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.editInfo #change input[type=text] {
+    width: 200px;
+}
+
+.editInfo #change input[type=submit] {
+    width: 50px;
+    height: 30px;
+    color: rgb(130,130,130);
+}
+
+
+.profilePic {
+    display: flex;
+    margin-top: 11%;
+    margin-left:auto;
+    flex-direction: column;
+    background-color: rgb(229, 238, 234);
+    padding: 20px;
+    height: 30%;
+    color: rgb(130,130,130);
+    font-family: 'Open Sans Condensed';
+    border-radius: 10px;
+    border: 1px solid rgba(130,130,130, 0.1);
+}
+
+.profilePic img {
+    border-radius:10px;
+    padding: 2px;
+    border: 1px double rgba(130,130,130, 0.5);
+    margin-bottom: 20px;
+}
+
+.profilePic input {
+    color: rgb(130,130,130);
+    font-family: 'Open Sans Condensed';
+    z-index: 1;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.profilePic #fakeButton, #submit {
+    display:block;
+    background-color: white;
+    /*z-index: 1;*/
+    border: none;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#submit {
+    width: 40%;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.profilePic #fakeButton {
+    position: absolute;
+    width: 8%;
+    top: 61.5%;
+    left:22.7%;
+    height: 1.7%;
+    vertical-align: middle;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.profilePic #fakeButton:hover, #submit:hover{
+    color: rgb(56, 197, 130);
+}
+
+footer {
+    position: absolute !important;
+    bottom: 0px !important;
+}
+
+.navBar {
+    background-image: url('imagens/gplay.png');
+}
+
+.logOut img, .menu img {
+    background-color: rgba(229, 238, 234, 0.9);
+}
