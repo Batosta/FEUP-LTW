@@ -143,6 +143,14 @@
         
         return $row[0];
     }
+    function discoverChannels($dbh, $accountID){
+
+        $stmt = $dbh->prepare('SELECT channelID FROM Channel EXCEPT SELECT channelID FROM ChannelUsers WHERE accountID = ?');
+        $stmt->execute(array($accountID));
+        $channels = $stmt->fetchAll();
+
+        return $channels;
+    }
     function getChannelIDs($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE ? = accountID');
@@ -306,7 +314,7 @@
                     <a id="homePage" href="wall.php"><p>Home Page</p></a>
                     <a id="settings" href="change_profile.php"><p>Edit profile</p></a>
                     <a id="subs" href="subscriptions.php"><p>Subscriptions</p></a>
-                    <a id="likes" href="#"><p>Liked</p></a>
+                    <a id="discover" href="discover.php"><p>Discover</p></a>
                 </div>
             </div>
 

@@ -60,12 +60,12 @@ footer a { text-decoration: none; }
 
 #homePage{background-image: url('../imagens/home.png');}
 #settings {background-image: url('../imagens/settings.png');}
-#likes {background-image: url('../imagens/like.png');}
+#discover {background-image: url('../imagens/like.png');}
 #subs {background-image: url('../imagens/following.png');}
 #logOut {background-image: url('../imagens/logout.png');}
 #user {background-image: url('../imagens/user.png');}
 
-#homePage, #settings, #likes, #subs, #logOut, #user {
+#homePage, #settings, #discover, #subs, #logOut, #user {
     background-color: #e6e6e6;
     background-size: 25px;
     background-repeat: no-repeat;
@@ -74,9 +74,9 @@ footer a { text-decoration: none; }
     float: left;
 }
 
-#subs:hover, #homePage:hover, #settings:hover, #likes:hover, #logOut:hover, #user:hover {background-color: rgb(254, 255, 254);}
+#subs:hover, #homePage:hover, #settings:hover, #discover:hover, #logOut:hover, #user:hover {background-color: rgb(254, 255, 254);}
 
-#likes:hover { background-image: url('../imagens/likeII.png');}
+#discover:hover { background-image: url('../imagens/likeII.png');}
 #subs:hover {background-image: url('../imagens/followingII.png');}
 #user:hover {background-image: url('../imagens/userII.png');}
 #settings:hover {background-image: url('../imagens/settingsII.png');}
