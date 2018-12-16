@@ -13,6 +13,7 @@
     $accountPhoto = getAccountPhoto($dbh, $account_id);
 
     $subscription = getSubscription($dbh, $account_id, $channel_id);
+    $number_subscribers = getNumberSubscriber($dbh, $channel_id);
   ?>
 
   <head>
@@ -46,13 +47,14 @@
             <input type="submit" value="Subscribe"> 
           <? } ?>
         </form>
+        <h2>Subscribers: <?=$number_subscribers?></h2>
       </section>
       <section id="posts">
 
       <?
       if($subscription == 1) {
 
-        showAllChannelPosts($dbh, $channel_id);
+        showAllChannelPosts($dbh, $channel_id, $account_id);
       }
       else { ?>
 

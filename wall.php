@@ -46,40 +46,36 @@
 
     <div class="main">
 
+      <button id="myBtn">Create Post</button>
+      <div id="myModal" class="modal">
+        <form class="modal-content" action="createNewPost.php" method="post">
+          <div class="minidiv"> 
+            <label>
+              <textarea name="title" placeholder="Title" required="required"></textarea>
+            </label>
+            <label>
+              <textarea name="photo" placeholder="Photo"></textarea>
+            </label>
+            <label>
+              <textarea name="description" placeholder="Description" required="required"></textarea>
+            </label>
+            <label>
+              <?
+                foreach($account_channels as $account_channel) {
 
-    <button id="myBtn">Create Post</button>
-
-    <div id="myModal" class="modal">
-
-      <form class="modal-content" action="createNewPost.php" method="post">
-        <div class="minidiv"> 
-          <label>
-            <textarea name="title" placeholder="Title" required="required"></textarea>
-          </label>
-          <label>
-            <textarea name="photo" placeholder="Photo"></textarea>
-          </label>
-          <label>
-            <textarea name="description" placeholder="Description" required="required"></textarea>
-          </label>
-          <label>
-          <?
-            foreach($account_channels as $account_channel) {
-
-              $channel_name = getChannelName($dbh, $account_channel['channelID']); 
-          ?>
-          <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
-          <? } ?>
-          </label>
-          <span class="close">&times;</span>
-        </div>
-        <div class="buttons"> 
-          <button id="enter"> Post </button>
-        </div>
-      </form>
-    </div>
-
-    <script src="script.js" defer></script>
+                  $channel_name = getChannelName($dbh, $account_channel['channelID']); 
+              ?>
+              <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
+              <? } ?>
+            </label>
+            <span class="close">&times;</span>
+          </div>
+          <div class="buttons"> 
+            <button id="enter"> Post </button>
+          </div>
+        </form>
+      </div>
+      <script src="script.js" defer></script>
 
       <?
         showAllPosts($dbh, $account_id);

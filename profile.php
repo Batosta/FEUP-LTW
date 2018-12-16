@@ -14,6 +14,7 @@
     $accountBirthday = getAccountBirthday($dbh, $account_id);
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
+    $accountPoints = getAccountPoints($dbh, $account_id);
 
     $account_channels = getChannelIDs($dbh, $account_id);
   ?>
@@ -38,6 +39,7 @@
         <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
         <h2><?=$accountUsername ?></h2>
         <h4><?=$accountName ?></h4>
+        <h4>Points: <?=$accountPoints ?></h4>
         <h5><?=$accountEmail ?></h5>
         <h5><?=$accountBirthday ?></h5>
         <h5><?=$accountCity ?></h5>
@@ -70,6 +72,7 @@
               <input type="radio" name="channel" value="<?=$account_channel['channelID']?>" checked="checked"><?=$channel_name?>
               <? } ?>
               </label>
+              <a href="createChannel.php?"><p>Create new Channel</p></a>
               <span class="close">&times;</span>
             </div>
             <div class="buttons"> 

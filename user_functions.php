@@ -67,6 +67,21 @@
 
         return $row['photo'];
     }
+    function getAccountPoints($dbh, $accountID){
+
+        $points = 0;
+        $stmt = $dbh->prepare('SELECT points FROM Post WHERE accountID = ?');
+        $stmt->execute(array($accountID)); 
+        $row = $stmt->fetchAll();
+
+        foreach($row as $post){
+
+            $points += $post['points'];
+        }
+
+
+        return $points;
+    }
     function getPostPoints($dbh, $postID){
 
         $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
@@ -119,6 +134,14 @@
                 return 1;
         }
         return 0;
+    }
+    function getNumberSubscriber($dbh, $channelID){
+
+        $stmt = $dbh->prepare('SELECT COUNT(*) FROM ChannelUsers WHERE channelID = ?');
+        $stmt->execute(array($channelID));
+        $row = $stmt->fetch();
+        
+        return $row[0];
     }
     function getChannelIDs($dbh, $accountID){
 
@@ -209,15 +232,13 @@
                             <input type="hidden" name="accountID" value="<?=$postAccountID?>">
                             <input type="hidden" name="post_points" value="<?=$post_points?>"> 
                             <input id="upvote" type="submit" name="like" value="like">
-                            <!--<input id="downvote" type="submit" name="dislike" value="dislike">-->
-
                         </form>
                     </article>
                 </section>
             </section>
 
             <?
-                $stmt1 = $dbh->prepare('SELECT accountID, commentText FROM Comment WHERE postID = ?');
+                $stmt1 = $dbh->prepare('SELECT commentID, accountID, commentText FROM Comment WHERE postID = ?');
                 $stmt1->execute(array($postID));
                 $existentComments = $stmt1->fetchAll();
                 foreach ($existentComments as $existentComment) {
@@ -232,6 +253,13 @@
                     <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
                 </div>
                 <h4><?=$existentComment['commentText']?></h4>
+                <? 
+                if($accountID == $existentComment['accountID']){ ?>
+                    <form action="deleteComment.php" method="post">
+                        <input type="hidden" name="commentID" value="<?=$existentComment['commentID']?>">
+                        <input class="button" type="submit" name="remove" value="Delete comment">
+                    </form>
+                <? } ?>
             </section>
             <? } ?>
             <section class="comments">

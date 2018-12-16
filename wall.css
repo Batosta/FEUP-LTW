@@ -19,7 +19,7 @@ body {
 .subscriptions {
     display:flex;
     margin-left: 5%;
-    margin-top: 125px;
+    margin-top: 175px;
     flex-direction: column;
     position: fixed;
     padding: 10px;
