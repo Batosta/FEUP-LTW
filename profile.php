@@ -15,7 +15,6 @@
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
     $accountPoints = getAccountPoints($dbh, $account_id);
-
     $account_channels = getChannelIDs($dbh, $account_id);
   ?>
 

@@ -1,11 +1,11 @@
 body {
 
     margin: 0;
-    background-image: url('imagens/changeII.gif');
+    background-image: url('../imagens/changeII.gif');
     background-repeat: no-repeat;
     background-color: rgba(229, 238, 234, 0.5);
     height: 100%;
-    background-position: 80% 65%;
+    background-position: 81.5% 65%;
     background-size: 30%, 100%;
     padding: 0;
     overflow: hidden;
@@ -45,9 +45,7 @@ body {
 }
 
 .editInfo #change input[type=submit] {
-    width: 50px;
     height: 30px;
-    color: rgb(130,130,130);
 }
 
 
@@ -57,7 +55,8 @@ body {
     margin-left:auto;
     flex-direction: column;
     background-color: rgb(229, 238, 234);
-    padding: 20px;
+    padding: 30px 30px;
+    padding-right: 50px;
     height: 30%;
     color: rgb(130,130,130);
     font-family: 'Open Sans Condensed';
@@ -65,7 +64,7 @@ body {
     border: 1px solid rgba(130,130,130, 0.1);
 }
 
-.profilePic img {
+#profilephoto {
     border-radius:10px;
     padding: 2px;
     border: 1px double rgba(130,130,130, 0.5);
@@ -75,19 +74,30 @@ body {
 .profilePic input {
     color: rgb(130,130,130);
     font-family: 'Open Sans Condensed';
+}
+
+.profilePic input[type=file]{
     z-index: 1;
 }
 
+#profilePicHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#profilePicHeader h2 {
+    margin-left: 10px;
+}
 
 .main {
     display: flex;
     flex-direction: row;
 }
 
-.profilePic #fakeButton, #submit {
+#submit {
     display:block;
     background-color: white;
-    /*z-index: 1;*/
     border: none;
     padding: 5px;
     text-align: center;
@@ -95,26 +105,12 @@ body {
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-}
-
-#submit {
     width: 40%;
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 34px;
 }
 
-.profilePic #fakeButton {
-    position: absolute;
-    width: 8%;
-    top: 61.5%;
-    left:22.7%;
-    height: 1.7%;
-    vertical-align: middle;
-    padding-bottom: 10px;
-    font-size: 14px;
-}
-
-.profilePic #fakeButton:hover, #submit:hover{
+#submit:hover{
     color: rgb(56, 197, 130);
 }
 
@@ -124,7 +120,7 @@ footer {
 }
 
 .navBar {
-    background-image: url('imagens/gplay.png');
+    background-image: url('../imagens/gplay.png');
 }
 
 .logOut img, .menu img {
