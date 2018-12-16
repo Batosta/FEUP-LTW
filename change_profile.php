@@ -34,40 +34,39 @@
 
         <img id="profilephoto" src=imagens/<?=$accountPhoto?> alt="Profile photo" height="150" width="150">
         <form action="uploadUserImage.php" method="post" enctype="multipart/form-data">
-        Select image to upload: 
-        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
-        <input id="submit" type="submit" value="Change Image" name="submit">
-      </form>
-    </div>
+          Select image to upload: 
+          <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
+          <input id="submit" type="submit" value="Change Image" name="submit">
+        </form>
+      </div>
 
       <div class="editInfo"> 
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change Name">
-        <input type="submit" class="button" name="change_name" value="Change" >
-      </form>
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change Username">
-        <input type="submit" class="button" name="change_username" value="Change" >
-      </form>
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change Email">
-        <input type="submit" class="button" name="change_email" value="Change" >
-      </form>
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change Birthday">
-        <input type="submit" class="button" name="change_birthday" value="Change" >
-      </form>
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change City">
-        <input type="submit" class="button" name="change_city" value="Change" >
-      </form>
-      <form id="change" action="change_profile_functions.php" method="post">
-        <input type="text" name="new_info" placeholder="Change Job">
-        <input type="submit" class="button" name="change_job" value="Change" >
-      </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change Name">
+          <input type="submit" class="button" name="change_name" value="Change" >
+        </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change Username">
+          <input type="submit" class="button" name="change_username" value="Change" >
+        </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change Email">
+          <input type="submit" class="button" name="change_email" value="Change" >
+        </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change Birthday">
+          <input type="submit" class="button" name="change_birthday" value="Change" >
+        </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change City">
+          <input type="submit" class="button" name="change_city" value="Change" >
+        </form>
+        <form id="change" action="change_profile_functions.php" method="post">
+          <input type="text" name="new_info" placeholder="Change Job">
+          <input type="submit" class="button" name="change_job" value="Change" >
+        </form>
+      </div>
     </div>
-  </div>
-
   </body>
 
   <? draw_footer(); ?>

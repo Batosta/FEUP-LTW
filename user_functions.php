@@ -82,15 +82,6 @@
 
         return $points;
     }
-    function getPostPoints($dbh, $postID){
-
-        $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
-        $stmt->execute(array($postID));
-
-        $row = $stmt->fetch();
-
-        return $row['points'];
-    }
 
 
     function checkPassword($dbh, $username, $password){
@@ -181,6 +172,23 @@
         $channel_name = getChannelName($dbh, $channelID);
         return $channel_name;
     }
+    function getPostPoints($dbh, $postID){
+
+        $stmt = $dbh->prepare('SELECT points FROM Post WHERE postID = ?');
+        $stmt->execute(array($postID));
+
+        $row = $stmt->fetch();
+
+        return $row['points'];
+    }
+    function getPostComments($dbh, $postID){
+
+        $stmt = $dbh->prepare('SELECT commentID, accountID, commentText FROM Comment WHERE postID = ?');
+        $stmt->execute(array($postID));
+        $row = $stmt->fetchAll();
+
+        return $row;
+    }
     function showAllChannelPosts($dbh, $channelID, $accountID){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE channelID = ?');
@@ -243,16 +251,13 @@
                         <button class="downvote"></button>
                     </article>
                 </section>
-                    <script src="script1.js" defer></script>
+                <script src="script1.js" defer></script>
             </section>
 
             <?
-                $stmt1 = $dbh->prepare('SELECT commentID, accountID, commentText FROM Comment WHERE postID = ?');
-                $stmt1->execute(array($postID));
-                $existentComments = $stmt1->fetchAll();
+                $existentComments = getPostComments($dbh, $postID);
                 foreach ($existentComments as $existentComment) {
             ?>
-
             <section id="existentComments">
                 <?
                     $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
