@@ -223,18 +223,19 @@
                 </div>
                 <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
-                <section id="points">
+                <section class="points">
                     <article class="currentPoints">
-                        <span class="points">Points: <?=$post_points?></span>
+                        <span class="points" value="<?=$post_points?>">Points: <?=$post_points?></span> 
 
-                        <form>
-                            <input type="hidden" name="postID" value="<?=$postID?>">
-                            <input type="hidden" name="accountID" value="<?=$postAccountID?>">
-                            <input type="hidden" name="post_points" value="<?=$post_points?>"> 
-                            <input id="upvote" type="submit" name="like" value="like">
-                        </form>
+                        <button class="upvote"></button>
+
+                        <span type="hidden" name="accountID" value="<?=$accountID?>"></span>
+                        <span type="hidden" name="postID" value="<?=$postID?>"></span>
+                        
+                        <button class="downvote"></button>
                     </article>
                 </section>
+                    <script src="script1.js" defer></script>
             </section>
 
             <?

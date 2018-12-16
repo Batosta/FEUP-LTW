@@ -29,9 +29,13 @@
 
   	return $stmt->fetch();
   }
+  if(checkLike($dbh, $accountID, $postID)){
+    $pointsAux = getPoints($dbh, $postID);
+    echo json_encode($pointsAux);
+  }else{
       addPoint($dbh, $accountID, $postID, $points);
       createLike($dbh, $accountID, $postID);
       $pointsAux = getPoints($dbh, $postID);
       echo json_encode($pointsAux);
-  
+  } 
 ?>
