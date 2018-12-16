@@ -8,7 +8,7 @@
 
 body {
     background-color: rgb(16,0,32);
-    background-image: url('imagens/shattered-dark.png');
+    background-image: url('../imagens/shattered-dark.png');
 }
 
 .mainContent {
@@ -73,7 +73,7 @@ body {
 
 #myBtn {
     display:inline-block;
-    background-image: url('imagens/plusII.png');
+    background-image: url('../imagens/plusII.png');
     background-repeat: no-repeat;
     background-size: 35px;
     background-position: left;
@@ -108,7 +108,7 @@ body {
 .modal-content {
   display: flex;
   background-color: rgb(250,250,250);
-  background-image: url('imagens/profile.png');
+  background-image: url('../imagens/profile.png');
   margin: 15% auto; 
   padding: 20px;
   height: 30%;

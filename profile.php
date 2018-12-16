@@ -22,9 +22,9 @@
   <head>
     <title>Profile</title> 
     <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="profile.css" rel="stylesheet">
-    <link href="post_style.css" rel="stylesheet">
-    <link href="common.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/post_style.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300, 300i|Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300" rel="stylesheet">
@@ -36,7 +36,7 @@
 
     <div class="main">
       <section id="bio">
-        <img src=<?=$accountPhoto ?> alt="Profile photo" height="150" width="150">
+        <img src='imagens/<?=$accountPhoto?>' alt="Profile photo" height="150" width="150">
         <h2><?=$accountUsername ?></h2>
         <h4><?=$accountName ?></h4>
         <h4>Points: <?=$accountPoints ?></h4>

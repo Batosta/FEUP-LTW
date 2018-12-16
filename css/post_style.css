@@ -90,13 +90,13 @@
     transition-duration: 0.4s;
 }
 
-.upvote {background-image: url('imagens/upvote.png'); margin-left: auto;}
+.upvote {background-image: url('../imagens/upvote.png'); margin-left: auto;}
 
-.downvote {background-image: url('imagens/downvote.png');}
+.downvote {background-image: url('../imagens/downvote.png');}
 
-.downvote:hover, .downvote:focus {background-image: url('imagens/downvoted.png');}
+.downvote:hover, .downvote:focus {background-image: url('../imagens/downvoted.png');}
 
-.upvote:hover, .upvote:focus {background-image: url('imagens/upvoted.png');}
+.upvote:hover, .upvote:focus {background-image: url('../imagens/upvoted.png');}
 
 #channel_name {
     font-weight: 300;

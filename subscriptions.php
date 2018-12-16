@@ -15,9 +15,9 @@
   <head>
     <title>Profile</title> 
     <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="common.css" rel="stylesheet">
-    <link href="profile.css" rel="stylesheet">
-    <link href="post_style.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>

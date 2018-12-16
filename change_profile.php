@@ -13,8 +13,8 @@
   <head>
     <title>Edit Profile</title> 
     <link href="favicon.ico" rel="shortcut icon">
-    <link href="profile.css" rel="stylesheet">
-    <link href="common.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
   </head>
   <body>
     

@@ -214,14 +214,14 @@
                     $post_points = getPostPoints($dbh, $postID);
                 ?> 
                 <div class="userInfo"> 
-                    <img id="account_photo" src=<?=$post_photo?> alt="Account photo" height="40" width="40">
+                    <img id="account_photo" src="imagens/<?=$post_photo?>"" alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
                     <a id="channel_name" href="channel.php?id=<?=$channel_id?>"><?=$channel_name?></a>
                 </div>
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>
                 </div>
-                <img id="post_photo" src=<?=$post['photo']?> alt="Post photo">
+                <img id="post_photo" src='imagens/<?=$post['photo']?>' alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <section class="points">
                     <article class="currentPoints">
@@ -250,7 +250,7 @@
                     $comment_photo = getAccountPhoto($dbh, $existentComment['accountID']);
                 ?>
                 <div class="commenterInfo"> 
-                    <img id="comment_photo" src=<?=$comment_photo?> alt="Comment photo" height="35" width="35">
+                    <img id="comment_photo" src="imagens/<?=$comment_photo?>" alt="Comment photo" height="35" width="35">
                     <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
                 </div>
                 <h4><?=$existentComment['commentText']?></h4>
@@ -311,7 +311,7 @@
             </div>
 
             <div class="user">
-                <a href="profile.php"><img src="<?=$accountPhoto?>" height = "25" width="25"></a>
+                <a href="profile.php"><img src="imagens/<?=$accountPhoto?>" height = "25" width="25"></a>
                 <a id="tinyName" href="profile.php"><?=$accountUsername?></a>
             </div>
 
