@@ -32,5 +32,5 @@ if ($uploadOk == 0) {
     }
   }
 
-  header("Location: change_profile.php");
+  header("Location: ./change_profile.php");
 ?>

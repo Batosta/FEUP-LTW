@@ -45,8 +45,8 @@ body {
 
 .changeName, .changeUsername, .changeAge, .changeCity, .changeJob, .changeEmail {
     display: none;
-    width: 350px;
-    height: 50px;
+    width: 360px;
+    height: 60px;
     padding: 10px;
     position: absolute;
     background-color: rgba(255,255,255,0.8);
@@ -144,6 +144,20 @@ body {
     border-radius: 10px;
 }
 
+#x {
+  color: #aaa;
+  font-size: 25px;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+#x:hover, #x:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .editInfo h4:hover {color: rgb(56, 197, 130);}
 
 #submit:hover {background-color: white; color:rgb(56, 197, 130);}
@@ -152,4 +166,4 @@ footer {position: absolute !important;}
 
 .navBar {background-image: url('../imagens/gplay.png');}
 
-.logOut img, .menu img {background-color: rgba(229, 238, 234, 0.9);}
+.logOut img, .menu img {background-color: rgba(229, 238, 234, 0.9);},

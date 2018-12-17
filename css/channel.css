@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    background-image: url('../imagens/gplay.png');
+    background-color: #e6e6e6;
+    height: 100%;
+    padding: 0;
+}
+
+
+.main {
+    width: 100em;
+    margin: 60px 20px;
+    display: grid;
+    grid-template-columns: [left] 25% [middle] 55% [right];
+    grid-template-rows: [top] auto [bottom];
+    grid-row: top / bottom;
+}
+
+.main #bio   {
+    display: block;
+    margin-bottom: 50%;
+    padding: 20px;
+    grid-column: left / middle;
+    font-family: "Open Sans Condensed";
+    border-radius: 2%;
+    color:white;
+    width: 250px;
+    height: 400px;
+    line-height: 50%;
+}
+
+.main #posts {
+    grid-column: middle / right;
+}
+
+
+.main #bio h5:before {
+    content:"• ";
+}
+
+.main #bio h5 {
+    font-family: "Quicksand";
+    font-weight: 300;
+}
+
+
+#myBtn {
+    display:inline-block;
+    background-image: url('../imagens/plus.png');
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: left;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Quicksand';
+    width: 130px;
+    height:40px;
+    text-align: right;
+    line-height: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#myBtn:hover {
+    color: rgb(16,0,32);
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  display: flex;
+  background-color: rgb(250,250,250);
+  background-image: url('../imagens/profile.png');
+  margin: 15% auto; 
+  padding: 20px;
+  height: 30%;
+  width: 50%; 
+  border-radius: 10px;
+  flex-direction:  column;
+}
+
+.minidiv {
+  display: block;
+}
+
+.modal-content textarea {
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Open Sans Condensed';
+    background-color: rgba(146,146,146,0.4);
+    float: left;;
+    width: 700px
+}
+
+.modal-content textarea {
+    margin: 5px;
+    height: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 35px;
+  margin-top: 5px;
+}
+
+.modal-content button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Open Sans Condensed';
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: rgba(56, 197, 130, 0.95);
+    color: white; 
+    margin-left: 10px;
+    height: 40px;
+    width: 100px;
+}
+
+.modal-content p {
+  font-family: 'Open Sans Condensed';
+  color: rgb(16, 0, 32);
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 2px;
+  margin-left: 5px;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
