@@ -25,7 +25,7 @@
         elseif(isset($_POST['change_job'])){
             changeJob($dbh, $account_id, $new_info);
         }
-        header('Location: ./profile.php');
+        header('Location: ./change_profile.php');
     }
 
     function changeName($dbh, $account_id, $new_info){

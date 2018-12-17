@@ -1,103 +1,124 @@
 body {
-
     margin: 0;
-    background-image: url('../imagens/changeII.gif');
-    background-repeat: no-repeat;
     background-color: rgba(229, 238, 234, 0.5);
     height: 100%;
-    background-position: 81.5% 65%;
-    background-size: 30%, 100%;
     padding: 0;
     overflow: hidden;
 }
 
-
 .editInfo {
     display: block;
-    background-color: rgba(56, 197, 130, 0.7);
-    padding: 30px 20px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 10%;
-    width: 30%;
-    height: 30%;
+    background-color: white;
+    width: 40%;
+    height: 50%;
     border-radius: 10px;
-    margin-bottom: 5%;
+    box-shadow: 5px 5px rgb(45, 159, 104);
+    background-image: url('../imagens/change.gif');
 }
 
-
-.editInfo #change {
-    margin: 30px;
-    margin-left: 20%;
-}
-
-.editInfo #change input {
+.editInfo h4 {
     font-family: 'Open Sans Condensed';
-    outline: none;
-    height: 20px;
+    line-height: 80%;
+    margin-left: 5%;
+    color: rgb(130,130,130);
+    font-weight: 300;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.editInfo h4:before {
+    content:"•  ";
+}
+
+.editInfo h4:hover {
+    background-image: url('../imagens/editII.png');
+    background-repeat: no-repeat;
+    background-size: 3%;
+    background-position: 80% 50%;
+}
+
+#usernameEdit {margin-top: 10%;}
+
+.changeName, .changeUsername, .changeBirthday, .changeCity, .changeJob, .changeEmail {
+    display: none;
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    top:70%;
     border-radius: 5px;
-    border: none;
+}
+
+.editInfo input {
+    font-family: 'Open Sans Condensed';
     padding: 5px;
 }
 
-.editInfo #change input[type=text] {
-    width: 200px;
+.editInfo input[type=text] {
+    border: none;
+    outline-color: rgb(56, 197, 130);
+    width: 250px;
 }
 
-.editInfo #change input[type=submit] {
-    height: 30px;
+.editInfo label {
+    font-family:'Open Sans Condensed';
+    color: rgb(130,130,130);
 }
 
+.editInfo input[type=submit]{
+    background-color: rgb(56, 197, 130);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 70px;
+    cursor: pointer;
+}
 
 .profilePic {
     display: flex;
-    margin-top: 11%;
-    margin-left:auto;
+    margin-top: 2%;
+    margin-left: 5%;
     flex-direction: column;
-    background-color: rgb(229, 238, 234);
-    padding: 30px 30px;
-    padding-right: 50px;
-    height: 30%;
-    color: rgb(130,130,130);
+    height: 80%;
+    color: white;
     font-family: 'Open Sans Condensed';
-    border-radius: 10px;
-    border: 1px solid rgba(130,130,130, 0.1);
+    background-color: rgb(56, 197, 130);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #profilephoto {
-    border-radius:10px;
     padding: 2px;
-    border: 1px double rgba(130,130,130, 0.5);
     margin-bottom: 20px;
+    margin-top: 10%;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgb(45, 159, 104);
 }
 
 .profilePic input {
-    color: rgb(130,130,130);
+    color: white;
     font-family: 'Open Sans Condensed';
-}
-
-.profilePic input[type=file]{
-    z-index: 1;
 }
 
 #profilePicHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-#profilePicHeader h2 {
+    margin-top: 10px;
     margin-left: 10px;
 }
 
-.main {
-    display: flex;
-    flex-direction: row;
-}
+#profilePicHeader h2 {margin-left: 10px;}
 
 #submit {
     display:block;
-    background-color: white;
+    background-color: rgb(56, 197, 130);
+    color: white;
     border: none;
     padding: 5px;
     text-align: center;
@@ -108,21 +129,27 @@ body {
     width: 40%;
     font-size: 15px;
     margin-top: 34px;
+    border: 1px solid rgba(255,255,255, 0.2);
 }
 
-#submit:hover{
-    color: rgb(56, 197, 130);
+.main {
+    display: flex;
+    background-color: rgb(56, 197, 130);
+    width: 70%;
+    height: 500px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    border-radius: 10px;
 }
 
-footer {
-    position: absolute !important;
-    bottom: 0px !important;
-}
+.editInfo h4:hover {color: rgb(56, 197, 130);}
 
-.navBar {
-    background-image: url('../imagens/gplay.png');
-}
+#submit:hover {background-color: white; color:rgb(56, 197, 130);}
 
-.logOut img, .menu img {
-    background-color: rgba(229, 238, 234, 0.9);
-}
+footer {position: absolute !important;}
+
+.navBar {background-image: url('../imagens/gplay.png');}
+
+.logOut img, .menu img {background-color: rgba(229, 238, 234, 0.9);}

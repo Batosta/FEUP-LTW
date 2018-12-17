@@ -1,0 +1,25 @@
+body{
+
+    margin: 0 0 -40px;
+    background-color: #e6e6e6;
+    height: 100%;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+.main {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    flex-direction: column;
+    margin-bottom: 10%;
+    width: 30%;
+    padding: 5%;
+    background-color: rgba(130, 130, 130, 0.5);
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: 'Open Sans Condensed';
+}
