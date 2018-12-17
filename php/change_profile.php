@@ -7,6 +7,8 @@
     include ('utilities_functions.php');
     include ('./session.php');
 
+    $warningID = $_GET['id'];
+
     $account_id = $_SESSION['accountID'];
     $accountUsername = getAccountUsername($dbh, $account_id);
     $accountPhoto = getAccountPhoto($dbh, $account_id);
@@ -45,8 +47,17 @@
           <input id="submit" type="submit" value="Change Image" name="submit">
         </form>
       </div>
-
-      <div class="editInfo"> 
+      <div class ="warning">
+          <h3>
+            <?
+            if($warningID == 1)
+              echo 'Username is already in use!';
+            else if($warningID == 2)
+              echo 'Email is already in use!';
+            ?>
+          </h3>
+        </div>
+      <div class="editInfo">
         <h4 id="usernameEdit" onclick="openUsername()"><?=$accountUsername ?></h4>
         <h4 onclick="openName()"><?=$accountName ?></h4>
         <h4 onclick="openEmail()"><?=$accountEmail ?></h4>
@@ -57,7 +68,7 @@
         <div class="changeName" id="changeName">
           <label for="new_info"> Name </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change Name">
+            <input type="text" name="new_info" placeholder="Change Name" required="required">
             <input id="submitButton" type="submit" class="button" name="change_name" value="Change" >
           </form>
         </div>
@@ -65,7 +76,7 @@
         <div class="changeUsername" id="changeUsername">
           <label for="new_info"> Username </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change Username">
+            <input type="text" name="new_info" placeholder="Change Username" required="required">
             <input id="submitButton" type="submit" class="button" name="change_username" value="Change" >
           </form>
         </div>
@@ -73,7 +84,7 @@
         <div class="changeEmail" id="changeEmail"> 
           <label for="new_info"> Email </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change Email">
+            <input type="text" name="new_info" placeholder="Change Email" required="required">
             <input id="submitButton" type="submit" class="button" name="change_email" value="Change" >
           </form>
         </div>
@@ -81,7 +92,7 @@
         <div class="changeAge" id="changeAge">
           <label for="new_info"> Age </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change Age">
+            <input type="number" name="new_info" placeholder="Change Age" min="1" max="120" required="required" required="required">
             <input id="submitButton" type="submit" class="button" name="change_age" value="Change" >
           </form>
         </div>
@@ -89,7 +100,7 @@
         <div class="changeCity" id="changeCity">
           <label for="new_info"> City </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change City">
+            <input type="text" name="new_info" placeholder="Change City" required="required">
             <input id="submitButton" type="submit" class="button" name="change_city" value="Change" >
           </form>
         </div>
@@ -97,7 +108,7 @@
         <div class="changeJob" id="changeJob">
           <label for="new_info"> Job </label>
           <form id="change" action="change_profile_functions.php" method="post">
-            <input type="text" name="new_info" placeholder="Change Job">
+            <input type="text" name="new_info" placeholder="Change Job" required="required">
             <input id="submitButton" type="submit" class="button" name="change_job" value="Change" >
           </form>
         </div>

@@ -10,6 +10,7 @@
     if($_POST){
         if(isset($_POST['change_name'])){
             changeName($dbh, $account_id, $new_info);
+            header('Location: ./change_profile.php');
         } 
         elseif(isset($_POST['change_username'])){
             changeUsername($dbh, $account_id, $new_info);
@@ -19,14 +20,16 @@
         } 
         elseif(isset($_POST['change_age'])){
             changeAge($dbh, $account_id, $new_info);
+            header('Location: ./change_profile.php');
         } 
         elseif(isset($_POST['change_city'])){
             changeCity($dbh, $account_id, $new_info);
+            header('Location: ./change_profile.php');
         } 
         elseif(isset($_POST['change_job'])){
             changeJob($dbh, $account_id, $new_info);
+            header('Location: ./change_profile.php');
         }
-        header('Location: ./change_profile.php');
     }
 
     function changeName($dbh, $account_id, $new_info){
@@ -36,13 +39,30 @@
     }
     function changeUsername($dbh, $account_id, $new_info){
 
-        $stmt = $dbh->prepare('UPDATE Account SET username = ? WHERE accountID = ?');
-        $stmt->execute(array($new_info, $account_id));
+        $availableUsername = checkAvailableUsername($dbh, $new_info);
+        if($availableUsername == null){
+            
+            $stmt = $dbh->prepare('UPDATE Account SET username = ? WHERE accountID = ?');
+            $stmt->execute(array($new_info, $account_id));
+            header('Location: ./change_profile.php');
+        }
+        else{
+
+            header('Location: ./change_profile.php?id=1');
+        }
     }
     function changeEmail($dbh, $account_id, $new_info){
 
-        $stmt = $dbh->prepare('UPDATE Account SET email = ? WHERE accountID = ?');
-        $stmt->execute(array($new_info, $account_id));
+        $availableEmail = checkAvailableEmail($dbh, $new_info);
+        if($availableEmail == null){
+            $stmt = $dbh->prepare('UPDATE Account SET email = ? WHERE accountID = ?');
+            $stmt->execute(array($new_info, $account_id));
+            header('Location: ./change_profile.php');
+        }
+        else{
+
+            header('Location: ./change_profile.php?id=2');
+        }
     }
     function changeAge($dbh, $account_id, $new_info){
 
