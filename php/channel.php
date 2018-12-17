@@ -62,8 +62,10 @@
           else { ?>
 
             <h3>Subscribe this channel to see their posts and to publish your own</h3>
-        <?} ?>  
+        <?} ?>
       </section>
+
+      <? draw_other_pages(); ?>
     </div>  
   </body>
 

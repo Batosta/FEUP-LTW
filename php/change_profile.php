@@ -56,7 +56,6 @@
 
         <div class="changeName" id="changeName">
           <label for="new_info"> Name </label>
-          <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change Name">
             <input id="submitButton" type="submit" class="button" name="change_name" value="Change" >
@@ -65,7 +64,6 @@
 
         <div class="changeUsername" id="changeUsername">
           <label for="new_info"> Username </label>
-          <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change Username">
             <input id="submitButton" type="submit" class="button" name="change_username" value="Change" >
@@ -74,7 +72,6 @@
 
         <div class="changeEmail" id="changeEmail"> 
           <label for="new_info"> Email </label>
-          <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change Email">
             <input id="submitButton" type="submit" class="button" name="change_email" value="Change" >
@@ -83,7 +80,6 @@
 
         <div class="changeAge" id="changeAge">
           <label for="new_info"> Age </label>
-          <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change Age">
             <input id="submitButton" type="submit" class="button" name="change_age" value="Change" >
@@ -92,7 +88,6 @@
 
         <div class="changeCity" id="changeCity">
           <label for="new_info"> City </label>
-           <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change City">
             <input id="submitButton" type="submit" class="button" name="change_city" value="Change" >
@@ -101,39 +96,45 @@
 
         <div class="changeJob" id="changeJob">
           <label for="new_info"> Job </label>
-          <span onclick="closeButton()" id="x" class="close">&times;</span>
           <form id="change" action="change_profile_functions.php" method="post">
             <input type="text" name="new_info" placeholder="Change Job">
             <input id="submitButton" type="submit" class="button" name="change_job" value="Change" >
           </form>
         </div>
 
-         <script>
+        <script>
           function openName() {
+            closeButton();
             document.getElementById("changeName").style.display = "block";
           }
 
           function openUsername() {
+            closeButton();
             document.getElementById("changeUsername").style.display = "block";
           }
 
           function openEmail() {
+            closeButton();
             document.getElementById("changeEmail").style.display = "block";
           }
 
           function openAge() {
+            closeButton();
             document.getElementById("changeAge").style.display = "block";
           }
 
           function openCity() {
+            closeButton();
             document.getElementById("changeCity").style.display = "block";
           }
 
           function openJob() {
+            closeButton();
             document.getElementById("changeJob").style.display = "block";
           }
 
           function closeForm() {
+            closeButton();
             document.getElementById("submitButton").style.display = "none";
           }
 
@@ -144,7 +145,7 @@
             document.getElementById("changeAge").style.display = "none";
             document.getElementById("changeCity").style.display = "none";
             document.getElementById("changeJob").style.display = "none";
-          }
+          } 
         </script>
       </div>
     </div>
