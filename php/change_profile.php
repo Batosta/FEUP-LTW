@@ -12,7 +12,7 @@
     $accountPhoto = getAccountPhoto($dbh, $account_id);
     $accountName = getAccountName($dbh, $account_id);
     $accountEmail = getAccountEmail($dbh, $account_id);
-    $accountBirthday = getAccountBirthday($dbh, $account_id);
+    $accountAge = getAccountAge($dbh, $account_id);
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
   ?>
@@ -50,91 +50,88 @@
         <h4 id="usernameEdit" onclick="openUsername()"><?=$accountUsername ?></h4>
         <h4 onclick="openName()"><?=$accountName ?></h4>
         <h4 onclick="openEmail()"><?=$accountEmail ?></h4>
-        <h4 onclick="openBirthday()"><?=$accountBirthday ?></h4>
+        <h4 onclick="openAge()"><?=$accountAge ?></h4>
         <h4 onclick="openCity()"><?=$accountCity ?></h4>
         <h4 onclick="openJob()"><?=$accountJob ?></h4>
 
-      <div class="changeName" id="changeName">
-        <label for="new_info"> Name </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change Name">
-          <input id="submitButton" type="submit" class="button" name="change_name" value="Change" >
-        </form>
+        <div class="changeName" id="changeName">
+          <label for="new_info"> Name </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change Name">
+            <input id="submitButton" type="submit" class="button" name="change_name" value="Change" >
+          </form>
+        </div>
+
+        <div class="changeUsername" id="changeUsername">
+          <label for="new_info"> Username </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change Username">
+            <input id="submitButton" type="submit" class="button" name="change_username" value="Change" >
+          </form>
+        </div>
+
+        <div class="changeEmail" id="changeEmail"> 
+          <label for="new_info"> Email </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change Email">
+            <input id="submitButton" type="submit" class="button" name="change_email" value="Change" >
+          </form>
+        </div>
+
+        <div class="changeAge" id="changeAge">
+          <label for="new_info"> Age </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change Age">
+            <input id="submitButton" type="submit" class="button" name="change_age" value="Change" >
+          </form>
+        </div>
+
+        <div class="changeCity" id="changeCity">
+          <label for="new_info"> City </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change City">
+            <input id="submitButton" type="submit" class="button" name="change_city" value="Change" >
+          </form>
+        </div>
+
+        <div class="changeJob" id="changeJob">
+          <label for="new_info"> Job </label>
+          <form id="change" action="change_profile_functions.php" method="post">
+            <input type="text" name="new_info" placeholder="Change Job">
+            <input id="submitButton" type="submit" class="button" name="change_job" value="Change" >
+          </form>
+        </div>
+
+         <script>
+          function openName() {
+            document.getElementById("changeName").style.display = "block";
+          }
+
+          function openUsername() {
+            document.getElementById("changeUsername").style.display = "block";
+          }
+
+          function openEmail() {
+            document.getElementById("changeEmail").style.display = "block";
+          }
+
+          function openAge() {
+            document.getElementById("changeAge").style.display = "block";
+          }
+
+          function openCity() {
+            document.getElementById("changeCity").style.display = "block";
+          }
+
+          function openJob() {
+            document.getElementById("changeJob").style.display = "block";
+          }
+
+          function closeForm() {
+            document.getElementById("submitButton").style.display = "none";
+          }
+        </script>
       </div>
-
-      <div class="changeUsername" id="changeUsername">
-        <label for="new_info"> Username </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change Username">
-          <input id="submitButton" type="submit" class="button" name="change_username" value="Change" >
-        </form>
-      </div>
-
-      <div class="changeEmail" id="changeEmail"> 
-        <label for="new_info"> Email </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change Email">
-          <input id="submitButton" type="submit" class="button" name="change_email" value="Change" >
-        </form>
-      </div>
-
-      <div class="changeBirthday" id="changeBirthday">
-        <label for="new_info"> Birthday </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change Birthday">
-          <input id="submitButton" type="submit" class="button" name="change_birthday" value="Change" >
-        </form>
-      </div>
-
-      <div class="changeCity" id="changeCity">
-        <label for="new_info"> City </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change City">
-          <input id="submitButton" type="submit" class="button" name="change_city" value="Change" >
-        </form>
-      </div>
-
-      <div class="changeJob" id="changeJob">
-        <label for="new_info"> Job </label>
-        <form id="change" action="change_profile_functions.php" method="post">
-          <input type="text" name="new_info" placeholder="Change Job">
-          <input id="submitButton" type="submit" class="button" name="change_job" value="Change" >
-        </form>
-      </div>
-
-       <script>
-        function openName() {
-          document.getElementById("changeName").style.display = "block";
-        }
-
-        function openUsername() {
-          document.getElementById("changeUsername").style.display = "block";
-        }
-
-        function openEmail() {
-          document.getElementById("changeEmail").style.display = "block";
-        }
-
-        function openBirthday() {
-          document.getElementById("changeBirthday").style.display = "block";
-        }
-
-        function openCity() {
-          document.getElementById("changeCity").style.display = "block";
-        }
-
-        function openJob() {
-          document.getElementById("changeJob").style.display = "block";
-        }
-
-        function closeForm() {
-          document.getElementById("submitButton").style.display = "none";
-        }
-      </script>
-
-
-    </div>
-
     </div>
   </body>
 

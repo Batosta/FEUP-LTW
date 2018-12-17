@@ -2,5 +2,5 @@
 	session_start();
     session_destroy();
     $_SESSION['status']="Unactive";
-    header('Location: ../html/login.html');
+    header('Location: ../login.html');
 ?>

@@ -13,7 +13,7 @@ create table Account(
     passW text(30) not null,
     email text(40) not null unique,
     username text(20) not null unique,
-    birthday text(10),
+    age integer,
     city text(20),
     job text(30),
     photo text(100)
@@ -35,8 +35,8 @@ create table ChannelUsers(
 -- Table with every post made by every user in every channel
 create table Post(
     postID integer primary key autoincrement,
-    accountID integer references Account(accountID),
-    channelID integer references Channel(channelID),
+    accountID integer not null references Account(accountID),
+    channelID integer not null references Channel(channelID),
     title text(50) not null,
     photo text(100),
     description text(200) not null,
@@ -53,15 +53,15 @@ create table LikeUser(
 -- Table with all the comments of every post
 create table Comment(
     commentID integer primary key autoincrement,
-    postID integer references Post(postID),
-    accountID integer references Account(accountID),
+    postID integer not null references Post(postID),
+    accountID integer not null references Account(accountID),
     commentText text not null
 );
 
 -- Table with all the subcomments for every comment
 create table SubComment(
     subcommentID integer primary key autoincrement,
-    commentID integer references Comment(commentID),
-    accountID integer references Account(accountID),
+    commentID integer not null references Comment(commentID),
+    accountID integer not null references Account(accountID),
     subcommentText text not null
 );

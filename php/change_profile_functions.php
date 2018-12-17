@@ -16,8 +16,8 @@
         elseif(isset($_POST['change_email'])){
             changeEmail($dbh, $account_id, $new_info);
         } 
-        elseif(isset($_POST['change_birthday'])){
-            changeBirthday($dbh, $account_id, $new_info);
+        elseif(isset($_POST['change_age'])){
+            changeAge($dbh, $account_id, $new_info);
         } 
         elseif(isset($_POST['change_city'])){
             changeCity($dbh, $account_id, $new_info);
@@ -43,9 +43,9 @@
         $stmt = $dbh->prepare('UPDATE Account SET email = ? WHERE accountID = ?');
         $stmt->execute(array($new_info, $account_id));
     }
-    function changeBirthday($dbh, $account_id, $new_info){
+    function changeAge($dbh, $account_id, $new_info){
 
-        $stmt = $dbh->prepare('UPDATE Account SET birthday = ? WHERE accountID = ?');
+        $stmt = $dbh->prepare('UPDATE Account SET age = ? WHERE accountID = ?');
         $stmt->execute(array($new_info, $account_id));
     }
     function changeCity($dbh, $account_id, $new_info){

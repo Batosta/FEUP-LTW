@@ -14,7 +14,7 @@
     $accountName = getAccountName($dbh, $account_id);
     $accountPhoto = getAccountPhoto($dbh, $account_id);
     $accountEmail = getAccountEmail($dbh, $account_id);
-    $accountBirthday = getAccountBirthday($dbh, $account_id);
+    $accountAge = getAccountAge($dbh, $account_id);
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
     $accountPoints = getAccountPoints($dbh, $account_id);
@@ -40,9 +40,9 @@
         <img src='../imagens/<?=$accountPhoto?>' alt="Profile photo" height="150" width="150">
         <h2><?=$accountUsername ?></h2>
         <h4><?=$accountName ?></h4>
-        <h4>Points: <?=$accountPoints ?></h4>
+        <h4><points><?=$accountPoints ?></points></h4>
         <h5><?=$accountEmail ?></h5>
-        <h5><?=$accountBirthday ?></h5>
+        <h5><age><?=$accountAge ?></age></h5>
         <h5><?=$accountCity ?></h5>
         <h5><?=$accountJob ?></h5>
       </section>

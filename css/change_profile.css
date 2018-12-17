@@ -43,7 +43,7 @@ body {
 
 #usernameEdit {margin-top: 10%;}
 
-.changeName, .changeUsername, .changeBirthday, .changeCity, .changeJob, .changeEmail {
+.changeName, .changeUsername, .changeAge, .changeCity, .changeJob, .changeEmail {
     display: none;
     width: 350px;
     height: 50px;

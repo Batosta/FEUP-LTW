@@ -32,13 +32,13 @@
 
         return $row['username'];
     }
-    function getAccountBirthday($dbh, $accountID){
+    function getAccountAge($dbh, $accountID){
 
-        $stmt = $dbh->prepare('SELECT birthday FROM Account WHERE ? = accountID');
+        $stmt = $dbh->prepare('SELECT age FROM Account WHERE ? = accountID');
         $stmt->execute(array($accountID));
         $row = $stmt->fetch();
 
-        return $row['birthday'];
+        return $row['age'];
     }
     function getAccountCity($dbh, $accountID){
 

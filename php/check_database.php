@@ -13,7 +13,7 @@ foreach ($result as $row) {
     echo $row['passW'], "|";
     echo $row['email'], "|";
     echo $row['username'], "|";
-    echo $row['birthday'], "|";
+    echo $row['age'], "|";
     echo $row['city'], "|";
     echo $row['job'], "|";
     echo $row['photo'], "<br>";

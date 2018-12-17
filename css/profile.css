@@ -58,6 +58,16 @@ body {
     padding: 5px;
 }
 
+.main #bio points:before {
+
+  content: 'Points: ';
+}
+
+.main #bio age:after {
+
+  content: ' years old';
+}
+
 #insta, #face, #spotify {
     display: block;
     background-image: url('../imagens/instagram.png');

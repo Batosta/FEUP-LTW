@@ -34,7 +34,7 @@
 
             <div class="searchBar">
                 <form action="search.php" method="post">
-                    <input type="text" name="search" placeholder="Search something in your profile">
+                    <input type="text" name="search" placeholder="Search something">
                 </form>
             </div>
               
