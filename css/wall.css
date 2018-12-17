@@ -37,6 +37,9 @@ body {
     padding: 7px;
     border-right: 20px solid transparent;
     margin-top: 5px;
+    background-image: url('../imagens/main.png');
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
 
 }
 
@@ -68,11 +71,11 @@ body {
 }
 
 @keyframes colorChange {
-  0%   {border-right-color:#38c582;}
-  25%  {border-right-color:#6699ff;}
-  50%  {border-right-color:#9966ff; }
-  75%  {border-right-color:#993399;}
-  100% {border-right-color:#660033; }
+  0%   {background-color:#38c582;}
+  25%  {background-color:#6699ff;}
+  50%  {background-color:#9966ff; }
+  75%  {background-color:#993399;}
+  100% {background-color:#660033; }
 }
 
 #myBtn {
