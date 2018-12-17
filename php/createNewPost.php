@@ -10,6 +10,8 @@
     $newPost_description = $_POST['description'];
     $newPost_channelID = $_POST['channel'];
 
+    echo $newPost_channelID;
+
     $stmt = $dbh->prepare('INSERT INTO Post (postID, accountID, channelID, title, photo, description, points) VALUES (NULL, ?, ?, ?, ?, ?, ?);');
     $stmt->execute(array($accountID, $newPost_channelID, $newPost_title, $newPost_photo, $newPost_description, 0));
 

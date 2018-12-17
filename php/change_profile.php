@@ -3,7 +3,8 @@
   <?
 
     $dbh = new PDO('sqlite:database.db');
-    include ('user_functions.php');
+    include ('account_functions.php');
+    include ('utilities_functions.php');
     include ('./session.php');
 
     $account_id = $_SESSION['accountID'];
@@ -12,9 +13,9 @@
   ?>
   <head>
     <title>Edit Profile</title> 
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/change_profile.css" rel="stylesheet">
-    <link href="imagens/icon.png" rel="shortcut icon">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/change_profile.css" rel="stylesheet">
+    <link href="../imagens/icon.png" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300, 300i|Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300" rel="stylesheet">
@@ -28,11 +29,11 @@
       <div class="profilePic">
 
         <div id="profilePicHeader" class="profilePicHeader">
-          <img src="imagens/edit.png" height="20" width="20">
+          <img src="../imagens/edit.png" height="20" width="20">
           <h2> Edit Profile </h2>
         </div>
 
-        <img id="profilephoto" src=imagens/<?=$accountPhoto?> alt="Profile photo" height="150" width="150">
+        <img id="profilephoto" src="../imagens/<?=$accountPhoto?>"" alt="Profile photo" height="150" width="150">
         <form action="uploadUserImage.php" method="post" enctype="multipart/form-data">
           Select image to upload: 
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">

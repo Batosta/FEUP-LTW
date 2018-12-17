@@ -6,7 +6,6 @@
     $account_id = $_SESSION['accountID'];
     $new_info = $_POST['new_info'];
 
-
     if($_POST){
         if(isset($_POST['change_name'])){
             changeName($dbh, $account_id, $new_info);

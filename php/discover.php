@@ -2,7 +2,9 @@
 <html lang="en-US">
   <?php
     $dbh = new PDO('sqlite:database.db');
-    include ('user_functions.php');
+    include ('account_functions.php');
+    include ('channel_functions.php');
+    include ('utilities_functions.php');
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
@@ -14,10 +16,10 @@
   ?>
   <head>
     <title>Home Page</title>
-    <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="css/wall.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/post_style.css" rel="stylesheet">
+    <link href="../imagens/icon.png" rel="shortcut icon">
+    <link href="../css/wall.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>
@@ -29,7 +31,7 @@
     <div class="mainContent">
 
       <div class="miniHeader"> 
-        <img src="imagens/music.png" width="30" height="30">
+        <img src="../imagens/music.png" width="30" height="30">
         <h2 id="siteName"> Aria </h2>
       </div>
 

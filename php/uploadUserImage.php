@@ -1,7 +1,7 @@
 <?php
         
 include ('./session.php');
-include_once('user_functions.php');
+include_once('utilities_functions.php');
 
 $dbh = new PDO('sqlite:database.db');
 $account_id = $_SESSION['accountID'];

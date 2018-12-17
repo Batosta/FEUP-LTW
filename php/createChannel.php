@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US"> 
   <?
-    include ('user_functions.php');
+    include ('./account_functions.php');
+    include ('./utilities_functions.php');
     include ('./session.php');
     
     $dbh = new PDO('sqlite:database.db');
@@ -12,9 +13,9 @@
   ?>
   <head>
     <title>Create Channel</title> 
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="profile.css" rel="stylesheet">
-    <link href="common.css" rel="stylesheet">
+    <link href="../favicon.ico" rel="shortcut icon">
+    <link href="../css/profile.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
   </head>
   
   <body>

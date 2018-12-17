@@ -2,7 +2,11 @@
 <html lang="en-US"> 
   <?
     $dbh = new PDO('sqlite:database.db');
-    include ('./user_functions.php');
+
+    include ('account_functions.php');
+    include ('channel_functions.php');
+    include ('post_functions.php');
+    include ('utilities_functions.php');
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
@@ -18,19 +22,17 @@
 
   <head>
     <title><?=$channel_name?></title> 
-    <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/profile.css" rel="stylesheet">
-    <link href="css/post_style.css" rel="stylesheet">
+    <link href="../imagens/icon.png" rel="shortcut icon">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
+    <link href="../css/post_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>
 
   <body>
     
-    <?  
-
-    draw_header($accountPhoto, $accountUsername); ?>
+    <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
       <section id="bio">
@@ -51,15 +53,16 @@
       </section>
       <section id="posts">
 
-      <?
-      if($subscription == 1) {
+        <?
+          if($subscription == 1) {
 
-        showAllChannelPosts($dbh, $channel_id, $account_id);
-      }
-      else { ?>
+            createPost($channel_id);
+            showAllChannelPosts($dbh, $channel_id, $account_id);
+          }
+          else { ?>
 
-        <h3>Subscribe this channel to see their posts</h3>
-      <? } ?>  
+            <h3>Subscribe this channel to see their posts and to publish your own</h3>
+        <?} ?>  
       </section>
     </div>  
   </body>

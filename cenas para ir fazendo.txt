@@ -7,5 +7,3 @@ Shits que temos de ir fazendo...a ordem nao interessa neste caso...checkem só q
 2. nao aceitares mails/usernames iguais (fazer um popupzinho if possible)
 
 3. upwnload imagens - https://stackoverflow.com/questions/4360568/allow-users-to-upload-a-pic-for-their-profile ;)
-
-4. comentários iguais nao estao a funcionar

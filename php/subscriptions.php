@@ -2,7 +2,9 @@
 <html lang="en-US"> 
   <?
     $dbh = new PDO('sqlite:database.db');
-    include ('user_functions.php');
+    include ('account_functions.php');
+    include ('channel_functions.php');
+    include ('utilities_functions.php');
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
@@ -14,9 +16,9 @@
 
   <head>
     <title>Profile</title> 
-    <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/profile.css" rel="stylesheet">
+    <link href="../imagens/icon.png" rel="shortcut icon">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>

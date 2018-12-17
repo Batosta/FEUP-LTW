@@ -17,5 +17,5 @@ $stmt = $dbh->prepare('INSERT INTO Account (accountID, personName, passW, email,
 $stmt->execute(array($name, $hashPass, $email, $username, $age));
 
 
-header('Location: ./check_database.php');
+header('Location: ./login.php');
 ?>
