@@ -9,7 +9,7 @@
 	    include ('utilities_functions.php');
 	    include ('session.php');
 
-		$search_text = $_POST['search'];
+		$search_text = htmlspecialchars($_POST['search']);
 
 		$account_id = $_SESSION['accountID'];
 	    $accountUsername = getAccountUsername($dbh, $account_id);

@@ -5,7 +5,7 @@
 
     $dbh = new PDO('sqlite:database.db');
     $account_id = $_SESSION['accountID'];
-    $new_info = $_POST['new_info'];
+    $new_info = htmlspecialchars($_POST['new_info']);
 
     if($_POST){
         if(isset($_POST['change_name'])){

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <?
-
     $warningID = null;
     $warningID = $_GET['id'];
   ?>

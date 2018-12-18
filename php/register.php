@@ -5,11 +5,11 @@ include_once("./register_functions.php");
 
 $dbh = new PDO('sqlite:database.db');
 
-$name = $_POST['name'];
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$repassword = $_POST['repassword'];
+$name = htmlspecialchars($_POST['name']);
+$username = htmlspecialchars($_POST['username']);
+$email = htmlspecialchars($_POST['email']);
+$password = htmlspecialchars($_POST['password']);
+$repassword = htmlspecialchars($_POST['repassword']);
 $age = $_POST['age'];
 
 

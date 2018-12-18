@@ -5,9 +5,9 @@
 
     $accountID = $_SESSION['accountID'];
 
-    $title = $_POST['title'];
-    $photo = $_POST['photo'];
-    $description = $_POST['description'];
+    $title = htmlspecialchars($_POST['title']);
+    $photo = htmlspecialchars($_POST['photo']);
+    $description = htmlspecialchars($_POST['description']);
     $channelID = $_POST['channel'];
 
     $epoch = time();
