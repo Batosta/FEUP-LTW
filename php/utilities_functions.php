@@ -28,8 +28,8 @@
             </div>
 
             <div class="user">
-                <a href="profile.php"><img src="../imagens/<?=$accountPhoto?>" height = "25" width="25"></a>
-                <a id="tinyName" href="profile.php"><?=$accountUsername?></a>
+                <a href="profile.php?id=0"><img src="../imagens/<?=$accountPhoto?>" height = "25" width="25"></a>
+                <a id="tinyName" href="profile.php?id=0"><?=$accountUsername?></a>
             </div>
 
             <div class="searchBar">

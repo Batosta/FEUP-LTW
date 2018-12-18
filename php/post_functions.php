@@ -26,13 +26,29 @@
 
         return $row['points'];
     }
-    function getPostDateHour($dbh, $postID){
+    function getPostEpoch($dbh, $postID){
 
-        $stmt = $dbh->prepare('SELECT dateHour FROM Post WHERE postID = ?');
+        $stmt = $dbh->prepare('SELECT epoch FROM Post WHERE postID = ?');
         $stmt->execute(array($postID));
         $row = $stmt->fetch();
 
-        return $row['dateHour'];
+        return $row['epoch'];
+    }
+    function getPostDateHour($dbh, $postID){
+
+        $epoch = getPostEpoch($dbh, $postID);
+        
+        $dt = new DateTime("@$epoch");
+        $dateHour = $dt->format("jS F h:i");
+
+        return $dateHour;
+    }
+    function epochToDateHour($epoch){
+
+        $dt = new DateTime("@$epoch");
+        $dateHour = $dt->format("jS F h:i");
+
+        return $dateHour;
     }
     function getPostComments($dbh, $postID){
 
@@ -68,9 +84,17 @@
             showPostByPostId($dbh, $postID, $accountID);
         }
     }
-    function showPostByAccountId($dbh, $accountID){
+    function showPostByAccountId($dbh, $accountID, $sortID){
 
-        $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ?');
+        if($sortID == 0)
+            $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ? ORDER BY epoch DESC');
+        else if($sortID == 1)
+            $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ? ORDER BY epoch ASC');
+        else if($sortID == 2)
+            $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ? ORDER BY points DESC');
+        else if($sortID == 3)
+            $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ? ORDER BY points ASC');
+
         $stmt->execute(array($accountID));
         $result = $stmt->fetchAll();
 
@@ -99,7 +123,7 @@
                     <img id="account_photo" src="../imagens/<?=$post_photo?>"" alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
                     <a id="channel_name" href="channel.php?id=<?=$post['channelID']?>"><?=$channel_name?></a>
-                    <h2 id="dateHour"><?=$post['dateHour']?></h2>
+                    <h2 id="dateHour"><?=epochToDateHour($post['epoch'])?></h2>
                 </div>
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>

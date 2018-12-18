@@ -18,6 +18,8 @@
     $accountCity = getAccountCity($dbh, $account_id);
     $accountJob = getAccountJob($dbh, $account_id);
     $accountPoints = getAccountPoints($dbh, $account_id);
+
+    $sortID = $_GET['id'];
   ?>
 
   <head>
@@ -48,8 +50,14 @@
       </section>
       <section id="posts">
         <? 
-          showPostByAccountId($dbh, $account_id);
+          showPostByAccountId($dbh, $account_id, $sortID);
         ?>
+      </section>
+      <section id="sorts">
+        <a href="profile.php?id=0">Fresh</a>
+        <a href="profile.php?id=1">Old</a>
+        <a href="profile.php?id=2">Most liked</a>
+        <a href="profile.php?id=3">Most disliked</a>
       </section>
    
     <? draw_other_pages(); ?>
