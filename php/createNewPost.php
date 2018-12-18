@@ -5,15 +5,24 @@
 
     $accountID = $_SESSION['accountID'];
 
-    $newPost_title = $_POST['title'];
-    $newPost_photo = $_POST['photo'];
-    $newPost_description = $_POST['description'];
-    $newPost_channelID = $_POST['channel'];
+    $title = $_POST['title'];
+    $photo = $_POST['photo'];
+    $description = $_POST['description'];
+    $channelID = $_POST['channel'];
 
-    echo $newPost_channelID;
+    $newDate = new DateTime();
+    $dateHour = $newDate->format("jS F h:i");
 
-    $stmt = $dbh->prepare('INSERT INTO Post (postID, accountID, channelID, title, photo, description, points) VALUES (NULL, ?, ?, ?, ?, ?, ?);');
-    $stmt->execute(array($accountID, $newPost_channelID, $newPost_title, $newPost_photo, $newPost_description, 0));
+
+    echo $accountID, '<br>';
+    echo $channelID, '<br>';
+    echo $title, '<br>';
+    echo $photo, '<br>';
+    echo $description, '<br>';
+    echo $dateHour, '<br>';
+
+    $stmt = $dbh->prepare('INSERT INTO Post(postID, accountID, channelID, title, photo, description, points, dateHour) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);');
+    $stmt->execute(array($accountID, $channelID, $title, $photo, $description, 0, $dateHour));
 
 	header('Location: ./profile.php');
 ?>

@@ -11,8 +11,6 @@
     $accountUsername = getAccountUsername($dbh, $account_id);
     $accountPhoto = getAccountPhoto($dbh, $account_id);
     $channel_ids = getChannelIDs($dbh, $account_id);
-    $channel_id = $_GET['id'];
-    $subscription = getSubscription($dbh, $account_id, $channel_id);
   ?>
 
   <head>
@@ -40,18 +38,10 @@
         ?>
         <a href="channel.php?id=<?=$channel_id[0]?>"><?=$channel_name?>
         <form id="subscription" action="subscribe.php" method="post">
-          <input type="hidden" name="subscription" value="<?=$subscription?>">
-          <input type="hidden" name="channelID" value="<?=$channel_id?>">
+          <input type="hidden" name="subscription" value="1">
+          <input type="hidden" name="channelID" value="<?=$channel_id['channelID']?>">
           <input type="hidden" name="accountID" value="<?=$account_id?>">
-
-          <?
-          if($subscription == 1) { ?>
-            <input type="submit" value="Unsubscribe"> 
-          <? }
-          else{ ?>
-            <input type="submit" value="Subscribe"> 
-          <? } ?>
-
+          <input type="submit" value="Unsubscribe"> 
         </form>
       </a>
         <? }  ?>

@@ -40,7 +40,8 @@ create table Post(
     title text(50) not null,
     photo text(100),
     description text(200) not null,
-    points integer not null
+    points integer not null,
+    dateHour text(25) not null
 );
 
 -- Table that states if the user has already like a post
