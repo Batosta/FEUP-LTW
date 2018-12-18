@@ -38,8 +38,8 @@ function receiveComments(event) {
     let comment = document.createElement('article');
     comment.classList.add('comment');
 
-    comment.innerHTML = '<span class="accountID">' +
-    comments[i].accountID + '</span><p>' +
+    comment.innerHTML = '<img id="comment_photo" src="../imagens/' +
+    photo + '" alt="Comment photo" height="35" width="35"><p>' +
     comments[i].commentText + '</p>';
 
     child.appendChild(comment);
