@@ -124,6 +124,14 @@
     float: left;
 }
 
+#dateHour {
+    margin-left: auto;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
 .userInfo {
     display: flex;
     align-items: center;

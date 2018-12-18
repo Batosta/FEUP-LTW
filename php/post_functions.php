@@ -99,13 +99,12 @@
                     <img id="account_photo" src="../imagens/<?=$post_photo?>"" alt="Account photo" height="40" width="40">
                     <h2 id="username"><?=$post_username?></h2>
                     <a id="channel_name" href="channel.php?id=<?=$post['channelID']?>"><?=$channel_name?></a>
+                    <h2 id="dateHour"><?=$post['dateHour']?></h2>
                 </div>
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>
                 </div>
-                <div class="dateHour">
-                    <h2 id="dateHour"><?=$post['dateHour']?></h2>
-                </div>
+               
                 <img id="post_photo" src="../imagens/<?=$post['photo']?>"" alt="Post photo">
                 <h3 id="description"><?=$post['description']?></h3>
                 <section class="points">
