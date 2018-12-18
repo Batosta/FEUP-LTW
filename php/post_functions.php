@@ -112,6 +112,7 @@
         $post = $stmt->fetch();
 
         $postAccountID = $post['accountID'];
+        $photo = getAccountPhoto($dbh, $accountID);
         $post_photo = getAccountPhoto($dbh, $postAccountID);
         $post_username = getAccountUsername($dbh, $postAccountID);
         $channel_name = getChannelName($dbh, $post['channelID']);
@@ -181,6 +182,7 @@
                     <label>
                         <textarea name="text" required="required"></textarea>
                     </label>
+                    <input type="hidden" name="photo" value="<?=$photo?>">
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
                     <input class="button" type="submit" name="submit" value="Submit">

@@ -59,7 +59,7 @@
 	      		else {
 	      			foreach($search_posts as $search_post) {
 
-	      				showPostByPostId($dbh, $search_post['postID']);
+	      				showPostByPostId($dbh, $search_post['postID'], $account_id);
 	      			} ?>
 	      			<h3>No more results to show</h3>
 	      	<?	} 	?>

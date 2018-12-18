@@ -1,10 +1,12 @@
 let commentsSection = document.getElementsByClassName("comments");
 let child;
+let photo;
 
 for(let i = 0; i < commentsSection.length; i++){
   commentsSection[i].addEventListener("submit", function(){
   child = commentsSection[i];
 
+  photo = commentsSection[i].querySelector('input[name=photo]').value;
   let pID = commentsSection[i].querySelector('input[name=postID]').value;
   let aID = commentsSection[i].querySelector('input[name=accountID]').value;
   let cText = commentsSection[i].querySelector('textarea[name=text]').value;
