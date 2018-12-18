@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: rgb(16,0,32);
-  background-image: url('../imagens/shattered-dark.png');
+  background-color: rgba(16,0,32, 0.85);
+  background-image: url('../imagens/gplay.png');
   margin: 0;
 }
 
