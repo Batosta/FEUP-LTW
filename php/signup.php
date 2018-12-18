@@ -8,8 +8,8 @@
 
   <head>
     <title>Sign Up</title>  
-    <link href="imagens/icon.png" rel="shortcut icon">
-    <link href="css/signup.css" rel="stylesheet">
+    <link href="../imagens/icon.png" rel="shortcut icon">
+    <link href="../css/signup.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand:300,400" rel="stylesheet">
   </head>
@@ -17,12 +17,12 @@
   <body>
   
     <div class="topBar">
-      <a href="index.html"><img src="imagens/icon.png" height="40" width="40"></a>
+      <a href="../index.html"><img src="../imagens/icon.png" height="40" width="40"></a>
       <p>Aria</p>
     </div>
 
     <div class="signUpMenu">
-      <form id="signup" action="php/register.php" method="post">
+      <form id="signup" action="./register.php" method="post">
         <p> Sign Up </p>
         <p>
         <?

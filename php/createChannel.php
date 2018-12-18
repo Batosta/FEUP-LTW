@@ -13,7 +13,7 @@
   ?>
   <head>
     <title>Create Channel</title> 
-    <link href="../favicon.ico" rel="shortcut icon">
+    <link href="../imagens/icon.png" rel="shortcut icon">
     <link href="../css/profile.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
   </head>
