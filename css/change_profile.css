@@ -92,6 +92,14 @@ body {
     border-radius: 5px;
 }
 
+.warning {
+    font-family: 'Open Sans Condensed';
+    color: rgb(130, 130, 130);
+    height: 10%;
+    width: 40%;
+    text-align: center;
+}
+
 #profilephoto {
     padding: 2px;
     margin-bottom: 20px;

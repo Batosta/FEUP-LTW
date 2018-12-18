@@ -134,6 +134,8 @@
                     <img id="comment_photo" src="../imagens/<?=$comment_photo?>" alt="Comment photo" height="35" width="35">
                     <h4><?=getAccountUsername($dbh, $existentComment['accountID'])?></h4>
                 </div>
+
+                <div id="commentBox" class="commentBox">
                 <h4><?=$existentComment['commentText']?></h4>
                 <? 
                 if($accountID == $existentComment['accountID']){ ?>
@@ -142,6 +144,7 @@
                         <input class="button" type="submit" name="remove" value="Delete comment">
                     </form>
                 <? } ?>
+                </div>
             </section>
             <? } ?>
             <section class="comments">
@@ -192,4 +195,24 @@
         <script src="../javascript/script.js" defer></script>
 	<? }
 
+     function createChannel($channelID){ ?>
+
+        <button id="createChannel"> Create New Channel </button>
+
+        <div id="myModal" class="modal">
+
+            <form class="modal-content" action="createNewChannel.php" method="post">
+                <div class="minidiv"> 
+                    <label>
+                        <textarea name="description" placeholder="Description" required="required"></textarea>
+                    </label>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="buttons"> 
+                    <button id="enter"> Create </button>
+                </div>
+            </form>
+        </div>
+        <script src="../javascript/script.js" defer></script>
+    <? }
 ?>

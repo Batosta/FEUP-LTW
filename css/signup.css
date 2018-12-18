@@ -6,6 +6,7 @@ body {
     background-size: 550px;
     background-attachment: fixed;
     background-position: 50% 50%;
+    overflow: hidden;
 }
 
 .signUpMenu {
@@ -14,7 +15,7 @@ body {
     position: absolute;
     width: 300px;
     right: 39%;
-    top: 26%;
+    top: 18%;
 } 
 
 #button {
@@ -53,6 +54,18 @@ footer {
     align-items: center;
 }
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.ErrorMessage {
+    font-size: 15px;
+    font-family: 'Open Sans Condensed';
+    color: white;
+    text-align: center;
+}
+
 .about {
 
     margin-left: 20px;
@@ -70,7 +83,7 @@ footer {
 
 .topBar {
     display: flex;
-    background-color: white;
+    background-color:transparent;
     height: 50px;
     align-items: center;
 }

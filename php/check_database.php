@@ -49,7 +49,7 @@ foreach ($result as $row) {
     echo $row['photo'], "|";
     echo $row['description'], "|";
     echo $row['points'], "|";
-    echo $row['dateHour'], "<br>";
+    echo $row['epoch'], "<br>";
 }
 
 echo "<br><br>LikeUser<br>";

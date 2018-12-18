@@ -172,6 +172,28 @@
     font-size: 15px;
 }
 
+#commentBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#commentBox input[type=submit] {
+    font-style: italic;
+    background-color: transparent;
+    border:none;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: 'Open Sans Condensed';
+    cursor: pointer;
+    color: rgba(255,255,255,0.8);
+}
+
+#commentBox input[type=submit]:hover {
+    color: white;
+}
+
 .commenterInfo h4:after { content:" :"; }
 
 .points {float:left; color: #d9d9d9;}

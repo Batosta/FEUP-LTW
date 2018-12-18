@@ -24,23 +24,33 @@
 
   <body>
     
-    <? draw_header($accountPhoto, $accountUsername); ?>
+  <? draw_header($accountPhoto, $accountUsername); ?>
     
-    <div class="mainContent">
-
-      <div class="subscriptions">
-
+  <div class="main">
+      <section id="bio">
+        <h1> Discover channels </h1>
+        <div class="following"> 
         <? 
         foreach($discover_channels as $discover_channel){
 
           $channel_name = getChannelName($dbh, $discover_channel['channelID']);
         ?>
-        <a href="channel.php?id=<?=$discover_channel['channelID']?>"><?=$channel_name?></a>
-        <? } ?>
-      </div>
-    </div>
+        <a href="channel.php?id=<?=$discover_channel['channelID']?>"><?=$channel_name?>
+        <form id="subscription" action="subscribe.php" method="post">
+          <input type="hidden" name="subscription" value="0">
+          <input type="hidden" name="channelID" value="<?=$channel_id['channelID']?>">
+          <input type="hidden" name="accountID" value="<?=$account_id?>">
+          <input type="submit" value="Subscribe"> 
+        </form>
+      </a>
+        <? }  ?>
+        </div>
+      </section>
+    </div> 
   
   </body>
 
   <? draw_footer(); ?>
 </html>
+
+ 

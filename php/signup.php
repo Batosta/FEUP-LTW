@@ -25,6 +25,7 @@
       <form id="signup" action="./register.php" method="post">
         <p> Sign Up </p>
         <p>
+          <div class="ErrorMessage"> 
         <?
         if($warningID == 1)
           echo 'Passwords dont match!';
@@ -33,6 +34,7 @@
         else if($warningID == 3)
           echo 'Email is already in use!';
         ?>
+        </div>
         </p>
         <p><input type="text" name="name" placeholder="Name" required="required"></p>
         <p><input type="text" name="username" placeholder="Username" required="required"></p>

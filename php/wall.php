@@ -37,7 +37,7 @@
       </div>
 
       <div class="subscriptions">
-        <a href="createChannel.php"> Create New Channel </a>
+        <? createChannel($channel_id); ?>
         <? 
         foreach($account_channels as $account_channel){
 

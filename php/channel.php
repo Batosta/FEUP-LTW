@@ -65,7 +65,6 @@
         <?} ?>
       </section>
 
-      <? draw_other_pages(); ?>
     </div>  
   </body>
 

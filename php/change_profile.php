@@ -47,16 +47,7 @@
           <input id="submit" type="submit" value="Change Image" name="submit">
         </form>
       </div>
-      <div class ="warning">
-          <h3>
-            <?
-            if($warningID == 1)
-              echo 'Username is already in use!';
-            else if($warningID == 2)
-              echo 'Email is already in use!';
-            ?>
-          </h3>
-        </div>
+
       <div class="editInfo">
         <h4 id="usernameEdit" onclick="openUsername()"><?=$accountUsername ?></h4>
         <h4 onclick="openName()"><?=$accountName ?></h4>
@@ -160,6 +151,17 @@
         </script>
       </div>
     </div>
+
+    <div class ="warning">
+      <h4>
+        <?
+        if($warningID == 1)
+          echo 'Username is already in use!';
+        else if($warningID == 2)
+          echo 'Email is already in use!';
+         ?>
+        </h4>
+      </div>
   </body>
 
   <? draw_footer(); ?>

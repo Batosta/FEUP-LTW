@@ -14,7 +14,7 @@
         $_SESSION['status']="Active";
         $accountID = getUserID($dbh, $username);
         currentUser($username, $accountID);
-        header('Location: ./profile.php');
+        header('Location: ./profile.php?id=0');
     }
     else{
         $_SESSION['ERROR'] = 'Incorrect password or username';
