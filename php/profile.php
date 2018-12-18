@@ -49,17 +49,20 @@
         <h5><?=$accountJob ?></h5>
       </section>
       <section id="posts">
-        <? 
-          showPostByAccountId($dbh, $account_id, $sortID);
-        ?>
-      </section>
+
       <section id="sorts">
         <a href="profile.php?id=0">Fresh</a>
         <a href="profile.php?id=1">Old</a>
         <a href="profile.php?id=2">Most liked</a>
         <a href="profile.php?id=3">Most disliked</a>
       </section>
-   
+
+        <? 
+          showPostByAccountId($dbh, $account_id, $sortID);
+        ?>
+      </section>
+
+  
     <? draw_other_pages(); ?>
 
   </div>
