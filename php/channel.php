@@ -10,12 +10,10 @@
     include ('session.php');
 
     $account_id = $_SESSION['accountID'];
-
     $channel_id = $_GET['id'];
     $channel_name = getChannelName($dbh, $channel_id);
     $accountUsername = getAccountUsername($dbh, $account_id);
     $accountPhoto = getAccountPhoto($dbh, $account_id);
-
     $subscription = getSubscription($dbh, $account_id, $channel_id);
     $number_subscribers = getNumberSubscriber($dbh, $channel_id);
   ?>

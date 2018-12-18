@@ -36,7 +36,6 @@
         return $row[0];
     }
 
-
     function discoverChannels($dbh, $accountID){
 
         $stmt = $dbh->prepare('SELECT channelID FROM Channel EXCEPT SELECT channelID FROM ChannelUsers WHERE accountID = ?');

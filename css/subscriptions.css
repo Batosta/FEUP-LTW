@@ -1,13 +1,11 @@
-body{
-
+body, html{
     margin: 0 0 -40px;
     background-image: url('../imagens/gplay.png');
     background-color: #e6e6e6;
     height: 100%;
     padding: 0;
     min-height: 100%;
-    position: relative;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .main {
@@ -17,10 +15,96 @@ body{
     margin-top: 10%;
     flex-direction: column;
     margin-bottom: 10%;
-    width: 30%;
+    width: 50%;
+    height: 40%;
     padding: 5%;
-    background-color: rgba(130, 130, 130, 0.5);
     text-decoration: none;
     border-radius: 10px;
     font-family: 'Open Sans Condensed';
+    background-image: linear-gradient(rgb(56, 197, 130), transparent), url('../imagens/dark-geometric.png') ;
+    box-shadow: 5px 5px rgba(130,130,130,0.5);
+}
+
+#bio a {
+    text-decoration: none;
+    color: rgb(100,100,100);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+#bio {
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+    color: rgb(100,100,100);
+}
+
+#bio h1 {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.following {
+    display: flex;
+    flex-direction: column;
+}
+
+.following a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.following a input[type=submit]{
+    background-image: url('../imagens/follow.png');
+    background-repeat: no-repeat;
+    background-size: 20%;
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+    font-family: 'Open Sans Condensed';
+    color: rgb(100,100,100);
+    cursor: pointer;
+    background-position: left;
+    padding: 10px;
+    padding-left: 25px;
+    margin-right: 10px;
+    text-align: center;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.following a input[type=submit]:hover{
+    color: rgba(100,100,100, 0.8);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+background-color: rgba(255,255,255,0.5);
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(16, 0, 32, 0.5);  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: rgba(16,0,32, 0.7);  
 }

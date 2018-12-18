@@ -63,6 +63,8 @@ body {
   -webkit-animation-duration: 4s;
   animation-name: colorChange;
   animation-duration: 4s;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
 @keyframes colorChange {
