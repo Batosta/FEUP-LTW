@@ -237,6 +237,6 @@
                 </div>
             </form>
         </div>
-        <script src="../javascript/script.js" defer></script>
+        <script src="../javascript/script1.js" defer></script>
     <? }
 ?>
