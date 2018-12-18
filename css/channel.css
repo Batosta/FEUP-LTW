@@ -1,67 +1,94 @@
 body {
-    margin: 0;
-    background-image: url('../imagens/gplay.png');
-    background-color: #e6e6e6;
-    height: 100%;
-    padding: 0;
+  margin: 0;
+  background-image: url('../imagens/gplay.png');
+  background-color: #e6e6e6;
+  height: 100%;
+  padding: 0;
 }
 
 
 .main {
-    width: 100em;
-    margin: 60px 20px;
-    display: grid;
-    grid-template-columns: [left] 25% [middle] 55% [right];
-    grid-template-rows: [top] auto [bottom];
-    grid-row: top / bottom;
+  width: 100em;
+  margin: 60px 20px;
+  display: grid;
+  grid-template-columns: [left] 25% [middle] 55% [right];
+  grid-template-rows: [top] auto [bottom];
+  grid-row: top / bottom;
 }
 
-.main #bio   {
-    display: block;
-    margin-bottom: 50%;
-    padding: 20px;
-    grid-column: left / middle;
-    font-family: "Open Sans Condensed";
-    border-radius: 2%;
-    color:white;
-    width: 250px;
-    height: 400px;
-    line-height: 50%;
+#bio   {
+  background-image: linear-gradient(rgb(56, 197, 130), transparent), url('../imagens/dark-geometric.png');
+  display: block;
+  margin-bottom: 50%;
+  margin-top: 15%;
+  padding: 20px;
+  grid-column: left / middle;
+  font-family: "Open Sans Condensed";
+  border-radius: 2%;
+  color:white;
+  width: 250px;
+  height: 200px;
+  line-height: 50%;
+  text-decoration: none;
+  box-shadow: 5px 5px rgba(130,130,130, 0.3);
 }
 
-.main #posts {
-    grid-column: middle / right;
+#bio a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  font-style: bold;
 }
 
-
-.main #bio h5:before {
-    content:"• ";
+#bio h2 {
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  font-size: 20px;
 }
 
-.main #bio h5 {
-    font-family: "Quicksand";
-    font-weight: 300;
+#subscription input[type=submit] {
+  border:1 px solid white;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Open Sans Condensed';
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-image: url(../imagens/channel.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: 5%;
+  text-align: right;
+  width: 200px;
+  margin-top: 50px;
+}
+
+#posts {
+  grid-column: middle / right;
 }
 
 
 #myBtn {
-    display:inline-block;
-    background-image: url('../imagens/plus.png');
-    background-repeat: no-repeat;
-    background-size: 35px;
-    background-position: left;
-    background-color: transparent;
-    color: transparent;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    font-family: 'Quicksand';
-    width: 130px;
-    height:40px;
-    text-align: right;
-    line-height: 5px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  display:inline-block;
+  background-image: url('../imagens/plus.png');
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: left;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Quicksand';
+  width: 130px;
+  height:40px;
+  text-align: right;
+  line-height: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 #myBtn:hover {
@@ -98,19 +125,19 @@ body {
 }
 
 .modal-content textarea {
-    resize: none;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Open Sans Condensed';
-    background-color: rgba(146,146,146,0.4);
-    float: left;;
-    width: 700px
+  resize: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Open Sans Condensed';
+  background-color: rgba(146,146,146,0.4);
+  float: left;;
+  width: 700px
 }
 
 .modal-content textarea {
-    margin: 5px;
-    height: 20px;
+  margin: 5px;
+  height: 20px;
 }
 
 .buttons {
@@ -122,18 +149,18 @@ body {
 }
 
 .modal-content button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px;
-    font-family: 'Open Sans Condensed';
-    font-size: 15px;
-    border-radius: 5px;
-    background-color: rgba(56, 197, 130, 0.95);
-    color: white; 
-    margin-left: 10px;
-    height: 40px;
-    width: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  font-family: 'Open Sans Condensed';
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: rgba(56, 197, 130, 0.95);
+  color: white; 
+  margin-left: 10px;
+  height: 40px;
+  width: 100px;
 }
 
 .modal-content p {

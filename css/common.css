@@ -137,7 +137,7 @@ footer a { text-decoration: none; }
 }
 
 
-.user img {border-radius: 50%; border: 3px solid rgba(146,146,146, 0.40);}
+.user img {border-radius: 50%; border: 2px solid rgba(146,146,146, 0.40);}
 
 .user {
     display: flex;

@@ -35,9 +35,11 @@
     <? draw_header($accountPhoto, $accountUsername); ?>
 
     <div class="main">
+
       <section id="bio">
         <a href="channel.php?id=<?=$channel_id?>"><p><?=$channel_name?></p></a>
-        <form id="subsription" action="subscribe.php" method="post">
+         <h2><?=$number_subscribers?> Subscribers</h2>
+        <form id="subscription" action="subscribe.php" method="post">
           <input type="hidden" name="subscription" value="<?=$subscription?>">
           <input type="hidden" name="channelID" value="<?=$channel_id?>">
           <input type="hidden" name="accountID" value="<?=$account_id?>">
@@ -49,8 +51,8 @@
             <input type="submit" value="Subscribe"> 
           <? } ?>
         </form>
-        <h2>Subscribers: <?=$number_subscribers?></h2>
       </section>
+
       <section id="posts">
 
         <?
