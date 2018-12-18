@@ -4,6 +4,7 @@ body {
   background-color: #e6e6e6;
   height: 100%;
   padding: 0;
+  overflow-x: hidden;
 }
 
 
@@ -85,6 +86,7 @@ body {
   font-family: 'Quicksand';
   width: 130px;
   height:40px;
+  cursor: pointer;
   text-align: right;
   line-height: 5px;
   -webkit-transition-duration: 0.4s; /* Safari */
