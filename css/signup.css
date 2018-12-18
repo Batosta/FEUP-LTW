@@ -66,19 +66,9 @@ footer a {
     text-align: center;
 }
 
-.about {
-
-    margin-left: 20px;
-}
-
 .ltw {
     
-    margin-left: auto;
-}
-
-.contacts  {
-    margin-left: auto;
-    margin-right: 20px;
+    margin: auto;
 }
 
 .topBar {

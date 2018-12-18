@@ -32,7 +32,7 @@ else{
 			$hashPass = encryptPass($password);
 			$stmt = $dbh->prepare('INSERT INTO Account (accountID, personName, passW, email, username, age, city, job, photo) VALUES (NULL, ?, ?, ?, ?, ?, NULL, NULL, \'default.jpg\');');
 			$stmt->execute(array($name, $hashPass, $email, $username, $age));
-			header("Location: ../login.html");
+			header("Location: ./signin.php?id=0");
 		}
 	}
 

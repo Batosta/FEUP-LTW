@@ -29,19 +29,9 @@ footer {
     text-align: center;
 }
 
-.about {
-
-    margin-left: 20px;
-}
-
 .ltw {
     
-    margin-left: auto;
-}
-
-.contacts  {
-    margin-left: auto;
-    margin-right: 20px;
+    margin: auto;
 }
 
 .menu #signIn a {
@@ -84,25 +74,6 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
-}
-
-form input{
-    background-image: url('../imagens/searchIcon.png');
-    background-color: rgba(128, 128, 128, 0.20);
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 8px 5px;
-    color: rgb(102, 102, 102);
-    opacity: 30%;
-    font-family:"Open Sans Condensed";
-    border-radius: 5px;
-    left: 5%;
-    top: 2%;
-    position: absolute;
-    padding: 1px 35px;
-    width: 200px;
-    height: 30px;
-    outline: none;
 }
 
 .logo {

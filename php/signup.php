@@ -49,18 +49,9 @@
   </body>
 
   <footer>
-    <div class="about">
-      <p>About Us  <p>
-    </div>
-
     <div class="ltw">
       <a id="ltw" href="https://web.fe.up.pt/~arestivo/page/courses/2018/ltw/" target="_blank"><p>Linguagens & Tecnoglogias Web</p></a>
     </div>
-
-    <div class="contacts">
-      <p> Contact </p>
-    </div>
-
   </footer>
 
 </html>

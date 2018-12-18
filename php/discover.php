@@ -38,11 +38,11 @@
         <a href="channel.php?id=<?=$discover_channel['channelID']?>"><?=$channel_name?>
         <form id="subscription" action="subscribe.php" method="post">
           <input type="hidden" name="subscription" value="0">
-          <input type="hidden" name="channelID" value="<?=$channel_id['channelID']?>">
+          <input type="hidden" name="channelID" value="<?=$discover_channel['channelID']?>">
           <input type="hidden" name="accountID" value="<?=$account_id?>">
           <input type="submit" value="Subscribe"> 
         </form>
-      </a>
+        </a>
         <? }  ?>
         </div>
       </section>

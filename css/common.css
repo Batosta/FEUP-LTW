@@ -15,15 +15,10 @@ footer p {
 
 footer a { text-decoration: none; }
 
-.about { margin-left: 20px;}
-
-.ltw { margin-left: auto;}
-
-.contacts  {
-    margin-left: auto;
-    margin-right: 20px;
+.ltw {
+    
+    margin: auto;
 }
-
 
 .navBar {
     display: flex;

@@ -21,19 +21,9 @@ footer {
     align-items: center;
 }
 
-.about {
-
-    margin-left: 20px;
-}
-
 .ltw {
     
-    margin-left: auto;
-}
-
-.contacts  {
-    margin-left: auto;
-    margin-right: 20px;
+    margin: auto;
 }
 
 .logInMenu {
