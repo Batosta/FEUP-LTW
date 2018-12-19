@@ -4,12 +4,11 @@
  
   $postID = $_POST['postID'];
   $accountID = $_POST['accountID'];
-  $commentText = $_POST['commentText'];
+  $commentText = htmlspecialchars($_POST['commentText']);
 
   addComment($dbh, $accountID, $postID, $commentText);
 
   $comments = getCommentsAfterId($dbh, $postID);
 
   echo json_encode($comments);
-
 ?>

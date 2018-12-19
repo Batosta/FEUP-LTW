@@ -1,10 +1,12 @@
 let commentsSection = document.getElementsByClassName("comments");
 let child;
+let photo;
 
 for(let i = 0; i < commentsSection.length; i++){
   commentsSection[i].addEventListener("submit", function(){
   child = commentsSection[i];
 
+  photo = commentsSection[i].querySelector('input[name=photo]').value;
   let pID = commentsSection[i].querySelector('input[name=postID]').value;
   let aID = commentsSection[i].querySelector('input[name=accountID]').value;
   let cText = commentsSection[i].querySelector('textarea[name=text]').value;
@@ -36,8 +38,8 @@ function receiveComments(event) {
     let comment = document.createElement('article');
     comment.classList.add('comment');
 
-    comment.innerHTML = '<span class="accountID">' +
-    comments[i].accountID + '</span><p>' +
+    comment.innerHTML = '<img id="comment_photo" src="../imagens/' +
+    photo + '" alt="Comment photo" height="35" width="35"><p>' +
     comments[i].commentText + '</p>';
 
     child.appendChild(comment);

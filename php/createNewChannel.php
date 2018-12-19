@@ -6,7 +6,7 @@
 
     $accountID = $_SESSION['accountID'];
 
-    $description = $_POST['description'];
+    $description = htmlspecialchars($_POST['description']);
 
 
     $stmt = $dbh->prepare('INSERT INTO Channel (channelID, description) VALUES (NULL, ?);');

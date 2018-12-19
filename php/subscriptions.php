@@ -32,9 +32,12 @@
         <div class="following"> 
         <? 
         
-          foreach($channel_ids as $channel_id){
+          if($channel_ids == null)
+            echo 'You are not following any channels at the moment. Try the discover page to find new channels to subscribe to!';
+          else{  
+            foreach($channel_ids as $channel_id){
 
-            $channel_name = getChannelName($dbh, $channel_id[0]);
+              $channel_name = getChannelName($dbh, $channel_id[0]);
         ?>
         <a href="channel.php?id=<?=$channel_id[0]?>"><?=$channel_name?>
         <form id="subscription" action="subscribe.php" method="post">
@@ -43,8 +46,8 @@
           <input type="hidden" name="accountID" value="<?=$account_id?>">
           <input type="submit" value="Unsubscribe"> 
         </form>
-      </a>
-        <? }  ?>
+        </a>
+        <? }}  ?>
         </div>
       </section>
     </div> 

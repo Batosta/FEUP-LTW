@@ -66,9 +66,13 @@
         $stmt->execute(array($accountID));
         $channelIDs = $stmt->fetchAll();
 
-        foreach ($channelIDs as $channelID) {
+        if($channelIDS == null)
+            echo "You have no posts to see. Try subscribing to new channels!";
+        else{
+            foreach ($channelIDs as $channelID) {
 
-            showAllChannelPosts($dbh, $channelID['channelID'], $accountID);
+                showAllChannelPosts($dbh, $channelID['channelID'], $accountID);
+            }
         }
     }
 
@@ -78,10 +82,15 @@
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE channelID = ?');
         $stmt->execute(array($channelID));
         $result = $stmt->fetchAll();
-        foreach($result as $post){
 
-            $postID = $post['postID'];
-            showPostByPostId($dbh, $postID, $accountID);
+        if($result == null)
+            echo 'This channel has no posts to see. Try creating your own post in this channel!';
+        else{
+            foreach($result as $post){
+
+                $postID = $post['postID'];
+                showPostByPostId($dbh, $postID, $accountID);
+            }
         }
     }
     function showPostByAccountId($dbh, $accountID, $sortID){
@@ -98,10 +107,14 @@
         $stmt->execute(array($accountID));
         $result = $stmt->fetchAll();
 
-        foreach ($result as $post) {
+        if($result == null)
+            echo "You have no posts published. Try subscribing to a channel and make a post!";
+        else{
+            foreach ($result as $post) {
 
-            $postID = $post['postID'];
-            showPostByPostId($dbh, $postID, $accountID);
+                $postID = $post['postID'];
+                showPostByPostId($dbh, $postID, $accountID);
+            }
         }
     }
 
@@ -112,6 +125,7 @@
         $post = $stmt->fetch();
 
         $postAccountID = $post['accountID'];
+        $photo = getAccountPhoto($dbh, $accountID);
         $post_photo = getAccountPhoto($dbh, $postAccountID);
         $post_username = getAccountUsername($dbh, $postAccountID);
         $channel_name = getChannelName($dbh, $post['channelID']);
@@ -128,8 +142,10 @@
                 <div class="title">
                     <h2 id="title"><?=$post['title']?></h2>
                 </div>
-               
-                <img id="post_photo" src="../imagens/<?=$post['photo']?>"" alt="Post photo">
+                <?
+                if($post['photo'] != null) { ?>
+                    <img id="post_photo" src="../imagens/<?=$post['photo']?>"" alt="Post photo">
+                <? } ?>
                 <h3 id="description"><?=$post['description']?></h3>
                 <section class="points">
                     <article class="currentPoints">
@@ -181,6 +197,7 @@
                     <label>
                         <textarea name="text" required="required"></textarea>
                     </label>
+                    <input type="hidden" name="photo" value="<?=$photo?>">
                     <input type="hidden" name="postID" value="<?=$postID?>">
                     <input type="hidden" name="accountID" value="<?=$accountID?>">
                     <input class="button" type="submit" name="submit" value="Submit">
