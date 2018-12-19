@@ -159,9 +159,9 @@
           echo 'Username is already in use!';
         else if($warningID == 2)
           echo 'Email is already in use!';
-         ?>
-        </h4>
-      </div>
+        ?>
+      </h4>
+    </div>
   </body>
 
   <? draw_footer(); ?>

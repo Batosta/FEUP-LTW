@@ -1,4 +1,5 @@
 <?php
+
   include_once('comments.php');
   $dbh = new PDO('sqlite:database.db');
  

@@ -60,24 +60,19 @@
     }
 
 
-    function showAllPosts($dbh, $accountID) {
+
+    function showAllPosts($dbh, $accountID, $page_name) {
         
         $stmt = $dbh->prepare('SELECT channelID FROM ChannelUsers WHERE accountID = ?');
         $stmt->execute(array($accountID));
         $channelIDs = $stmt->fetchAll();
 
-        if($channelIDS == null)
-            echo "You have no posts to see. Try subscribing to new channels!";
-        else{
-            foreach ($channelIDs as $channelID) {
+        foreach ($channelIDs as $channelID) {
 
-                showAllChannelPosts($dbh, $channelID['channelID'], $accountID);
-            }
+            showAllChannelPosts($dbh, $channelID['channelID'], $accountID, $page_name);
         }
     }
-
-
-    function showAllChannelPosts($dbh, $channelID, $accountID){
+    function showAllChannelPosts($dbh, $channelID, $accountID, $page_name){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE channelID = ?');
         $stmt->execute(array($channelID));
@@ -89,11 +84,11 @@
             foreach($result as $post){
 
                 $postID = $post['postID'];
-                showPostByPostId($dbh, $postID, $accountID);
+                showPostByPostId($dbh, $postID, $accountID, $page_name);
             }
         }
     }
-    function showPostByAccountId($dbh, $accountID, $sortID){
+    function showPostByAccountId($dbh, $accountID, $sortID, $page_name){
 
         if($sortID == 0)
             $stmt = $dbh->prepare('SELECT * FROM Post WHERE accountID = ? ORDER BY epoch DESC');
@@ -113,12 +108,11 @@
             foreach ($result as $post) {
 
                 $postID = $post['postID'];
-                showPostByPostId($dbh, $postID, $accountID);
+                showPostByPostId($dbh, $postID, $accountID, $page_name);
             }
         }
     }
-
-    function showPostByPostId($dbh, $postID, $accountID){
+    function showPostByPostId($dbh, $postID, $accountID, $page_name){
 
         $stmt = $dbh->prepare('SELECT * FROM Post WHERE postID = ?');
         $stmt->execute(array($postID));
@@ -148,15 +142,22 @@
                 <? } ?>
                 <h3 id="description"><?=$post['description']?></h3>
                 <section class="points">
-                    <article class="currentPoints">
-                        <span class="points" value="<?=$post['points']?>">Points: <?=$post['points']?></span> 
+                    <article class="currentPoints"> 
+                        <span class="points" value="<?=$post['points']?>">Points: <?=$post['points']?></span>
 
-                        <button class="upvote"></button>
+                        <form id="upvote" action="voteUp.php" method="post">
+                            <input type="hidden" name="page_name" value="<?=$page_name?>">
+                            <input type="hidden" name="accountID" value="<?=$accountID?>">
+                            <input type="hidden" name="postID" value="<?=$postID?>">
+                            <button class="upvote"></button>
+                        </form>
 
-                        <span type="hidden" name="accountID" value="<?=$accountID?>"></span>
-                        <span type="hidden" name="postID" value="<?=$postID?>"></span>
-                        
-                        <button class="downvote"></button>
+                        <form id="upvote" action="voteDown.php" method="post">
+                            <input type="hidden" name="page_name" value="<?=$page_name?>">
+                            <input type="hidden" name="accountID" value="<?=$accountID?>">
+                            <input type="hidden" name="postID" value="<?=$postID?>">
+                            <button class="downvote"></button>
+                        </form>
                     </article>
                 </section>
                 <script src="../javascript/script1.js" defer></script>

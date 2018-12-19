@@ -20,6 +20,10 @@
     $accountPoints = getAccountPoints($dbh, $account_id);
 
     $sortID = $_GET['id'];
+
+    $basename = basename(__FILE__, '.php');
+    $query_string = $_SERVER['QUERY_STRING'];
+    $page_name = $basename . '.php?' . $query_string;
   ?>
 
   <head>
@@ -54,7 +58,7 @@
           <a href="profile.php?id=3">Most disliked</a>
         </section>
         <? 
-          showPostByAccountId($dbh, $account_id, $sortID);
+          showPostByAccountId($dbh, $account_id, $sortID, $page_name);
         ?>
       </section>
       <? draw_other_pages(); ?>
