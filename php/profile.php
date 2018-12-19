@@ -34,9 +34,7 @@
   </head>
 
   <body>
-    
     <? draw_header($accountPhoto, $accountUsername); ?>
-
     <div class="main">
       <section id="bio">
         <img src='../imagens/<?=$accountPhoto?>' alt="Profile photo" height="150" width="150">
@@ -49,24 +47,18 @@
         <h5><?=$accountJob ?></h5>
       </section>
       <section id="posts">
-
-      <section id="sorts">
-        <a href="profile.php?id=0">Fresh</a>
-        <a href="profile.php?id=1">Old</a>
-        <a href="profile.php?id=2">Most liked</a>
-        <a href="profile.php?id=3">Most disliked</a>
-      </section>
-
+        <section id="sorts">
+          <a href="profile.php?id=0">Fresh</a>
+          <a href="profile.php?id=1">Old</a>
+          <a href="profile.php?id=2">Most liked</a>
+          <a href="profile.php?id=3">Most disliked</a>
+        </section>
         <? 
           showPostByAccountId($dbh, $account_id, $sortID);
         ?>
       </section>
-
-  
-    <? draw_other_pages(); ?>
-
-  </div>
-
+      <? draw_other_pages(); ?>
+    </div>
   </body>
   <? draw_footer() ?>
 
