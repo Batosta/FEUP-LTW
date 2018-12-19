@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-image: url('../imagens/gplay.png');
+    background-color: #e6e6e6;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+#channels, #posts {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-family: 'Open Sans Condensed';
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+
+

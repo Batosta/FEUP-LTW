@@ -7,7 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .main {
   width: 100em;
   margin: 60px 20px;
@@ -116,69 +115,57 @@ body {
   background-image: url('../imagens/profile.png');
   margin: 15% auto; 
   padding: 20px;
-  height: 30%;
+  height: 40%;
   width: 50%; 
   border-radius: 10px;
   flex-direction:  column;
 }
 
 .minidiv {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
-.modal-content textarea {
+.minidiv textarea {
   resize: none;
   outline: none;
   border: none;
   border-radius: 5px;
   font-family: 'Open Sans Condensed';
   background-color: rgba(146,146,146,0.4);
-  float: left;;
-  width: 700px
+  width: 95%;
+  height: 15%;
+  margin: 1%;
 }
 
-.modal-content textarea {
-  margin: 5px;
-  height: 20px;
+.minidiv textarea #descriptions {
+  height: 30%;
+  overflow: auto;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 35px;
-  margin-top: 5px;
-}
-
-.modal-content button {
+#enter {
   border: none;
   outline: none;
   cursor: pointer;
   padding: 10px;
   font-family: 'Open Sans Condensed';
-  font-size: 15px;
+  font-size: 90%;
   border-radius: 5px;
   background-color: rgba(56, 197, 130, 0.95);
   color: white; 
-  margin-left: 10px;
-  height: 40px;
-  width: 100px;
+  margin: 1%;
+  height: 16%;
+  width: 10%;
+  align-self: flex-end;
 }
 
-.modal-content p {
-  font-family: 'Open Sans Condensed';
-  color: rgb(16, 0, 32);
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
 
 .close {
   color: #aaa;
   float: left;
   font-size: 28px;
   font-weight: bold;
-  padding: 2px;
-  margin-left: 5px;
+  align-self: flex-end;
 }
 
 .close:hover, .close:focus {

@@ -110,72 +110,60 @@ body {
 .modal-content {
   display: flex;
   background-color: rgb(250,250,250);
-  background-image: url('../imagens/profile.png');
+  background-image: linear-gradient(rgba(56,197,130,0.7), rgba(56,197,130,0.7)), url('../imagens/try.gif');
   margin: 15% auto; 
   padding: 20px;
-  height: 30%;
-  width: 50%; 
+  height: 25%;
+  width: 40%; 
   border-radius: 10px;
-  flex-direction:  column;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .minidiv {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
-.modal-content textarea {
+.minidiv textarea {
   resize: none;
-  outline: none;
   border: none;
   border-radius: 5px;
   font-family: 'Open Sans Condensed';
-  background-color: rgba(146,146,146,0.4);
-  float: left;;
-  width: 700px
+  background-color: rgba(255,255,255,0.9);
+  width: 95%;
+  padding: 1%;
+  height: 2%;
+  outline: none;
+  font-size: 100%;
 }
 
-.modal-content textarea {
-  margin: 5px;
-  height: 20px;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 35px;
-  margin-top: 5px;
+.minidiv label {
+  font-family: 'Open Sans Condensed';
+  color: white;
+  font-size: 20px;
+  font-style: bold; 
 }
 
 .modal-content button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px;
+  width: 20%;
+  height: 20%;
+  align-self: flex-end;
   font-family: 'Open Sans Condensed';
-  font-size: 15px;
+  border: none;
+  background-color: rgba(255,255,255,0.9);
   border-radius: 5px;
-  background-color: rgba(56, 197, 130, 0.95);
-  color: white; 
-  margin-left: 10px;
-  height: 40px;
-  width: 100px;
+  color: rgb(130,130,130);
+  cursor: pointer;
 }
 
-.modal-content p {
-  font-family: 'Open Sans Condensed';
-  color: rgb(16, 0, 32);
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
+.modal-content button:hover { color: rgba(130, 130, 130, 0.6); }
 
 .close {
-  color: #aaa;
-  float: left;
+  color: white;
   font-size: 28px;
   font-weight: bold;
-  padding: 2px;
-  margin-left: 5px;
+  align-self: flex-end;
 }
 
 .close:hover, .close:focus {

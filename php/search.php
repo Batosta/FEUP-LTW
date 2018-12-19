@@ -22,7 +22,7 @@
   	<head>
 	    <title>Search</title> 
 	    <link href="../imagens/icon.png" rel="shortcut icon">
-	    <link href="../css/profile.css" rel="stylesheet">
+	    <link href="../css/search.css" rel="stylesheet">
 	    <link href="../css/post_style.css" rel="stylesheet">
 	    <link href="../css/common.css" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
@@ -65,9 +65,6 @@
 	      	<?	} 	?>
 	    </section>
     </div>  
-
-    <? draw_other_pages() ?>
-
+    <? draw_footer() ?>
   </body>
-  <? draw_footer() ?>
 </html>

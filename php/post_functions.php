@@ -199,44 +199,34 @@
 
             <form class="modal-content" action="createNewPost.php" method="post">
                 <div class="minidiv"> 
-                    <label>
-                        <textarea name="title" placeholder="Title" required="required"></textarea>
-                    </label>
-                    <label>
-                        <textarea name="photo" placeholder="Photo"></textarea>
-                    </label>
-                    <label>
-                        <textarea name="description" placeholder="Description" required="required"></textarea>
-                    </label>
-                    <input type="hidden" name="channel" value="<?=$channelID?>">
                     <span class="close">&times;</span>
+                        <textarea name="title" placeholder="Title" required="required"></textarea>
+                        <textarea name="photo" placeholder="Photo"></textarea>
+                        <textarea id="descriptions" name="description" placeholder="Description" required="required"></textarea>
+                    <input type="hidden" name="channel" value="<?=$channelID?>">
                 </div>
-                <div class="buttons"> 
                     <button id="enter"> Post </button>
-                </div>
             </form>
         </div>
         <script src="../javascript/script.js" defer></script>
 	<? }
 
-     function createChannel($channelID){ ?>
+    function createChannel($channelID){ ?>
 
         <button id="createChannel"> Create New Channel </button>
 
         <div id="myModal" class="modal">
 
             <form class="modal-content" action="createNewChannel.php" method="post">
-                <div class="minidiv"> 
-                    <label>
-                        <textarea name="description" placeholder="Description" required="required"></textarea>
-                    </label>
-                    <span class="close">&times;</span>
-                </div>
-                <div class="buttons"> 
-                    <button id="enter"> Create </button>
-                </div>
+                <div class="minidiv">
+                <span class="close">&times;</span>
+                <label> New Channel </label>
+                <textarea name="description" placeholder="Description" required="required" maxlength="15"></textarea>
+            </div>
+                <button id="enter"> Create </button>
             </form>
         </div>
+
         <script src="../javascript/script1.js" defer></script>
     <? }
 ?>
