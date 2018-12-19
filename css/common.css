@@ -4,7 +4,7 @@ footer {
     background-color: rgb(16,0,32);
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: 7%;
     align-items: center;
 }
 
@@ -15,16 +15,14 @@ footer p {
 
 footer a { text-decoration: none; }
 
-.ltw {
-    
-    margin: auto;
-}
+.ltw {margin: auto;}
 
 .navBar {
     display: flex;
     background-color: rgba(250,250,250, 0.3);
-    height: 8%;
+    height: 7%;
     align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
@@ -32,16 +30,17 @@ footer a { text-decoration: none; }
 }
 
 .logOut {
-    margin-left: auto;
-    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
 }
 
-.menu { margin-left: 10px;}
+.menu {margin-left: 1%;}
 
 .menuContent {
     display: none;
     position: absolute;
-    min-width: 200px;
+    min-width: 15%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1; 
 }
@@ -62,11 +61,12 @@ footer a { text-decoration: none; }
 
 #homePage, #settings, #discover, #subs, #logOut, #user {
     background-color: #e6e6e6;
-    background-size: 25px;
+    background-size: 12%;
     background-repeat: no-repeat;
     background-position: 5% 50%;
     border-radius: 0%;
     float: left;
+    font-size: 100%;
 }
 
 #subs:hover, #homePage:hover, #settings:hover, #discover:hover, #logOut:hover, #user:hover {background-color: rgb(254, 255, 254);}
@@ -87,58 +87,63 @@ footer a { text-decoration: none; }
 .logOutContent {
     display: none;
     position: absolute;
+    top: 90%;
     right:0;
-    min-width: 200px;
+    min-width: 15%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1;
-    border-right:100px;
+    border-right: 7.5%;
 }
 
-.logOut img, .menu img {
-    padding: 5px;
-    width: 25px;
-    height: 25px;
+.logOut img , .menu img {
+    padding: 0.5%;
+    width: 5%;
+    height: 5%;
     border-radius: 50%;
     background-color: rgba(229, 238, 234, 0.562);
 }
 
+
 .searchBar form input{
     background-image: url('../imagens/searchIcon.png');
     background-color: rgba(250, 250, 250, 0.65);
-    background-size: 20px;
+    background-size: 10%;
     background-repeat: no-repeat;
-    background-position: 8px 5px;
+    background-position: 2%;
     color: rgb(0, 0, 0);
     opacity: 30%;
     font-family:"Open Sans Condensed";
     border-radius: 20px;
     top: 8%;
-    left: 65%;
+    left: 70%;
     position: absolute;
-    padding: 1px 35px;
-    height: 30px;
+    padding: 0.1% 3%;
+    height: 70%;
 }
 
 .searchBar form input[type=text] {
-    width: 130px;
+    width: 10%;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
 .searchBar form input[type=text]:focus {
-    width: 300px;
+    width: 20%;
     color: rbg(250,250,250);
     outline: none;
 }
 
 
-.user img {border-radius: 50%; border: 2px solid rgba(146,146,146, 0.40);}
+.user img {border-radius: 50%; border: 1px solid rgba(146,146,146, 0.40);}
 
 .user {
     display: flex;
-    margin-left: 10px;
+    margin-left: 2%;
+    margin-right: auto;
     align-items: center;
     padding: 5px;
+    position: absolute;
+    left: 3%;
     flex-direction: row;
     width: auto;
     -webkit-transition: width 0.4s ease-in-out;
@@ -150,17 +155,17 @@ footer a { text-decoration: none; }
     color: rgb(146,146,146);
     font-family: 'Open Sans Condensed';
     margin: 0 5px;
-    font-size: 15px;
+    font-size: 100%;
 }
 
 #tinyName:hover {color: rgb(16, 0, 32);}
 
-.user img:hover {border: 3px solid rgba(16,0,32, 0.5);}
+.user img:hover {border: 1px solid rgba(16,0,32, 0.5);}
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-width: 12px;
-height: 12px;
+width: 1%;
+height: 1%;
 }
 
 ::-webkit-scrollbar-track {
@@ -176,7 +181,6 @@ border-radius: 10px;
 ::-webkit-scrollbar-thumb:hover {
 background: rgba(16,0,32, 0.7);  
 }
-
 
 
     

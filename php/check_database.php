@@ -52,13 +52,14 @@ foreach ($result as $row) {
     echo $row['epoch'], "<br>";
 }
 
-echo "<br><br>LikeUser<br>";
-$stmt = $dbh->prepare('SELECT * FROM LikeUser');
+echo "<br><br>Vote<br>";
+$stmt = $dbh->prepare('SELECT * FROM Vote');
 $stmt->execute();
 $result = $stmt->fetchAll();
 foreach ($result as $row) {
     echo $row['accountID'], "|";
-    echo $row['postID'], "<br>";
+    echo $row['postID'], "|";
+    echo $row['value'], "<br>";
 }
 
 echo "<br><br>Comment<br>";

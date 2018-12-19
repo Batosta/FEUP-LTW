@@ -3,7 +3,7 @@ body {
     background-image: url('../imagens/logIn.gif');
     background-color: rgb(239,239,239);
     background-repeat: no-repeat;
-    background-size: 550px;
+    background-size: 40%;
     background-attachment: fixed;
     background-position: 50% 50%;
     overflow: hidden;
@@ -13,13 +13,13 @@ body {
     display: block;
     background-color: rgba(56, 197, 130, 0.9);
     position: absolute;
-    width: 300px;
+    width: 20%;
     right: 39%;
     top: 18%;
 } 
 
 #button {
-    width: 100px;
+    width: 40%;
     background-color: white;
     color: rgb(77, 76, 76);
 }
@@ -37,10 +37,8 @@ body {
     font-family:"Open Sans Condensed";
     color: rgb(102, 102, 102);
     opacity: 30%;
-    width: 180px;    
+    width: 80%;    
 }
-
-
 
 footer {
     display: flex;
@@ -50,7 +48,7 @@ footer {
     color: white;
     bottom: 0;
     width: 100%;
-    height: 40px;
+    height: 7%;
     align-items: center;
 }
 

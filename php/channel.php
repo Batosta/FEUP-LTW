@@ -16,6 +16,10 @@
     $accountPhoto = getAccountPhoto($dbh, $account_id);
     $subscription = getSubscription($dbh, $account_id, $channel_id);
     $number_subscribers = getNumberSubscriber($dbh, $channel_id);
+
+    $basename = basename(__FILE__, '.php');
+    $query_string = $_SERVER['QUERY_STRING'];
+    $page_name = $basename . '.php?' . $query_string;
   ?>
 
   <head>
@@ -57,7 +61,7 @@
           if($subscription == 1) {
 
             createPost($channel_id);
-            showAllChannelPosts($dbh, $channel_id, $account_id);
+            showAllChannelPosts($dbh, $channel_id, $account_id, $page_name);
           }
           else { ?>
 

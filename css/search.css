@@ -5,7 +5,6 @@ body {
     height: 100%;
     width: 100%;
     padding: 0;
-    overflow-x: hidden;
 }
 
 
@@ -14,6 +13,14 @@ body {
   margin-right: auto;
   margin-top: 5%;
   font-family: 'Open Sans Condensed';
+  color: white;
+}
+
+#channels {
+  background-image: linear-gradient(to bottom, rgba(16, 0, 32,0.7), transparent);
+  border-radius: 10px;
+  width: 40%;
+  padding: 1%;
 }
 
 .main {
@@ -21,5 +28,29 @@ body {
   flex-direction: row;
 }
 
+#channels a {
+  text-decoration: none;
+  color: white;
+}
 
+#channels h2 {
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  padding: 1%;
+}
 
+#channels h3 , #posts #messages {
+  text-align: center;
+  background-image: url('../imagens/cute.gif');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 25%;
+}
+
+#posts #postsTitle {
+  background-color: rgba(16,0,32,0.6);
+  border-radius: 10px;
+  padding: 1%;
+}
+
+#posts #messages { color: rgb(16, 0, 32); }

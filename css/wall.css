@@ -60,6 +60,7 @@ body {
   outline: none;
   background-repeat: no-repeat;
   font-family: 'Open Sans Condensed';
+  cursor: pointer;
 }
 
 #siteName {

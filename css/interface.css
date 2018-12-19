@@ -2,7 +2,7 @@
 body {
     background-image: url('../imagens/music.gif');
     background-repeat: no-repeat;
-    background-size: 500px;
+    background-size: 40%;
     background-attachment: fixed;
     background-position: 50% 50%; 
     margin: 0;
@@ -25,24 +25,21 @@ footer {
 .title {
     font-family: "Quicksand";
     color: rgb(16,0,32);
-    font-size: 40px;
+    font-size: 250%;
     font-weight: 300;
     text-align: center;
 }
 
-.ltw {
-    
-    margin: auto;
-}
+.ltw {margin: auto;}
 
 .menu #signIn a {
-    width: 60px;
+    width: 5%;
     right: 75%;
     top: 45%;
 }
 
 .menu #logIn  a {
-    width: 70px;
+    width: 5%;
     right: 20%;
     top: 45%;
 }
@@ -51,7 +48,7 @@ footer {
     background-color: rgb(56, 197, 130);
     text-transform: uppercase;
     font-family:"Open Sans Condensed";
-    font-size: 17px;
+    font-size: 100%;
     padding: 20px 30px;
     border-radius: 5px;
     position: absolute;
@@ -65,17 +62,11 @@ footer {
     background-color: transparent; 
     border: 1px solid #38c582;
     color: #38c582 !important;
-
 }
 
-.menu  a {
-    text-decoration: none;
-}
+.menu  a {text-decoration: none;}
 
-footer a {
-    text-decoration: none;
-    color: white;
-}
+footer a {text-decoration: none;color: white;}
 
 .logo {
     position: absolute;

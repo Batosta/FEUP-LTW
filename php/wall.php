@@ -14,6 +14,8 @@
     $accountPhoto = getAccountPhoto($dbh, $account_id);
     $account_channels = getChannelIDs($dbh, $account_id);
 
+    $basename = basename(__FILE__, '.php');
+    $page_name = $basename . '.php';
   ?>
   <head>
     <title>Home Page</title>
@@ -51,7 +53,7 @@
     <div class="main">
 
       <?
-        showAllPosts($dbh, $account_id);
+        showAllPosts($dbh, $account_id, $page_name);
       ?>
     </div>
   </div>
