@@ -9,6 +9,7 @@ body {
   background-color: rgba(16,0,32, 0.85);
   background-image: url('../imagens/gplay.png');
   margin: 0;
+  overflow: auto;
 }
 
 .mainContent { display: flex; flex-direction: row;}
