@@ -4,7 +4,6 @@ drop table if exists ChannelUsers;
 drop table if exists Post;
 drop table if exists Vote;
 drop table if exists Comment;
-drop table if exists SubComment;
 
 -- Table with all the accounts of the users
 create table Account(
@@ -58,12 +57,4 @@ create table Comment(
     postID integer not null references Post(postID),
     accountID integer not null references Account(accountID),
     commentText text not null
-);
-
--- Table with all the subcomments for every comment
-create table SubComment(
-    subcommentID integer primary key autoincrement,
-    commentID integer not null references Comment(commentID),
-    accountID integer not null references Account(accountID),
-    subcommentText text not null
 );

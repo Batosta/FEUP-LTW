@@ -51,17 +51,17 @@
       	</section>
 
       	<section id="posts">
-	      	<h2 id="postsTitle"> Posts </h2>
+	      	<h2> Posts </h2>
 	      	<? 	if($search_posts == null) {	?>
 	      	
-	      		<h3 id="messages">There were no results found</h3>
+	      		<h3>There were no results found</h3>
 	      	<? 	}
 	      		else {
 	      			foreach($search_posts as $search_post) {
 
 	      				showPostByPostId($dbh, $search_post['postID'], $account_id);
 	      			} ?>
-	      			<h3 id="messages">No more results to show</h3>
+	      			<h3>No more results to show</h3>
 	      	<?	} 	?>
 	    </section>
     </div>  

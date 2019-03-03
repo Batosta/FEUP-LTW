@@ -1,11 +1,12 @@
+
 body {
-    margin: 0;
-    background-image: url('../imagens/logIn.gif');
-    background-color: rgb(239,239,239);
+    background-image: url('../imagens/music.gif');
     background-repeat: no-repeat;
     background-size: 40%;
     background-attachment: fixed;
-    background-position: 50% 50%;
+    background-position: 50% 50%; 
+    margin: 0;
+    background-color: white;
     overflow: hidden;
 }
 
@@ -17,58 +18,58 @@ footer {
     color: white;
     bottom: 0;
     width: 100%;
-    height: 7%;
+    height: 40px;
     align-items: center;
 }
 
-.ltw {
-    
-    margin: auto;
-}
-
-.logInMenu {
-    display: block;
-    background-color: rgba(56, 197, 130, 0.9);
-    position: absolute;
-    width: 20%;
-    right: 40%;
-    top: 36%;
-}
-
-
-.logInMenu p {
-    color:white;
+.title {
     font-family: "Quicksand";
-    font-size: 100%;
+    color: rgb(16,0,32);
+    font-size: 250%;
+    font-weight: 300;
     text-align: center;
 }
 
-.logInMenu input {
-    background-color: rgb(228, 226, 226);
-    border-radius: 5px;
+.ltw {margin: auto;}
+
+.menu #signIn a {
+    width: 5%;
+    right: 75%;
+    top: 45%;
+}
+
+.menu #logIn  a {
+    width: 5%;
+    right: 20%;
+    top: 45%;
+}
+
+.menu #logIn a, .menu #signIn a {
+    background-color: rgb(56, 197, 130);
+    text-transform: uppercase;
     font-family:"Open Sans Condensed";
-    color: rgb(102, 102, 102);
-    opacity: 30%;
-    width: 80%;
+    font-size: 100%;
+    padding: 20px 30px;
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+    color: white;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
-#button {
-    width: 40%;
-    background-color: white;
-    color: rgb(77, 76, 76);
-    outline:none;
+.menu #signIn a:hover, .menu #logIn a:hover {
+    background-color: transparent; 
+    border: 1px solid #38c582;
+    color: #38c582 !important;
 }
 
-.topBar {
-    display: flex;
-    background-color: transparent;
-    height: 50px;
-    align-items: center;
-}
+.menu  a {text-decoration: none;}
 
-.topBar p {
-    color: rgb(16,0,32);
-    font-family: "Quicksand";
-    font-size: 20px;
-    margin-right: auto;
+footer a {text-decoration: none;color: white;}
+
+.logo {
+    position: absolute;
+    left: 1%;
+    top: 2%;
 }

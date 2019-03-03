@@ -30,18 +30,15 @@
             <div class="user">
                 <a href="profile.php?id=0"><img src="../imagens/<?=$accountPhoto?>" height = "25" width="25"></a>
                 <a id="tinyName" href="profile.php?id=0"><?=$accountUsername?></a>
-             </div>
-           
+            </div>
 
             <div class="searchBar">
                 <form action="search.php" method="post">
-                <input type="text" name="search" placeholder="Search something">
+                    <input type="text" name="search" placeholder="Search something">
                 </form>
             </div>
-
-
+              
             <div class="logOut">
-
                 <img src="../imagens/turn-on.png" height="25" width="25">
                 <div class="logOutContent">
                     <a id="logOut" href="logout.php"><p>Sign Out</p></a>

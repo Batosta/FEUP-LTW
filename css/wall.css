@@ -1,8 +1,8 @@
 .main {
-	width: 50em;
-	margin-left: 30%;
+  width: 50em;
+  margin-left: 30%;
   margin-right: auto;
-  margin-top: 125px; 							/* Top margin to avoid having items behind the navigation bar */
+  margin-top: 125px;              /* Top margin to avoid having items behind the navigation bar */
 }
 
 body {
